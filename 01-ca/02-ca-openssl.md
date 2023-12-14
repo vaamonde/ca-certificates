@@ -8,7 +8,7 @@
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
 #Data de atualização: 14/12/2023<br>
-#Versão: 0.01<br>
+#Versão: 0.02<br>
 
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
@@ -40,45 +40,48 @@ aplicativos como navegação na web, email, mensagens instantâneas e voz sobre 
 Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e<br>
 navegadores web.
 
-#01_ Criando a estrutura de diretórios da CA e dos Certificados no Ubuntu Server<br>
+#01_ Criando a estrutura de diretórios da CA (Certificate Authority) e dos Certificados no Ubuntu Server<br>
 
 	#conhecendo a estrutura de diretórios da CA e dos Certificados Assinados
 	/etc/ssl/.............<-- Diretório padrão das configurações do OpenSSL
 	/etc/ssl/certs/.......<-- Diretório das CA's Confiáveis do Ubuntu Server
-	/etc/ssl/crl/.........<-- Diretório
+	/etc/ssl/crl/.........<-- Diretório de Requisição de Revogação de Certificados
 	/etc/ssl/conf/........<-- Diretório dos Arquivos de Configuração da CA e dos Certificados
 	/etc/ssl/newcerts/....<-- Diretório de Criação dos Novos Certificados Assinados
 	/etc/ssl/private/.....<-- Diretório das Chaves Públicas e Privadas dos Certificados Assinados
 	/etc/ssl/request/.....<-- Diretório das Requisições de Certificados Assinados
 
+	#criando os diretórios para o armazenamento dos arquivos e certificados
 	#opção do comando mkdir: -v (verbose)
 	#opção do bloco de argumentos {}: Agrupa comandos em um bloco
 	sudo mkdir -v /etc/ssl/{certs,conf,crl,newcerts,private,requests}
 
-#02_ Criando os arquivos de Indexação de Solicitação de Certificados Assinados no Ubuntu Server<br>
+#02_ Criando os arquivos de Banco de Dados dos Certificados Assinados no Ubuntu Server<br>
 
 	#conhecendo os arquivos de configuração da CA e dos Certificados Assinados
-	/etc/ssl/index.txt......<--
-	/etc/ssl/index.attr.....<--
-	/etc/ssl/serial.........<--
-	/etc/ssl/conf/ca.conf...<-- 
+	#mais informações sobre os arquivos acesse: https://pki-tutorial.readthedocs.io/en/latest/cadb.html#
+	/etc/ssl/index.txt......<-- Arquivo de Banco de Dados dos Certificados da CA
+	/etc/ssl/index.attr.....<-- Arquivo de Banco de Dados de Atributos dos Certificados da CA
+	/etc/ssl/serial.........<-- Arquivo de Número de Série de Geração de Certificados
+	/etc/ssl/conf/ca.conf...<-- Arquivo de Configuração da Unidade Certificadora Raiz Confiável
 
+	#criando os arquivos de banco de dados, atributos e número de série da CA
 	#opção do bloco de argumentos {}: Agrupa comandos em um bloco
 	sudo touch /etc/ssl/{index.txt,index.txt.attr,serial}
 	
-	#adicionando um valor de sequência de números de solicitação de certificados
+	#adicionando um valor de sequência numérica de solicitações de certificados
 	#assinados no arquivo serial para o controle e gerenciamentos dos certificados
 	#opção do redirecionador de saída >>: Redireciona a saída padrão, anexando
 	sudo echo "1234" >> /etc/ssl/serial
 
 	#download de arquivo de configuração da CA do Ubuntu Server
 	#opção do comando wget: -v (verbose), -O (output file)
-	sudo wget -v -O /etc/ssl/conf/ca.conf 
+	sudo wget -v -O /etc/ssl/conf/ca.conf https://raw.githubusercontent.com/vaamonde/ca-certificates/main/conf/ca.conf
 
-#03_ Editando o arquivo de Configuração da CA no Ubuntu Server<br>
+#03_ Editando o arquivo de Configuração da CA (Certificate Authority) no Ubuntu Server<br>
 
-	#arquivo de configuração da CA
-	sudo /etc/ssl/conf/ca.conf
+	#editando o arquivo de configuração da CA
+	sudo vim /etc/ssl/conf/ca.conf
 	INSERT
 
 		#alterar as informações principais da CA a partir da linha: 20
@@ -88,8 +91,14 @@ navegadores web.
 	#salvar e sair do arquivo
 	ESC SHIFT : x <Enter>
 
-#04_ Criando o Chave Raiz RSA Privada da CA no Ubuntu Server<br>
+#04_ Criando o Chave Raiz RSA (Rivest-Shamir-Adleman) Privada da CA (Certificate Authority) no Ubuntu Server<br>
 
+	#Tipo de criptografia da chave privada com as opções de: -aes128, -aes192, -aes256, -camellia128, 
+	#-camellia192, -camellia256, -des, -des3 ou -idea, padrão utilizado: -aes256
+
+	#Tamanho da chave privada utilizada em todas as configurações dos certificados, opções de: 1024, 
+	#2048, 3072 ou 4096, padrão utilizado: 2048
+	
 	#opções do comando openssl: genrsa (command generates an RSA private key),
 	#-criptokey (Encrypt the private key with the AES, CAMELLIA, DES, triple DES or the IDEA ciphers)
 	#-out (The output file to write to, or standard output if not specified), 
@@ -97,7 +106,7 @@ navegadores web.
 	#bits (The size of the private key to generate in bits)
 	sudo openssl genrsa -aes256 -out /etc/ssl/private/pti-ca.key.old -passout pass:"pti@2018" 2048
 
-#05_ Removendo a Senha da Chaves Raiz Privada da CA no Ubuntu Server<br>
+#05_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada da CA (Certificate Authority) no Ubuntu Server<br>
 
 	#removendo a senha do arquivo de Chave Raiz RSA e criando o arquivo sem senha
 	#opção do comando: &>> (redirecionar a saída padrão)
@@ -110,7 +119,7 @@ navegadores web.
 	# opção do comando rm: -v (verbose)	
 	sudo rm -v /etc/ssl/private/pti-ca.key.old
 
-#06_ Verificando o arquivo de Chave Raiz sem Senha da CA no Ubuntu Server<br>
+#06_ Verificando o arquivo de Chave Raiz RSA (Rivest-Shamir-Adleman) Privada da CA (Certificate Authority) no Ubuntu Server<br>
 
 	#opções do comando openssl: rsa (command processes RSA keys), -noout (Do not output the encoded 
 	#version of the key), -modulus (Print the value of the modulus of the key), -in (The input file 
@@ -119,6 +128,9 @@ navegadores web.
 	sudo openssl rsa -noout -modulus -in /etc/ssl/private/pti-ca.key | openssl md5
 
 #07_ Criando o arquivo CSR (Certificate Signing Request) no Ubuntu Server<br>
+
+	#Assinatura da chave de criptografia privada com as opções de: md5, -sha1, sha224, sha256, sha384 
+	#ou sha512, padrão utilizado: sha256
 
 	#opções do comando openssl: req (command primarily creates and processes certificate requests in 
 	#PKCS#10 format), -new (Generate a new certificate request), -criptocert (The message digest to 
@@ -132,6 +144,9 @@ navegadores web.
 
 #08_ Criando o arquivo CRT (Certificate Request Trust) no Ubuntu Server<br>
 
+	#Assinatura da chave de criptografia privada com as opções de: md5, -sha1, sha224, sha256, sha384 
+	#ou sha512, padrão utilizado: sha256
+
 	#opções do comando openssl: req (command primarily creates and processes certificate requests in 
 	#PKCS#10 format), -new (Generate a new certificate request), -x509 (Output a self-signed certificate 
 	#instead of a certificate request), -criptocert (The message digest to sign the request with) -days 
@@ -144,7 +159,7 @@ navegadores web.
 	sudo openssl req -new -x509 -sha256 -days 3650 -in /etc/ssl/requests/pti-ca.csr -key /etc/ssl/private/pti-ca.key \
 	-out /etc/ssl/newcerts/pti-ca.crt -config /etc/ssl/conf/ca.conf
 
-#09_ Verificando o arquivo CRT (Certificate Request Trust) da CA no Ubuntu Server<br>
+#09_ Verificando o arquivo CRT (Certificate Request Trust) da CA (Certificate Authority) no Ubuntu Server<br>
 
 	#opções do comando openssl: x509 (command is a multi-purpose certificate utility), -noout (Do not output 
 	#the encoded version of the request), -modulus (Print the value of the modulus of the public key contained 
@@ -154,7 +169,7 @@ navegadores web.
 	sudo openssl x509 -noout -modulus -in /etc/ssl/newcerts/pti-ca.crt | openssl md5
 	sudo openssl x509 -noout -text -in /etc/ssl/newcerts/pti-ca.crt
 
-#10_ Instalando o certificado CRT (Certificate Request Trust) Criando o arquivo PEM (Privacy Enhanced Mail) da CA no Ubuntu Server<br>
+#10_ Instalando o certificado CRT (Certificate Request Trust) e criando o arquivo PEM (Privacy Enhanced Mail) da CA (Certificate Authority) no Ubuntu Server<br>
 
 	#copiando o arquivo CRT da CA para o diretório de CA Certificates
 	#opção do comando cp: -v (verbose)
