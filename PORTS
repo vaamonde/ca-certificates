@@ -1,0 +1,20 @@
+Autor: Robson Vaamonde
+Site: www.procedimentosemti.com.br
+Facebook: facebook.com/ProcedimentosEmTI
+Facebook: facebook.com/BoraParaPratica
+YouTube: youtube.com/BoraParaPratica
+Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
+Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
+Github: https://github.com/vaamonde
+Data de criação: 14/12/2023
+Data de atualização: 14/12/2023
+Versão: 0.01
+Testado e homologado para a versão do Ubuntu Server 22.04.x LTS x64
+
+Network: 172.16.1.0/24
+CIDR: 24 (255.255.255.0)
+IP Address Server: 172.16.1.20
+IP Address Gateway: 172.16.1.254
+IP Address DNS: 8.8.8.8, 8.8.4.4, 172.16.1.254
+Hostname: wsvaamonde
+Domain: pti.intra
