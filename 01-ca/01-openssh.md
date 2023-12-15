@@ -17,20 +17,7 @@ Site Oficial do PuTTY: https://www.putty.org/
 OpenSSH é um conjunto de utilitários de rede relacionado à segurança que provém a criptografia<br> 
 em sessões de comunicações em uma rede de computadores usando o protocolo SSH.
 
-#01_ Editando o arquivo de configuração do OpenSSH Server<br>
-
-	#editando o arquivo de configuração do OpenSSH Server
-	sudo vim /etc/ssh/sshd_config
-	INSERT
-
-	#salvar e sair do arquivo
-	ESC SHIFT :x <Enter>
-
-	#reiniciar o serviço do OpenSSH Server
-	sudo systemctl restart ssh
-	sudo systemctl status ssh
-
-#07_ Acessando remotamente o OpenSSH Server via Powershell e pelo software PuTTY<br>
+#01_ Acessando remotamente o OpenSSH Server via Terminal, Powershell e pelo software PuTTY<br>
 
 	Windows
 		Pesquisa do Windows
@@ -55,6 +42,58 @@ em sessões de comunicações em uma rede de computadores usando o protocolo SSH
 	
 	#verificando os usuários logados remotamente no Ubuntu Server
 	#opção do comando who: -H (heading), -a (all)
-	w
-	who -Ha
-	users
+	#opção do comando last: -a (hostlast)
+	#opção do comando grep: -i (ignore-case)
+	#opção do comando netstat: -t (tcp), -n (numeric), -p (program), -a (all)
+	#opção do comando ps: -a (all processes), -x (must have a tty), -f (full-format listing), -j (Jobs format)
+	sudo who -Ha (show who is logged on)
+	sudo w (Show who is logged on and what they are doing)
+	sudo users (print the user names of users currently logged in to the current host)
+	sudo last -a | grep -i 'still logged in' (show a listing of last logged in users)
+	sudo ss | grep -i ssh (another utility to investigate sockets)
+	sudo netstat -tnpa | grep -i 'ESTABLISHED.*sshd' (show networking connection)
+	sudo ps -axfj | grep sshd (report a snapshot of the current processes)
+
+#02_ Gerando os pares de Chaves Pública/Privadas utilizando o GNU/Linux (Mint)<br>
+
+	Linux Mint Terminal: Ctrl+Alt+T
+		
+		#gerando o par de chaves no perfil do usuário local
+		ssh-keygen
+			Enter file in which to save the key (/home/vaamonde/.ssh/id_rsa): /home/vaamonde/.ssh/vaamonde <Enter>
+			Enter passphrase (empty for no passphrase): <Enter>
+			Enter same passphrase again: <Enter>
+		
+		#copiando a chave pública para o servidor Ubuntu
+		ssh-copy-id vaamonde@172.16.1.20
+
+#03_ Importando o pare de chaves Públicas/Privadas utilizando o Powershell (Windows)<br>
+
+	Windows Powershell: Menu, Powershell 
+		Primeira etapa: clicar com o botão direito do mouse e selecionar: Abrir como Administrador
+			Get-Service ssh-agent <Enter>
+			Set-Service ssh-agent -StartupType Manual <Enter> (Ou mudar para: Automatic)
+			Start-Service ssh-agent <Enter>
+
+		Segunda etapa: Powershell do perfil do usuário sem ser como administrador
+			ssh-add .\vaamonde <Enter>
+
+#04_ Editando o arquivo de configuração do OpenSSH Server no Ubuntu Server<br>
+
+	#editando o arquivo de configuração do OpenSSH Server
+	sudo vim /etc/ssh/sshd_config
+	INSERT
+
+		#alterar as informações principais dos métodos de autenticação a partir da linha: 29
+		# Métodos de Autenticação do OpenSSH, utilizar chaves públicas e autenticação por senha
+		# Por padrão o Servidor de OpenSSH não trabalhar com Chaves Pública para autenticação, 
+		# utilizando o arquivo /etc/passwd para se autenticar no servidor, por motivos de segurança, 
+		# é recomendado utilizar chaves públicas e senhas para se autenticar no servidor
+		# Descomentar essa opção depois de configurar a chave pública no client e no servidor
+	
+	#salvar e sair do arquivo
+	ESC SHIFT :x <Enter>
+
+	#reiniciar o serviço do OpenSSH Server
+	sudo systemctl restart ssh
+	sudo systemctl status ssh
