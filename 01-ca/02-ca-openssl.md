@@ -106,8 +106,7 @@ navegadores web.
 	#2048, 3072 ou 4096, padrão utilizado: 2048 bits
 	
 	#criando a chave raiz priva da CA
-	#opções do comando openssl: genrsa (command generates an RSA private key), -criptokey (Encrypt the 
-	#private key with the AES, CAMELLIA, DES, triple DES or the IDEA ciphers) -out (The output file to 
+	#opções do comando openssl: genrsa (command generates an RSA private key), -out (The output file to 
 	#write to, or standard output if not specified), -passout (The output file password source), pass: 
 	#(The actual password is password), bits (The size of the private key to generate in bits)
 	sudo openssl genrsa -aes256 -out /etc/ssl/private/pti-ca.key.old -passout pass:pti@2018 2048
@@ -132,22 +131,20 @@ navegadores web.
 	#opção do redirecionador de saída |: Conecta a saída padrão com a entrada padrão de outro comando
 	sudo openssl rsa -noout -modulus -in /etc/ssl/private/pti-ca.key | openssl md5
 
-#07_ Criando o arquivo CSR (Certificate Signing Request) no Ubuntu Server<br>
+#07_ Criando o arquivo CSR (Certificate Signing Request) da CA (Certificate Authority) no Ubuntu Server<br>
 
 	#Assinatura da chave de criptografia privada com as opções de: -md5, -sha1, -sha224, -sha256, -sha384 
 	#ou -sha512, padrão utilizado: sha256
 
 	#opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 	#opções do comando openssl: req (command primarily creates and processes certificate requests in 
-	#PKCS#10 format), -new (Generate a new certificate request), -criptocert (The message digest to 
-	#sign the request with) -nodes (Do not encrypt the private key), -key (The file to read the private 
-	#key from), -out (The output file to write to, or standard output if not specified), -extensions 
-	#(Specify alternative sections to include certificate extensions), -config (Specify an alternative 
-	#configuration file)
+	#PKCS#10 format), -new (Generate a new certificate request), -nodes (Do not encrypt the private key), 
+	#-key (The file to read the private key from), -out (The output file to write to, or standard output 
+	#if not specified), -config (Specify an alternative configuration file)
 	sudo openssl req -new -sha256 -nodes -key /etc/ssl/private/pti-ca.key -out /etc/ssl/requests/pti-ca.csr \
 	-config /etc/ssl/conf/ca.conf
 
-#08_ Criando o arquivo CRT (Certificate Request Trust) no Ubuntu Server<br>
+#08_ Criando o arquivo CRT (Certificate Request Trust) da CA (Certificate Authority) no Ubuntu Server<br>
 
 	#Assinatura da chave de criptografia privada com as opções de: -md5, -sha1, -sha224, -sha256, -sha384 
 	#ou -sha512, padrão utilizado: -sha256
@@ -155,12 +152,10 @@ navegadores web.
 	#opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 	#opções do comando openssl: req (command primarily creates and processes certificate requests in 
 	#PKCS#10 format), -new (Generate a new certificate request), -x509 (Output a self-signed certificate 
-	#instead of a certificate request), -criptocert (The message digest to sign the request with) -days 
-	#(Specify the number of days to certify the certificate for), -in (The input file to read from, or 
-	#standard input if not specified), -key (The file to read the private key from), -out (The output file 
-	#to write to, or standard output if not specified), -set_serial (Serial number to use when outputting 
-	#a self-signed certificate), -extensions (Specify alternative sections to include certificate extensions),
-	#-config (Specify an alternative configuration file).
+	#instead of a certificate request), -days (Specify the number of days to certify the certificate for), 
+	#-in (The input file to read from, or standard input if not specified), -key (The file to read the 
+	#private key from), -out (The output file to write to, or standard output if not specified), -config 
+	#(Specify an alternative configuration file).
 	sudo openssl req -new -x509 -sha256 -days 3650 -in /etc/ssl/requests/pti-ca.csr -key /etc/ssl/private/pti-ca.key \
 	-out /etc/ssl/newcerts/pti-ca.crt -config /etc/ssl/conf/ca.conf
 
