@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 14/12/2023<br>
-#Versão: 0.02<br>
+#Data de atualização: 15/12/2023<br>
+#Versão: 0.03<br>
 
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
@@ -71,10 +71,11 @@ navegadores web.
 	
 	#adicionando um valor de sequência numérica de solicitações de certificados
 	#assinados no arquivo serial para o controle e gerenciamentos dos certificados
+	#emitidos pela nossa CA
 	#opção do redirecionador de saída >>: Redireciona a saída padrão, anexando
 	sudo echo "1234" >> /etc/ssl/serial
 
-	#download de arquivo de configuração da CA do Ubuntu Server
+	#download do arquivo de configuração da CA do Ubuntu Server
 	#opção do comando wget: -v (verbose), -O (output file)
 	sudo wget -v -O /etc/ssl/conf/ca.conf https://raw.githubusercontent.com/vaamonde/ca-certificates/main/conf/ca.conf
 
@@ -88,32 +89,36 @@ navegadores web.
 		#Bloco de configuração das informações do Subject da CA e dos certificados.
 		#Alterar as variáveis conforme a sua necessidade e suas configurações.
 
+		#alterar as informações principais da CA a partir da linha: 47
+		# Bloco de configuração avançada da CA.
+		# Define os parâmetros avançados da criação e geração da CA e certificados.
+		# OBSERVAÇÃO: CUIDADO COM A LOCALIZAÇÃO E NOME DA CHAVE E CERTIFICADO DA CA.
+
 	#salvar e sair do arquivo
 	ESC SHIFT : x <Enter>
 
 #04_ Criando o Chave Raiz RSA (Rivest-Shamir-Adleman) Privada da CA (Certificate Authority) no Ubuntu Server<br>
 
-	#Tipo de criptografia da chave privada com as opções de: -aes128, -aes192, -aes256, -camellia128, 
+	#Tipo de criptografia da chave raiz privada com as opções de: -aes128, -aes192, -aes256, -camellia128, 
 	#-camellia192, -camellia256, -des, -des3 ou -idea, padrão utilizado: -aes256
 
-	#Tamanho da chave privada utilizada em todas as configurações dos certificados, opções de: 1024, 
-	#2048, 3072 ou 4096, padrão utilizado: 2048
+	#Tamanho da chave raiz privada utilizada em todas as configurações dos certificados, opções de: 1024, 
+	#2048, 3072 ou 4096, padrão utilizado: 2048 bits
 	
-	#opções do comando openssl: genrsa (command generates an RSA private key),
-	#-criptokey (Encrypt the private key with the AES, CAMELLIA, DES, triple DES or the IDEA ciphers)
-	#-out (The output file to write to, or standard output if not specified), 
-	#-passout (The output file password source), pass: (The actual password is password), 
-	#bits (The size of the private key to generate in bits)
-	sudo openssl genrsa -aes256 -out /etc/ssl/private/pti-ca.key.old -passout pass:"pti@2018" 2048
+	#criando a chave raiz priva da CA
+	#opções do comando openssl: genrsa (command generates an RSA private key), -criptokey (Encrypt the 
+	#private key with the AES, CAMELLIA, DES, triple DES or the IDEA ciphers) -out (The output file to 
+	#write to, or standard output if not specified), -passout (The output file password source), pass: 
+	#(The actual password is password), bits (The size of the private key to generate in bits)
+	sudo openssl genrsa -aes256 -out /etc/ssl/private/pti-ca.key.old -passout pass:pti@2018 2048
 
 #05_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada da CA (Certificate Authority) no Ubuntu Server<br>
 
-	#removendo a senha do arquivo de Chave Raiz RSA e criando o arquivo sem senha
-	#opção do comando: &>> (redirecionar a saída padrão)
+	#removendo a senha do arquivo de chave raiz privada e criando o novo arquivo sem senha
 	#opções do comando openssl: rsa (command processes RSA keys), -in (The input file to read from, or 
 	#standard input if not specified), -out (The output file to write to, or standard output if not 
 	# specified), -passin (The key password source), pass: (The actual password is password)
-	sudo openssl rsa -in /etc/ssl/private/pti-ca.key.old -out /etc/ssl/private/pti-ca.key -passin pass:"pti@2018"
+	sudo openssl rsa -in /etc/ssl/private/pti-ca.key.old -out /etc/ssl/private/pti-ca.key -passin pass:pti@2018
 	
 	#removendo o arquivo temporário de Chave Raiz RSA com senha
 	# opção do comando rm: -v (verbose)	
@@ -129,24 +134,25 @@ navegadores web.
 
 #07_ Criando o arquivo CSR (Certificate Signing Request) no Ubuntu Server<br>
 
-	#Assinatura da chave de criptografia privada com as opções de: md5, -sha1, sha224, sha256, sha384 
-	#ou sha512, padrão utilizado: sha256
+	#Assinatura da chave de criptografia privada com as opções de: -md5, -sha1, -sha224, -sha256, -sha384 
+	#ou -sha512, padrão utilizado: sha256
 
+	#opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 	#opções do comando openssl: req (command primarily creates and processes certificate requests in 
 	#PKCS#10 format), -new (Generate a new certificate request), -criptocert (The message digest to 
 	#sign the request with) -nodes (Do not encrypt the private key), -key (The file to read the private 
 	#key from), -out (The output file to write to, or standard output if not specified), -extensions 
 	#(Specify alternative sections to include certificate extensions), -config (Specify an alternative 
 	#configuration file)
-	#opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 	sudo openssl req -new -sha256 -nodes -key /etc/ssl/private/pti-ca.key -out /etc/ssl/requests/pti-ca.csr \
 	-config /etc/ssl/conf/ca.conf
 
 #08_ Criando o arquivo CRT (Certificate Request Trust) no Ubuntu Server<br>
 
-	#Assinatura da chave de criptografia privada com as opções de: md5, -sha1, sha224, sha256, sha384 
-	#ou sha512, padrão utilizado: sha256
+	#Assinatura da chave de criptografia privada com as opções de: -md5, -sha1, -sha224, -sha256, -sha384 
+	#ou -sha512, padrão utilizado: -sha256
 
+	#opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 	#opções do comando openssl: req (command primarily creates and processes certificate requests in 
 	#PKCS#10 format), -new (Generate a new certificate request), -x509 (Output a self-signed certificate 
 	#instead of a certificate request), -criptocert (The message digest to sign the request with) -days 
@@ -155,7 +161,6 @@ navegadores web.
 	#to write to, or standard output if not specified), -set_serial (Serial number to use when outputting 
 	#a self-signed certificate), -extensions (Specify alternative sections to include certificate extensions),
 	#-config (Specify an alternative configuration file).
-	#opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 	sudo openssl req -new -x509 -sha256 -days 3650 -in /etc/ssl/requests/pti-ca.csr -key /etc/ssl/private/pti-ca.key \
 	-out /etc/ssl/newcerts/pti-ca.crt -config /etc/ssl/conf/ca.conf
 
