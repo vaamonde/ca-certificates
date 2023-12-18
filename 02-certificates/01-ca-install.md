@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 15/12/2023<br>
-#Versão: 0.01<br>
+#Data de atualização: 18/12/2023<br>
+#Versão: 0.02<br>
 
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
@@ -23,6 +23,22 @@ Digicert: https://www.digicert.com<br>
 Verisign: https://www.verisign.com/<br>
 Let's Encrypt: https://letsencrypt.org/
 
+OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca<br>
+(escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza<br>
+várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta<br>
+biblioteca em várias outras linguagens. 
+
+O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux,<br>
+Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows.<br>
+O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para<br>
+gerar certificados de autenticação de serviços/protocolos em servidores (servers).
+
+O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer<br>
+(SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações<br>
+sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em<br>
+aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP).<br>
+Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e<br>
+navegadores web.
 
 #01_ Instalação da Autoridade Certificadora CA no Mozilla Firefox (GNU/Linux ou Microsoft Windows)<br>
 
@@ -124,6 +140,8 @@ Let's Encrypt: https://letsencrypt.org/
 			Abrir o Terminal como Root (Botão direito do Mouse: Abrir no Terminal)
 
 				#instalando e atualizando as Unidades Certificadores Raiz no Linux Mint
+				sudo apt update
+				sudo apt install ca-certificates
 				sudo update-ca-certificates
 
 				#verificando a criação do link PEM no Linux Mint
@@ -155,7 +173,13 @@ Let's Encrypt: https://letsencrypt.org/
 
 #07_ Instalação da Autoridade Certificadora CA no Android<br>
 
-	#EM DESENVOLVIMENTO
+	Configurações
+		Senhas e Segurança
+			Privacidade
+				Criptografia e Credenciais
+					Sistema: Credenciais confiáveis
+				Instalar do Cartão SD
+					Arquivo: pti-ca.crt
 
 #08_ Instalação da Autoridade Certificadora CA no iOS Apple<br>
 
@@ -163,4 +187,6 @@ Let's Encrypt: https://letsencrypt.org/
 
 #08_ Instalação da Autoridade Certificadora CA no MacOS Apple<br>
 
-	#EM DESENVOLVIMENTO
+	Pasta: Download
+			pti-ca.crt (clicar duas vezes em cima do certificado)
+				Abrir

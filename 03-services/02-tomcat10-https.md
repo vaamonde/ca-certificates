@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 17/12/2023<br>
-#Data de atualização: 17/12/2023<br>
-#Versão: 0.01<br>
+#Data de atualização: 18/12/2023<br>
+#Versão: 0.02<br>
 
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
@@ -39,6 +39,11 @@ sobre uma rede de computadores. Várias versões do protocolo encontram amplo us
 aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP).<br>
 Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e<br>
 navegadores web.
+
+O Tomcat é um servidor web Java, mais especificamente, um container de servlets. O Tomcat<br>
+implementa, dentre outras de menor relevância, as tecnologias Java Servlet e JavaServer<br>
+Pages e não é um container Enterprise JavaBeans. Desenvolvido pela Apache Software Foundation,<br>
+é distribuído como software livre.
 
 #01_ Fazendo o download do Arquivo de Configuração do Certificado do Apache TomCAT 10 Server<br>
 

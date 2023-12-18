@@ -7,12 +7,22 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 14/12/2023<br>
-#Versão: 0.01<br>
+#Data de atualização: 18/12/2023<br>
+#Versão: 0.02<br>
 
 Site Oficial do OpenSSH: https://www.openssh.com/<br>
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Site Oficial do PuTTY: https://www.putty.org/
+
+OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca<br>
+(escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza<br>
+várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta<br>
+biblioteca em várias outras linguagens. 
+
+O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux,<br>
+Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows.<br>
+O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para<br>
+gerar certificados de autenticação de serviços/protocolos em servidores (servers).
 
 OpenSSH é um conjunto de utilitários de rede relacionado à segurança que provém a criptografia<br> 
 em sessões de comunicações em uma rede de computadores usando o protocolo SSH.
@@ -22,8 +32,7 @@ em sessões de comunicações em uma rede de computadores usando o protocolo SSH
 	Windows
 		Pesquisa do Windows
 			Powershell
-
-	ssh vaamonde@172.16.1.20 (alterar para o endereço IPv4 do seu servidor)
+				ssh vaamonde@172.16.1.20 (alterar para o endereço IPv4 do seu servidor)
 
 	Windows
 		Pesquisa do Windows
@@ -67,7 +76,7 @@ em sessões de comunicações em uma rede de computadores usando o protocolo SSH
 		#copiando a chave pública para o servidor Ubuntu
 		ssh-copy-id vaamonde@172.16.1.20
 
-#03_ Importando o pare de chaves Públicas/Privadas utilizando o Powershell (Windows)<br>
+#03_ Importando o Par de chaves Pública/Privada utilizando o Powershell (Windows)<br>
 
 	Windows Powershell: Menu, Powershell 
 		Primeira etapa: clicar com o botão direito do mouse e selecionar: Abrir como Administrador

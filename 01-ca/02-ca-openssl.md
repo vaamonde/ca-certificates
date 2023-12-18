@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 15/12/2023<br>
-#Versão: 0.03<br>
+#Data de atualização: 18/12/2023<br>
+#Versão: 0.04<br>
 
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
@@ -39,6 +39,11 @@ sobre uma rede de computadores. Várias versões do protocolo encontram amplo us
 aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP).<br>
 Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e<br>
 navegadores web.
+
+A autoridade de certificação (CA), também conhecido como um Autoridade de Certificação,<br>
+é uma empresa ou organização que atua para validar as identidades de entidades (como sites,<br>
+endereços de email, empresas ou pessoas físicas) e vinculá-las a chaves criptográficas<br> 
+através da emissão de documentos eletrônicos conhecidos como certificados digitais.
 
 #01_ Criando a estrutura de diretórios da CA (Certificate Authority) e dos Certificados no Ubuntu Server<br>
 
@@ -105,7 +110,7 @@ navegadores web.
 	#Tamanho da chave raiz privada utilizada em todas as configurações dos certificados, opções de: 1024, 
 	#2048, 3072 ou 4096, padrão utilizado: 2048 bits
 	
-	#criando a chave raiz priva da CA
+	#criando a chave raiz privada da CA
 	#opções do comando openssl: genrsa (command generates an RSA private key), -out (The output file to 
 	#write to, or standard output if not specified), -passout (The output file password source), pass: 
 	#(The actual password is password), bits (The size of the private key to generate in bits)
@@ -176,6 +181,8 @@ navegadores web.
 	sudo cp -v /etc/ssl/newcerts/pti-ca.crt /usr/local/share/ca-certificates/
 
 	#instalando e atualizando as Unidades Certificadores Raiz no Ubuntu Server
+	sudo apt update
+	sudo apt install ca-certificates
 	sudo update-ca-certificates
 
 	#verificando a criação do link PEM no Ubuntu Server

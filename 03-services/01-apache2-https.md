@@ -40,6 +40,10 @@ aplicativos como navegação na web, email, mensagens instantâneas e voz sobre 
 Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e<br>
 navegadores web.
 
+O Servidor HTTP Apache ou Servidor Apache ou HTTP Daemon Apache ou somente Apache, é o<br>
+servidor web livre criado em 1995 por um grupo de desenvolvedores da NCSA, tendo como<br>
+base o servidor web NCSA HTTPd criado por Rob McCool.
+
 #01_ Fazendo o download do Arquivo de Configuração do Certificado do Apache2 Server<br>
 
 	#download do arquivo de configuração do Certificado do Apache2 Server
