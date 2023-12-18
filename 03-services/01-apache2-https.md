@@ -89,7 +89,7 @@ base o servidor web NCSA HTTPd criado por Rob McCool.
 	#opções do comando openssl: genrsa (command generates an RSA private key), -out (The output file to 
 	#write to, or standard output if not specified), -passout (The output file password source), pass: 
 	#(The actual password is password), bits (The size of the private key to generate in bits)
-	sudo openssl genrsa -aes256 -out /etc/ssl/private/apache2.old -passout pass:pti@2018 2048
+	sudo openssl genrsa -aes256 -out /etc/ssl/private/apache2.key.old -passout pass:pti@2018 2048
 
 #04_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache2 Server no Ubuntu Server<br>
 

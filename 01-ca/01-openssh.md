@@ -106,3 +106,9 @@ em sessões de comunicações em uma rede de computadores usando o protocolo SSH
 	#reiniciar o serviço do OpenSSH Server
 	sudo systemctl restart ssh
 	sudo systemctl status ssh
+
+#05_ Testando novamente a conexão com o OpenSSH e Certificado no Ubuntu Server<br>
+
+		Linux
+		Terminal: Ctrl + Alt + T
+			ssh vaamonde@172.16.1.20 (alterar o usuário e endereço IPv4 do seu servidor)

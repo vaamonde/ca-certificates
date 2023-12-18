@@ -8,7 +8,7 @@
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
 #Data de atualização: 18/12/2023<br>
-#Versão: 0.04<br>
+#Versão: 0.05<br>
 
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
@@ -77,8 +77,12 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	#adicionando um valor de sequência numérica de solicitações de certificados
 	#assinados no arquivo serial para o controle e gerenciamentos dos certificados
 	#emitidos pela nossa CA
-	#opção do redirecionador de saída >>: Redireciona a saída padrão, anexando
-	sudo echo "1234" >> /etc/ssl/serial
+	#opção do redirecionador |: Conecta a saída padrão com a entrada padrão de outro comando
+	echo "1234" | sudo tee /etc/ssl/serial
+
+	#verificando os arquivos e diretórios criados
+	#opções do comando ls: -l (long listing), -h (human-readable), -a (all)
+	ls -lha /etc/ssl
 
 	#download do arquivo de configuração da CA do Ubuntu Server
 	#opção do comando wget: -v (verbose), -O (output file)
