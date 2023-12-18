@@ -7,8 +7,25 @@ Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
 Data de criação: 14/12/2023
-Data de atualização: 14/12/2023
-Versão: 0.01
+Data de atualização: 18/12/2023
+Versão: 0.02
 Testado e homologado para a versão do Ubuntu Server 22.04.x LTS x64
 
-============================================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================================
+TOTAL DE BUGS..: 02
+BUGS RESOLVIDOS: 01
+BUGS PENDENTES.: 01 (0001)
+
+============================= CORREÇÕES DOS BUGS DOS SCRIPTS =============================
+
+0002 - Mensagem de erro na execução da criação do arquivo CRT (Certificate Request Trust)
+do Apache2 Server no Ubuntu Server, no começo do comando a seguinte mensagem é apresentada:
+403739B2D67F0000:error:0700006C:configuration file routines:NCONF_get_string:no 
+value:../crypto/conf/conf_lib.c:315:group=<NULL> name=unique_subject, BUG foi resolvido
+colocando o valor: unique_subject = no no arquivo em: /etc/ssl/index.txt.attr.
+STATUS=RESOLVIDO
+
+0001 - Mensagem de erro na execução da criação do arquivo CRT (Certificate Request Trust) 
+da CA (Certificate Authority) no Ubuntu Server, no final do comando a seguinte mensagem é
+apresentada: Warning: No -copy_extensions given; ignoring any extensions in the request,
+BUG foi resolvido colocando o a opção: -copy_extensions copyall na geração do certificado
+STATUS=RESOLVIDO

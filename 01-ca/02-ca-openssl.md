@@ -65,10 +65,10 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 
 	#conhecendo os arquivos de configuração da CA e dos Certificados Assinados
 	#mais informações sobre os arquivos acesse: https://pki-tutorial.readthedocs.io/en/latest/cadb.html#
-	/etc/ssl/index.txt......<-- Arquivo de Banco de Dados dos Certificados da CA
-	/etc/ssl/index.attr.....<-- Arquivo de Banco de Dados de Atributos dos Certificados da CA
-	/etc/ssl/serial.........<-- Arquivo de Número de Série de Geração de Certificados
-	/etc/ssl/conf/ca.conf...<-- Arquivo de Configuração da Unidade Certificadora Raiz Confiável
+	/etc/ssl/index.txt........<-- Arquivo de Banco de Dados dos Certificados da CA
+	/etc/ssl/index.txt.attr...<-- Arquivo de Banco de Dados de Atributos dos Certificados da CA
+	/etc/ssl/serial...........<-- Arquivo de Número de Série de Geração de Certificados
+	/etc/ssl/conf/ca.conf.....<-- Arquivo de Configuração da Unidade Certificadora Raiz Confiável
 
 	#criando os arquivos de banco de dados, atributos e número de série da CA
 	#opção do bloco de argumentos {}: Agrupa comandos em um bloco
@@ -79,6 +79,9 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	#emitidos pela nossa CA
 	#opção do redirecionador |: Conecta a saída padrão com a entrada padrão de outro comando
 	echo "1234" | sudo tee /etc/ssl/serial
+
+	#adicionando o valor de unique subject para no no arquivo index.txt.attr
+	echo "unique_subject = no" | sudo tee /etc/ssl/index.txt.attr
 
 	#verificando os arquivos e diretórios criados
 	#opções do comando ls: -l (long listing), -h (human-readable), -a (all)
@@ -160,13 +163,15 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 
 	#opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 	#opções do comando openssl: req (command primarily creates and processes certificate requests in 
-	#PKCS#10 format), -new (Generate a new certificate request), -x509 (Output a self-signed certificate 
+	#PKCS#10 format), -copy_extensions (Determines how to handle X.509 extensions when converting from a 
+	#certificate to a request using the -x509toreq option or converting from a request to a certificate 
+	#using the -req option. -new (Generate a new certificate request), -x509 (Output a self-signed certificate 
 	#instead of a certificate request), -days (Specify the number of days to certify the certificate for), 
 	#-in (The input file to read from, or standard input if not specified), -key (The file to read the 
 	#private key from), -out (The output file to write to, or standard output if not specified), -config 
 	#(Specify an alternative configuration file).
-	sudo openssl req -new -x509 -sha256 -days 3650 -in /etc/ssl/requests/pti-ca.csr -key /etc/ssl/private/pti-ca.key \
-	-out /etc/ssl/newcerts/pti-ca.crt -config /etc/ssl/conf/ca.conf
+	sudo openssl req -copy_extensions copyall -new -x509 -sha256 -days 3650 -in /etc/ssl/requests/pti-ca.csr \
+	-key /etc/ssl/private/pti-ca.key -out /etc/ssl/newcerts/pti-ca.crt -config /etc/ssl/conf/ca.conf
 
 #09_ Verificando o arquivo CRT (Certificate Request Trust) da CA (Certificate Authority) no Ubuntu Server<br>
 
