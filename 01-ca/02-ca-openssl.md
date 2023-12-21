@@ -23,6 +23,9 @@ Digicert: https://www.digicert.com<br>
 Verisign: https://www.verisign.com/<br>
 Let's Encrypt: https://letsencrypt.org/
 
+Projeto de Front-End da CA e Certificados: https://lab-ca.net/<br>
+Github do Projeto LAB-CA: https://github.com/hakwerk/labca
+
 OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca<br>
 (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza<br>
 várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta<br>
