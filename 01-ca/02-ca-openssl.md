@@ -70,7 +70,7 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	#mais informações sobre os arquivos acesse: https://pki-tutorial.readthedocs.io/en/latest/cadb.html#
 	/etc/ssl/index.txt........<-- Arquivo de Banco de Dados dos Certificados da CA
 	/etc/ssl/index.txt.attr...<-- Arquivo de Banco de Dados de Atributos dos Certificados da CA
-	/etc/ssl/serial...........<-- Arquivo de Número de Série de Geração de Certificados
+	/etc/ssl/serial...........<-- Arquivo do Número de Série de Geração de Certificados
 	/etc/ssl/conf/ca.conf.....<-- Arquivo de Configuração da Unidade Certificadora Raiz Confiável
 
 	#criando os arquivos de banco de dados, atributos e número de série da CA
@@ -79,16 +79,16 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	
 	#adicionando um valor de sequência numérica de solicitações de certificados
 	#assinados no arquivo serial para o controle e gerenciamentos dos certificados
-	#emitidos pela nossa CA
+	#emitidos pela nossa CA, número está em Hexadecimal
 	#opção do redirecionador |: Conecta a saída padrão com a entrada padrão de outro comando
 	echo "1234" | sudo tee /etc/ssl/serial
 
-	#adicionando o valor de unique subject para no no arquivo index.txt.attr
+	#adicionando o valor de: unique_subject=no - no arquivo index.txt.attr
 	echo "unique_subject = no" | sudo tee /etc/ssl/index.txt.attr
 
 	#verificando os arquivos e diretórios criados
 	#opções do comando ls: -l (long listing), -h (human-readable), -a (all)
-	ls -lha /etc/ssl
+	ls -lha /etc/ssl/
 
 	#download do arquivo de configuração da CA do Ubuntu Server
 	#opção do comando wget: -v (verbose), -O (output file)
@@ -105,9 +105,9 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 		#Alterar as variáveis conforme a sua necessidade e suas configurações.
 
 		#alterar as informações principais da CA a partir da linha: 47
-		# Bloco de configuração avançada da CA.
-		# Define os parâmetros avançados da criação e geração da CA e certificados.
-		# OBSERVAÇÃO: CUIDADO COM A LOCALIZAÇÃO E NOME DA CHAVE E CERTIFICADO DA CA.
+		#Bloco de configuração avançada da CA.
+		#Define os parâmetros avançados da criação e geração da CA e certificados.
+		#OBSERVAÇÃO: CUIDADO COM A LOCALIZAÇÃO E NOME DA CHAVE E CERTIFICADO DA CA.
 
 	#salvar e sair do arquivo
 	ESC SHIFT : x <Enter>

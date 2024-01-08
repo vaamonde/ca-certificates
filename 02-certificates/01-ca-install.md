@@ -63,7 +63,7 @@ navegadores web.
 
 #02_ # Instalação da Autoridade Certificadora CA no Google Chrome (GNU/Linux ou Microsoft Windows)<br>
 
-	#OBSERVAÇÃO IMPORTANTE: o Google Chrome no GNu/Linux utiliza o seu próprio sistema de
+	#OBSERVAÇÃO IMPORTANTE: o Google Chrome no GNU/Linux utiliza o seu próprio sistema de
 	#gerenciamento de Unidades Certificadoras e Certificados Assinados, ele não usa o do
 	#sistema operacional GNU/Linux, já no Windows ele usa do próprio sistema operacional
 	#não sendo necessário fazer esse procedimento.
@@ -83,7 +83,7 @@ navegadores web.
 
 #03_ Instalação da Autoridade Certificadora CA no Microsoft Edge (GNU/Linux ou Microsoft Windows)<br>
 
-	#OBSERVAÇÃO IMPORTANTE: o Microsoft Edge no GNu/Linux utiliza o seu próprio sistema de
+	#OBSERVAÇÃO IMPORTANTE: o Microsoft Edge no GNU/Linux utiliza o seu próprio sistema de
 	#gerenciamento de Unidades Certificadoras e Certificados Assinados, ele não usa o do
 	#sistema operacional GNU/Linux, já no Windows ele usa do próprio sistema operacional
 	#não sendo necessário fazer esse procedimento.

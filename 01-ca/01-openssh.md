@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 18/12/2023<br>
-#Versão: 0.02<br>
+#Data de atualização: 08/01/2024<br>
+#Versão: 0.03<br>
 
 Site Oficial do OpenSSH: https://www.openssh.com/<br>
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
@@ -81,7 +81,7 @@ em sessões de comunicações em uma rede de computadores usando o protocolo SSH
 	Windows Powershell: Menu, Powershell 
 		Primeira etapa: clicar com o botão direito do mouse e selecionar: Abrir como Administrador
 			Get-Service ssh-agent <Enter>
-			Set-Service ssh-agent -StartupType Manual <Enter> (Ou mudar para: Automatic)
+			Set-Service ssh-agent -StartupType Automatic <Enter> (Ou mudar para: Manual)
 			Start-Service ssh-agent <Enter>
 
 		Segunda etapa: Powershell do perfil do usuário sem ser como administrador
@@ -93,12 +93,13 @@ em sessões de comunicações em uma rede de computadores usando o protocolo SSH
 	sudo vim /etc/ssh/sshd_config
 	INSERT
 
-		#alterar as informações principais dos métodos de autenticação a partir da linha: 29
+		# alterar as informações principais dos métodos de autenticação a partir da linha: 29
 		# Métodos de Autenticação do OpenSSH, utilizar chaves públicas e autenticação por senha
 		# Por padrão o Servidor de OpenSSH não trabalhar com Chaves Pública para autenticação, 
 		# utilizando o arquivo /etc/passwd para se autenticar no servidor, por motivos de segurança, 
 		# é recomendado utilizar chaves públicas e senhas para se autenticar no servidor
 		# Descomentar essa opção depois de configurar a chave pública no client e no servidor
+		AuthenticationMethods publickey,password
 	
 	#salvar e sair do arquivo
 	ESC SHIFT :x <Enter>
