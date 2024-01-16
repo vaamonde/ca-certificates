@@ -53,14 +53,17 @@ A autoridade de certificação (CA), também conhecido como um Autoridade de Cer
 🔴 OpenSSL: https://www.openssl.org/docs/
 
 ## **Playlist do YouTUBE com todos os Vídeos do GNU/Linux Ubuntu Server 22.04.x LTS:**
-🔴 Link da Playlist: 
-
-================  PRIMEIRA ETAPA: INSTALAÇÃO DO UBUNTU SERVER ================
+🔴 Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUO1w0nfntfvR7VPtpa1SkeM
 
 ## **🤩🤩 Apresentação do NOVO CURSO GRATUITO CA (Certificate Authority Trust) Autoridade Certificadora Confiável no GNU/Linux Ubuntu Server 22.04.x LTS (Jammy Jellyfish) 🤩🤩**
 
 Vídeo de apresentação do NOVO Curso CA (Certificate Authority Trust) Autoridade Certificadora Confiável no GNU/Linux Ubuntu Server 22.04.x LTS (Jammy Jellyfish) do Projeto do Bora para Prática. O objetivo desse curso é mostrar os procedimentos básicos para instalar e configurar a Autoridade Certificadora Confiável e criar os Certificados Assinados dos principais serviços de rede.
 
-[![Apresentação do Curso](http://img.youtube.com/vi//0.jpg)]( "Apresentação do Curso")
+[![Apresentação do Curso](http://img.youtube.com/vi/JfNKOOPCWRQ/0.jpg)](https://www.youtube.com/watch?v=JfNKOOPCWRQ "Apresentação do Curso")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=JfNKOOPCWRQ
+
+================ PRIMEIRA ETAPA: CONFIGURAÇÃO DO OPENSSH ================
+
+
+=============== SEGUNDA ETAPA: CRIAÇÃO E INSTALAÇÃO DA CA ===============
