@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 18/01/2024<br>
-#Versão: 0.03<br>
+#Data de atualização: 21/01/2024<br>
+#Versão: 0.05<br>
 
 Site Oficial do OpenSSH: https://www.openssh.com/<br>
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
@@ -16,7 +16,7 @@ Site Oficial do PuTTY: https://www.putty.org/
 
 Site Oficial do Fail2ban: https://github.com/fail2ban/fail2ban<br>
 Site Oficial do SSHGuard: https://www.sshguard.net/<br>
-Site Oficial do Google Authenticator: https://github.com/google/google-authenticator-libpam
+Site Oficial do SSH 2FA: https://github.com/google/google-authenticator-libpam
 
 OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca<br>
 (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza<br>
@@ -30,6 +30,19 @@ gerar certificados de autenticação de serviços/protocolos em servidores (serv
 
 OpenSSH é um conjunto de utilitários de rede relacionado à segurança que provém a criptografia<br> 
 em sessões de comunicações em uma rede de computadores usando o protocolo SSH.
+
+O Fail2Ban é uma ferramenta de segurança amplamente utilizada para proteger servidores contra<br>
+ataques de força bruta e outras atividades maliciosas. Ele monitora os logs do sistema em tempo<br>
+real e toma medidas contra IPs suspeitos, como bloquear temporariamente o acesso após várias<br>
+tentativas de acesso falhadas.
+
+SSHGuard é um daemon de código aberto que protege os hosts contra ataques de força bruta. Ele faz<br>
+isso por meio do monitoramento e agregação de logs do sistema, detectando ataques e bloqueando<br>
+invasores usando um dos back-ends de firewall do Linux: iptables, FirewallD, pf e ipfw.
+
+2FA Autenticação por dois fatores oferece identificação aos usuários através da combinação de dois<br>
+componentes diferentes. Esses componentes podem ser algo que o usuário sabe, algo que o usuário<br>
+possui ou algo que é inseparável do usuário.
 
 #01_ Acessando remotamente o OpenSSH Server via Terminal, Powershell e pelo software PuTTY<br>
 
@@ -80,6 +93,11 @@ em sessões de comunicações em uma rede de computadores usando o protocolo SSH
 	sudo netstat -tnpa | grep -i 'ESTABLISHED.*sshd'
 	sudo ps -axfj | grep sshd
 
+	#verificando as informações de Log de Autenticação no Ubuntu Server
+	#opção do redirecionador |: Conecta a saída padrão com a entrada padrão de outro comando
+	sudo cat /var/log/auth.log | grep ssh
+	sudo cat /var/log/syslog | grep ssh
+
 #03_ Gerando os pares de Chaves Pública/Privada utilizando o GNU/Linux (Mint)<br>
 
 	Linux Mint Terminal: Ctrl+Alt+T
@@ -90,11 +108,22 @@ em sessões de comunicações em uma rede de computadores usando o protocolo SSH
 			Enter passphrase (empty for no passphrase): <Enter>
 			Enter same passphrase again: <Enter>
 		
-		#verificando as chaves criadas
+		#verificando as chaves criadas no perfil do usuário local
+		#opção do comando ls: ~ (atalho do path $HOME), -l (long listing), -h (human readable), * (curinga qualquer coisa)
 		ls -lh ~/.ssh/vaamonde*
 		
 		#copiando a chave pública para o servidor Ubuntu
 		ssh-copy-id vaamonde@172.16.1.20
+
+	OBSERVAÇÃO IMPORTANTE: No Microsoft Windows utilizando o Powershell ou no macOS utilizando o Terminal,
+	o procedimento de Geração das Chaves Pública/Privada é o mesmo comando: ssh-keygen.
+
+	OBSERVAÇÃO: A geração das Chaves Pública/Privada no PuTTY segue o mesmo padrão do comando: ssh-keygen,
+	sua utilização é mais simples, seguindo o procedimento abaixo:
+
+	Windows
+		Pesquisa do Windows
+			PuTTY
 
 #04_ Importando o Par de chaves Pública/Privada utilizando o Powershell (Windows)<br>
 
@@ -136,12 +165,41 @@ em sessões de comunicações em uma rede de computadores usando o protocolo SSH
 	#salvar e sair do arquivo
 	ESC SHIFT :x <Enter>
 
+	#editando o arquivo de configuração do TCPWrappers Hosts.Deny
+	sudo vim /etc/hosts.deny
+
+		# alterar as informações na linha 17
+		# mais informações veja o arquivo Hosts.Deny no Github:
+		# opção do comando date: -u (universal)
+		ALL: ALL: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-deny.log
+
+	#salvar e sair do arquivo
+	ESC SHIFT :x <Enter>
+
+	#editando o arquivo de configuração do TCPWrappers Hosts.Allow
+	sudo vim /etc/hosts.allow
+
+		# alterar as informações na linha 10
+		# OBSERVAÇÃO: ALTERAR A REDE CONFORME A SUA NECESSIDADE
+		# mais informações veja o arquivo Hosts.Allow no Github:
+		# opção do comando date: -u (universal)
+		sshd: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-ssh.log
+
+	#salvar e sair do arquivo
+	ESC SHIFT :x <Enter>
+
 	#reiniciar o serviço do OpenSSH Server
 	sudo systemctl restart ssh
 	sudo systemctl status ssh
 
 #06_ Testando novamente a conexão com o OpenSSH e Certificado no Ubuntu Server<br>
 
-		Linux
-		Terminal: Ctrl + Alt + T
-			ssh vaamonde@172.16.1.20 (alterar o usuário e endereço IPv4 do seu servidor)
+	Linux
+	Terminal: Ctrl + Alt + T
+		ssh vaamonde@172.16.1.20 (alterar o usuário e endereço IPv4 do seu servidor)
+	
+	#verificando os Log's de acesso ao servidor
+	sudo cat /var/log/auth.log | grep ssh
+	sudo cat /var/log/syslog | grep ssh
+	sudo cat /var/log/tcpwrappers-deny.log
+	sudo cat /var/log/tcpwrappers-allow-ssh.log

@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 18/12/2023<br>
-#Versão: 0.05<br>
+#Data de atualização: 21/01/2024<br>
+#Versão: 0.06<br>
 
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
@@ -24,7 +24,8 @@ Verisign: https://www.verisign.com/<br>
 Let's Encrypt: https://letsencrypt.org/
 
 Projeto de Front-End da CA e Certificados: https://lab-ca.net/<br>
-Github do Projeto LAB-CA: https://github.com/hakwerk/labca
+Github do Projeto LAB-CA: https://github.com/hakwerk/labca<br>
+Webmin Certbot e CA Manager: https://www.webmin.com/cgi-bin/search_third.cgi?search=cert
 
 OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca<br>
 (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza<br>
@@ -90,11 +91,11 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	#opções do comando ls: -l (long listing), -h (human-readable), -a (all)
 	ls -lha /etc/ssl/
 
+#03_ Editando o arquivo de Configuração da CA (Certificate Authority) no Ubuntu Server<br>
+
 	#download do arquivo de configuração da CA do Ubuntu Server
 	#opção do comando wget: -v (verbose), -O (output file)
 	sudo wget -v -O /etc/ssl/conf/ca.conf https://raw.githubusercontent.com/vaamonde/ca-certificates/main/conf/ca.conf
-
-#03_ Editando o arquivo de Configuração da CA (Certificate Authority) no Ubuntu Server<br>
 
 	#editando o arquivo de configuração da CA
 	sudo vim /etc/ssl/conf/ca.conf
@@ -128,6 +129,10 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 
 #05_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada da CA (Certificate Authority) no Ubuntu Server<br>
 
+	OBSERVAÇÃO IMPORTANTE: algumas aplicações não entende muito bem o conceito de senha no certificado,
+	geralmente isso está associado os software/aplicativo não a CA ou certificado, na maioria dos casos
+	recomendamos remover a senha para facilitar a configuração sem perder a segurança.
+	
 	#removendo a senha do arquivo de chave raiz privada e criando o novo arquivo sem senha
 	#opções do comando openssl: rsa (command processes RSA keys), -in (The input file to read from, or 
 	#standard input if not specified), -out (The output file to write to, or standard output if not 
@@ -198,4 +203,5 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	sudo update-ca-certificates
 
 	#verificando a criação do link PEM no Ubuntu Server
+	#opção do comando ls: -l (long listing), -h (human readable), -a (all)
 	ls -lha /etc/ssl/certs/pti-ca*
