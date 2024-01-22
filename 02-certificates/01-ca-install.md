@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 18/12/2023<br>
-#Versão: 0.02<br>
+#Data de atualização: 22/01/2024<br>
+#Versão: 0.03<br>
 
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
@@ -133,36 +133,36 @@ navegadores web.
 #05_ Instalação da Autoridade Certificadora CA no GNU/Linux (Linux Mint ou Ubuntu)<br>
 
 	Pasta: Download
-			Abrir como Root (Botão direito do Mouse: Abrir como root)
-				Copiar: pti-ca.crt
-				Para: /usr/local/share/ca-certificates/
+		Abrir como Root (Botão direito do Mouse: Abrir como root)
+			Copiar: pti-ca.crt
+			Para: /usr/local/share/ca-certificates/
 
-			Abrir o Terminal como Root (Botão direito do Mouse: Abrir no Terminal)
+		Abrir o Terminal como Root (Botão direito do Mouse: Abrir no Terminal)
 
-				#instalando e atualizando as Unidades Certificadores Raiz no Linux Mint
-				sudo apt update
-				sudo apt install ca-certificates
-				sudo update-ca-certificates
+			#instalando e atualizando as Unidades Certificadores Raiz no Linux Mint
+			sudo apt update
+			sudo apt install ca-certificates
+			sudo update-ca-certificates
 
-				#verificando a criação do link PEM no Linux Mint
-				ls -lha /etc/ssl/certs/pti-ca*
+			#verificando a criação do link PEM no Linux Mint
+			ls -lha /etc/ssl/certs/pti-ca*
 
 #06_ Instalação da Autoridade Certificadora CA no Microsoft Windows (10 ou 11)<br>
 
 	Pasta: Download
-			pti-ca.crt (clicar duas vezes em cima do certificado)
-				Abrir
-					Instalar Certificado...
-						Assistente para Importação de Certificados
-							Máquina Local <Avançar>
-								Deseja permitir que este aplicativo faça alterações no seu dispositivo? <sim>
-									Colocar todos os certificados no repositório a seguir
-										Repositório de Certificados <Procurar>
-											Autoridades de Certificação Raiz Confiáveis <OK>
-											<Avançar>
-											<Concluir>
-											<OK>
-											<OK>
+		pti-ca.crt (clicar duas vezes em cima do certificado)
+			Abrir
+				Instalar Certificado...
+					Assistente para Importação de Certificados
+						Máquina Local <Avançar>
+							Deseja permitir que este aplicativo faça alterações no seu dispositivo? <sim>
+								Colocar todos os certificados no repositório a seguir
+									Repositório de Certificados <Procurar>
+										Autoridades de Certificação Raiz Confiáveis <OK>
+										<Avançar>
+										<Concluir>
+										<OK>
+										<OK>
 
 	Pesquisa do Windows
 		Gerenciar Certificados de Computador <Sim>
@@ -181,12 +181,12 @@ navegadores web.
 				Instalar do Cartão SD
 					Arquivo: pti-ca.crt
 
-#08_ Instalação da Autoridade Certificadora CA no iOS Apple<br>
-
-	#EM DESENVOLVIMENTO
-
 #08_ Instalação da Autoridade Certificadora CA no MacOS Apple<br>
 
 	Pasta: Download
-			pti-ca.crt (clicar duas vezes em cima do certificado)
-				Abrir
+		pti-ca.crt (clicar duas vezes em cima do certificado)
+			Abrir
+
+#09_ Instalação da Autoridade Certificadora CA no iOS Apple<br>
+
+	#EM DESENVOLVIMENTO
