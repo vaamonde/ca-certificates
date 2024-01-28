@@ -62,13 +62,13 @@ A autoridade de certificação (CA), também conhecido como um Autoridade de Cer
 🔴 D-Trust: https://www.d-trust.net/<br>
 🔴 Digicert: https://www.digicert.com<br>
 🔴 Verisign: https://www.verisign.com/<br>
-🔴 Let's Encrypt: https://letsencrypt.org/
+🔴 Let's Encrypt: https://letsencrypt.org/<br>
 🔴 Site Oficial do Certbot (Let's Encrypt): https://certbot.eff.org/
 
 ## **Projetos de Frontend da CA (Certificate Authority Trust) e Certificados Assinados:**
-Projeto de Front-End da CA e Certificados: https://lab-ca.net/<br>
-Github do Projeto LAB-CA: https://github.com/hakwerk/labca<br>
-Webmin Certbot e CA Manager: https://www.webmin.com/cgi-bin/search_third.cgi?search=cert
+🔴 Projeto de Front-End da CA e Certificados: https://lab-ca.net/<br>
+🔴 Github do Projeto LAB-CA: https://github.com/hakwerk/labca<br>
+🔴 Webmin Certbot e CA Manager: https://www.webmin.com/cgi-bin/search_third.cgi?search=cert
 
 ## **Playlist do YouTUBE com todos os Vídeos do GNU/Linux Ubuntu Server 22.04.x LTS:**
 🔴 Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUO1w0nfntfvR7VPtpa1SkeM
