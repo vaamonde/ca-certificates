@@ -50,7 +50,25 @@ A autoridade de certificação (CA), também conhecido como um Autoridade de Cer
 🔴 Ubuntu Server Guide: https://ubuntu.com/server/docs<br>
 🔴 Ubuntu Server Guide FULL-PDF: https://assets.ubuntu.com/v1/f954307f-ubuntu-server-guide.pdf<br>
 🔴 OpenSSH: https://www.openssh.com/manual.html<br>
-🔴 OpenSSL: https://www.openssl.org/docs/
+🔴 OpenSSL: https://www.openssl.org/docs/<br>
+🔴 Site Oficial do Fail2ban: https://github.com/fail2ban/fail2ban<br>
+🔴 Site Oficial do SSHGuard: https://www.sshguard.net/<br>
+🔴 Site Oficial do SSH 2FA: https://github.com/google/google-authenticator-libpam
+
+## **CA (Certificate Authority Trust) Autoridades Certificadoras Validas:**
+🔴 SSL.com: https://www.ssl.com/<br>
+🔴 Secured Signing: https://www.securedsigning.com/<br>
+🔴 Globalsing: https://www.globalsign.com/<br>
+🔴 D-Trust: https://www.d-trust.net/<br>
+🔴 Digicert: https://www.digicert.com<br>
+🔴 Verisign: https://www.verisign.com/<br>
+🔴 Let's Encrypt: https://letsencrypt.org/
+🔴 Site Oficial do Certbot (Let's Encrypt): https://certbot.eff.org/
+
+## **Projetos de Frontend da CA (Certificate Authority Trust) e Certificados Assinados:**
+Projeto de Front-End da CA e Certificados: https://lab-ca.net/<br>
+Github do Projeto LAB-CA: https://github.com/hakwerk/labca<br>
+Webmin Certbot e CA Manager: https://www.webmin.com/cgi-bin/search_third.cgi?search=cert
 
 ## **Playlist do YouTUBE com todos os Vídeos do GNU/Linux Ubuntu Server 22.04.x LTS:**
 🔴 Link da Playlist: https://www.youtube.com/playlist?list=PLozhsZB1lLUO1w0nfntfvR7VPtpa1SkeM
