@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 21/01/2024<br>
-#Versão: 0.05<br>
+#Data de atualização: 29/01/2024<br>
+#Versão: 0.06<br>
 
 Site Oficial do OpenSSH: https://www.openssh.com/<br>
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
@@ -16,7 +16,8 @@ Site Oficial do PuTTY: https://www.putty.org/
 
 Site Oficial do Fail2ban: https://github.com/fail2ban/fail2ban<br>
 Site Oficial do SSHGuard: https://www.sshguard.net/<br>
-Site Oficial do SSH 2FA: https://github.com/google/google-authenticator-libpam
+Site Oficial do SSH 2FA: https://github.com/google/google-authenticator-libpam<br>
+Site Oficial do TCP Wrapper: https://redirect.cs.umbc.edu/~stephen/491sproj/index.html
 
 OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca<br>
 (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza<br>
@@ -43,6 +44,9 @@ invasores usando um dos back-ends de firewall do Linux: iptables, FirewallD, pf 
 2FA Autenticação por dois fatores oferece identificação aos usuários através da combinação de dois<br>
 componentes diferentes. Esses componentes podem ser algo que o usuário sabe, algo que o usuário<br>
 possui ou algo que é inseparável do usuário.
+
+TCP Wrapper é um sistema de rede ACL baseado em host, usado para filtrar acesso à rede a servidores<br>
+de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BSD.
 
 #01_ Acessando remotamente o OpenSSH Server via Terminal, Powershell e pelo software PuTTY<br>
 
