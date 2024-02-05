@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 29/01/2024<br>
-#Versão: 0.06<br>
+#Data de atualização: 05/02/2024<br>
+#Versão: 0.07<br>
 
 Site Oficial do OpenSSH: https://www.openssh.com/<br>
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
@@ -116,8 +116,15 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 		#opção do comando ls: ~ (atalho do path $HOME), -l (long listing), -h (human readable), * (curinga qualquer coisa)
 		ls -lh ~/.ssh/vaamonde*
 		
+		OBSERVAÇÃO IMPORTANTE: arquivo vaamonde.pub é a Chave Pública criada é o arquivo: vaamonde é a
+		Chave Privada criada.
+
 		#copiando a chave pública para o servidor Ubuntu
 		ssh-copy-id vaamonde@172.16.1.20
+
+		#verificando remotamente a chave copiada para o servidor Ubuntu
+		#opção do comando ls: ~ (atalho do path $HOME), -l (long listing), -h (human readable), * (curinga qualquer coisa)
+		ssh vaamonde@172.16.1.20 "ls -lh ~/.ssh/vaamonde*"
 
 	OBSERVAÇÃO IMPORTANTE: No Microsoft Windows utilizando o Powershell ou no macOS utilizando o Terminal,
 	o procedimento de Geração das Chaves Pública/Privada é o mesmo comando: ssh-keygen.
@@ -131,6 +138,11 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 
 #04_ Importando o Par de chaves Pública/Privada utilizando o Powershell (Windows)<br>
 
+	OBSERVAÇÃO IMPORTANTE: se você fez a geração das Chaves Pública/Privada utilizando o GNU/Linux,
+	para importar essas chaves em outro equipamento você precisar enviar a chaves por email, pendrive,
+	servidor de arquivos, servidor web, etc... APENAS CUIDADO COM O ENVIO DA CHAVES, POIS SE A MESMA
+	VAZAR (SER DESCOBERTA OU ENVIADA PARA OUTRA PESSOAL) O PROCESSO DE SEGURANÇA SERÁ COMPROMETIDO.
+	
 	Windows Powershell: Menu, Powershell 
 		
 		Primeira etapa: clicar com o botão direito do mouse e selecionar: Abrir como Administrador
@@ -147,6 +159,9 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 			#saindo do Powershell
 			exit
 
+	OBSERVAÇÃO IMPORTANTE: Copiar a Chave Privada para o diretório padrão de Chaves do SSH no
+	Perfil do Usuário do Windows em: C:\Users\SEU_USUÁRIO\.ssh
+	
 		Segunda etapa: Powershell do perfil do usuário sem ser como administrador
 			
 			#adicionar a chave privada no perfil do usuário
