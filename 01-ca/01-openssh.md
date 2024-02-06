@@ -12,7 +12,8 @@
 
 Site Oficial do OpenSSH: https://www.openssh.com/<br>
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
-Site Oficial do PuTTY: https://www.putty.org/
+Site Oficial do PuTTY: https://www.putty.org/<br>
+Site Oficial do 2FAS Auth: https://2fas.com/
 
 Site Oficial do Fail2ban: https://github.com/fail2ban/fail2ban<br>
 Site Oficial do SSHGuard: https://www.sshguard.net/<br>
@@ -136,7 +137,7 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 		Pesquisa do Windows
 			PuTTY
 
-#04_ Importando o Par de chaves Pública/Privada utilizando o Powershell (Windows)<br>
+#04_ Importando o Par de Chaves Pública/Privada utilizando o Powershell (Windows)<br>
 
 	OBSERVAÇÃO IMPORTANTE: se você fez a geração das Chaves Pública/Privada utilizando o GNU/Linux,
 	para importar essas chaves em outro equipamento você precisar enviar a chaves por email, pendrive,

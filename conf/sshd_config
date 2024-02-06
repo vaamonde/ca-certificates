@@ -41,7 +41,7 @@ AuthenticationMethods password
 PubkeyAuthentication yes
 #
 # Especifica se a autenticação por senha é permitida. O padrão é yes. Não é recomendado 
-# alterar essa opção.
+# alterar essa opção. Opção utilizada no software Fail2Ban.
 PasswordAuthentication yes
 #
 # Configuração do diretório de chaves públicas para autenticar os usuários, as chaves 
@@ -127,7 +127,8 @@ AddressFamily inet
 IgnoreRhosts yes
 HostbasedAuthentication no
 #
-# Não permitir que usuários sem senhas se autentique remotamente no Servidor de OpenSSH
+# Não permitir que usuários sem senhas se autentique remotamente no Servidor de OpenSSH.
+# Opção utilizada no software Fail2Ban.
 PermitEmptyPasswords no
 #
 # Não permitir que os usuários definam opções de ambiente, utilizar os pré-definidos
