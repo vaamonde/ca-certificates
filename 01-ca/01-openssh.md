@@ -141,8 +141,8 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 
 	OBSERVAÇÃO IMPORTANTE: se você fez a geração das Chaves Pública/Privada utilizando o GNU/Linux,
 	para importar essas chaves em outro equipamento você precisar enviar a chaves por email, pendrive,
-	servidor de arquivos, servidor web, etc... APENAS CUIDADO COM O ENVIO DA CHAVES, POIS SE A MESMA
-	VAZAR (SER DESCOBERTA OU ENVIADA PARA OUTRA PESSOAL) O PROCESSO DE SEGURANÇA SERÁ COMPROMETIDO.
+	servidor de arquivos, servidor web, etc... APENAS CUIDADO COM O ENVIO DAS CHAVES, POIS SE A MESMA
+	VAZAR (SER DESCOBERTA OU ENVIADA PARA OUTRA PESSOA) O PROCESSO DE SEGURANÇA SERÁ COMPROMETIDO.
 	
 	Windows Powershell: Menu, Powershell 
 		
