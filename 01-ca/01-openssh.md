@@ -51,11 +51,11 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 
 #01_ Acessando remotamente o OpenSSH Server via Terminal, Powershell e pelo software PuTTY<br>
 
-	OBSERVAÇÃO IMPORTANTE: Muitas vezes o erro de: WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
-	acontece no momento da conexão do SSH Client, esse erro está associado a mudança de endereço IP
-	ou nome do servidor ou alteração da chave de criptografia da conexão do SSH, para resolver esse
-	problema de forma simples, recomendo remover o arquivo de Finger Print do perfil do seu usuário
-	com o comando: rm -v ~/.ssh/known_hosts
+	#OBSERVAÇÃO IMPORTANTE: Muitas vezes o erro de: WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!
+	#acontece no momento da conexão do SSH Client, esse erro está associado a mudança de endereço IP
+	#ou nome do servidor ou alteração da chave de criptografia da conexão do SSH, para resolver esse
+	#problema de forma simples, recomendo remover o arquivo de Finger Print do perfil do seu usuário
+	#com o comando: rm -v ~/.ssh/known_hosts
 	
 	Windows
 		Pesquisa do Windows
@@ -117,8 +117,8 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 		#opção do comando ls: ~ (atalho do path $HOME), -l (long listing), -h (human readable), * (curinga qualquer coisa)
 		ls -lh ~/.ssh/vaamonde*
 		
-		OBSERVAÇÃO IMPORTANTE: arquivo vaamonde.pub é a Chave Pública criada é o arquivo: vaamonde é a
-		Chave Privada criada.
+		#OBSERVAÇÃO IMPORTANTE: arquivo vaamonde.pub é a Chave Pública criada é o arquivo: vaamonde é a
+		#Chave Privada criada.
 
 		#copiando a chave pública para o servidor Ubuntu
 		ssh-copy-id vaamonde@172.16.1.20
@@ -127,11 +127,11 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 		#opção do comando ls: ~ (atalho do path $HOME), -l (long listing), -h (human readable), * (curinga qualquer coisa)
 		ssh vaamonde@172.16.1.20 "ls -lh ~/.ssh/vaamonde*"
 
-	OBSERVAÇÃO IMPORTANTE: No Microsoft Windows utilizando o Powershell ou no macOS utilizando o Terminal,
-	o procedimento de Geração das Chaves Pública/Privada é o mesmo comando: ssh-keygen.
+	#OBSERVAÇÃO IMPORTANTE: No Microsoft Windows utilizando o Powershell ou no macOS utilizando o Terminal,
+	#o procedimento de Geração das Chaves Pública/Privada é o mesmo comando: ssh-keygen.
 
-	OBSERVAÇÃO: A geração das Chaves Pública/Privada no PuTTY segue o mesmo padrão do comando: ssh-keygen,
-	sua utilização é mais simples, seguindo o procedimento abaixo:
+	#OBSERVAÇÃO: A geração das Chaves Pública/Privada no PuTTY segue o mesmo padrão do comando: ssh-keygen,
+	#sua utilização é mais simples, seguindo o procedimento abaixo:
 
 	Windows
 		Pesquisa do Windows
@@ -139,10 +139,10 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 
 #04_ Importando o Par de Chaves Pública/Privada utilizando o Powershell (Windows)<br>
 
-	OBSERVAÇÃO IMPORTANTE: se você fez a geração das Chaves Pública/Privada utilizando o GNU/Linux,
-	para importar essas chaves em outro equipamento você precisar enviar a chaves por email, pendrive,
-	servidor de arquivos, servidor web, etc... APENAS CUIDADO COM O ENVIO DAS CHAVES, POIS SE A MESMA
-	VAZAR (SER DESCOBERTA OU ENVIADA PARA OUTRA PESSOA) O PROCESSO DE SEGURANÇA SERÁ COMPROMETIDO.
+	#OBSERVAÇÃO IMPORTANTE: se você fez a geração das Chaves Pública/Privada utilizando o GNU/Linux,
+	#para importar essas chaves em outro equipamento você precisar enviar a chaves por email, pendrive,
+	#servidor de arquivos, servidor web, etc... APENAS CUIDADO COM O ENVIO DAS CHAVES, POIS SE A MESMA
+	#VAZAR (SER DESCOBERTA OU ENVIADA PARA OUTRA PESSOA) O PROCESSO DE SEGURANÇA SERÁ COMPROMETIDO.
 	
 	Windows Powershell: Menu, Powershell 
 		
@@ -160,8 +160,8 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 			#saindo do Powershell
 			exit
 
-	OBSERVAÇÃO IMPORTANTE: Copiar a Chave Privada para o diretório padrão de Chaves do SSH no
-	Perfil do Usuário do Windows em: C:\Users\SEU_USUÁRIO\.ssh
+	#OBSERVAÇÃO IMPORTANTE: Copiar a Chave Privada para o diretório padrão de Chaves do SSH no
+	#Perfil do Usuário do Windows em: C:\Users\SEU_USUÁRIO\.ssh
 	
 		Segunda etapa: Powershell do perfil do usuário sem ser como administrador
 			
