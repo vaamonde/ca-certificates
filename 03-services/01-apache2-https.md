@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 15/12/2023<br>
-#Versão: 0.01<br>
+#Data de atualização: 06/04/2023<br>
+#Versão: 0.02<br>
 
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
@@ -187,25 +187,33 @@ base o servidor web NCSA HTTPd criado por Rob McCool.
 
 #11_ Habilitando o suporte ao TLS/SSL no Site HTTPS do Apache2 Server no Ubuntu Server<br>
 
-	#habilitando os módulos do TLs/SSL e cabeçalhos do Apache2 Server
+	#habilitando os módulos do TLS/SSL e cabeçalhos do Apache2 Server
 	a2enmod ssl headers
 	
-	#habilitando o Site HTTPS do Apache2 Server
-	a2ensite default-ssl
-
 	#verificando as informações do arquivo do HTTPS do Apache2 Server
 	apache2ctl configtest
+
+	#habilitando o Site HTTPS do Apache2 Server
+	a2ensite default-ssl
 
 	#reiniciando o Serviços do Apache2 Server
 	sudo systemctl restart apache2
 	sudo systemctl status apache2
 
+	#analisando os Log's e mensagens de erro do Servidor do Apache2
+	#opção do comando journalctl: x (catalog), e (pager-end), u (unit)
+	sudo journalctl -xeu apache2
+
 #12_ Verificando a Porta de Conexão do Apache2 Server no Ubuntu Server<br>
+
+	#OBSERVAÇÃO IMPORTANTE: no Ubuntu Server as Regras de Firewall utilizando o comando: 
+	#iptables ou: ufw está desabilitado por padrão (INACTIVE), caso você tenha habilitado 
+	#algum recurso de Firewall é necessário fazer a liberação do Fluxo de Entrada, Porta 
+	#e Protocolo TCP do Serviço corresponde nas tabelas do firewall e testar a conexão
 
 	#verificando as portas 80 HTTP e 443 HTTPS do Apache2 Server 
 	#opção do comando lsof: -n (network number), -P (port number), -i (list IP Address), -s (alone directs)
-	sudo lsof -nP -iTCP:'80' -sTCP:LISTEN
-	sudo lsof -nP -iTCP:'443' -sTCP:LISTEN
+	sudo lsof -nP -iTCP:'80,443' -sTCP:LISTEN
 
 #13_ Testando o Certificado TLS/SSL do Apache2 Server no ubuntu Server<br>
 

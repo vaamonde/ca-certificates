@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 22/01/2024<br>
-#Versão: 0.03<br>
+#Data de atualização: 06/04/2024<br>
+#Versão: 0.04<br>
 
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
@@ -42,6 +42,9 @@ navegadores web.
 
 #01_ Instalação da Autoridade Certificadora CA no Mozilla Firefox (GNU/Linux ou Microsoft Windows)<br>
 
+	#baixando o certificado do nosso servidor de navegador:
+	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
+
 	#OBSERVAÇÃO IMPORTANTE: no Windows ou no GNU/Linux o Mozilla Firefox utiliza o seu próprio
 	#sistema de gerenciamento de Unidades Certificadoras e Certificados Assinados, ele não usa
 	#o do sistema operacional.
@@ -63,6 +66,9 @@ navegadores web.
 
 #02_ # Instalação da Autoridade Certificadora CA no Google Chrome (GNU/Linux ou Microsoft Windows)<br>
 
+	#baixando o certificado do nosso servidor de navegador:
+	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
+
 	#OBSERVAÇÃO IMPORTANTE: o Google Chrome no GNU/Linux utiliza o seu próprio sistema de
 	#gerenciamento de Unidades Certificadoras e Certificados Assinados, ele não usa o do
 	#sistema operacional GNU/Linux, já no Windows ele usa do próprio sistema operacional
@@ -82,6 +88,9 @@ navegadores web.
 	chrome://restart
 
 #03_ Instalação da Autoridade Certificadora CA no Microsoft Edge (GNU/Linux ou Microsoft Windows)<br>
+
+	#baixando o certificado do nosso servidor de navegador:
+	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 	#OBSERVAÇÃO IMPORTANTE: o Microsoft Edge no GNU/Linux utiliza o seu próprio sistema de
 	#gerenciamento de Unidades Certificadoras e Certificados Assinados, ele não usa o do
@@ -109,6 +118,9 @@ navegadores web.
 
 #04_ Instalação da Autoridade Certificadora CA no Opera (GNU/Linux ou Microsoft Windows)<br>
 
+	#baixando o certificado do nosso servidor de navegador:
+	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
+
 	#OBSERVAÇÃO IMPORTANTE: O navegador Opera utiliza o mesmo gerenciador de Certificado do 
 	#Google Chrome, se você já importou o certificado no Google Chrome na hora de importar
 	#o certificado no Navegador Opera a seguinte mensagem de erro aparece para você: 
@@ -132,6 +144,9 @@ navegadores web.
 
 #05_ Instalação da Autoridade Certificadora CA no GNU/Linux (Linux Mint ou Ubuntu)<br>
 
+	#baixando o certificado do nosso servidor de navegador:
+	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
+
 	Pasta: Download
 		Abrir como Root (Botão direito do Mouse: Abrir como root)
 			Copiar: pti-ca.crt
@@ -148,6 +163,9 @@ navegadores web.
 			ls -lha /etc/ssl/certs/pti-ca*
 
 #06_ Instalação da Autoridade Certificadora CA no Microsoft Windows (10 ou 11)<br>
+
+	#baixando o certificado do nosso servidor de navegador:
+	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 	Pasta: Download
 		pti-ca.crt (clicar duas vezes em cima do certificado)
@@ -173,15 +191,24 @@ navegadores web.
 
 #07_ Instalação da Autoridade Certificadora CA no Android<br>
 
+	#baixando o certificado do nosso servidor de navegador:
+	google chrome: http://endereço_ipv4_ubuntuserver/ca/
+
 	Configurações
 		Senhas e Segurança
 			Privacidade
 				Criptografia e Credenciais
-					Sistema: Credenciais confiáveis
+					Armazenamento de Credenciais: Credenciais confiáveis
+						Sistema: Utilizado em todo o sistema 
+						Usuário: Específico para o usuário
 				Instalar do Cartão SD
-					Arquivo: pti-ca.crt
+					Menu: Download
+						Arquivo: pti-ca.crt
 
 #08_ Instalação da Autoridade Certificadora CA no MacOS Apple<br>
+
+	#baixando o certificado do nosso servidor de navegador:
+	safari ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 	Pasta: Download
 		pti-ca.crt (clicar duas vezes em cima do certificado)
@@ -189,4 +216,7 @@ navegadores web.
 
 #09_ Instalação da Autoridade Certificadora CA no iOS Apple<br>
 
+	#baixando o certificado do nosso servidor de navegador:
+	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
+	
 	#EM DESENVOLVIMENTO

@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 21/01/2024<br>
-#Versão: 0.06<br>
+#Data de atualização: 06/04/2024<br>
+#Versão: 0.07<br>
 
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
@@ -205,3 +205,21 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	#verificando a criação do link PEM no Ubuntu Server
 	#opção do comando ls: -l (long listing), -h (human readable), -a (all)
 	ls -lha /etc/ssl/certs/pti-ca*
+
+#11_ Disponibilizando o certificado CRT (Certificate Request Trust) para download<br>
+
+	#OBSERVAÇÃO IMPORTANTE: Nesse cenário temos em nosso servidor instalado e configurado o
+	#serviço do Apache2 Server, caso não tenha, você pode utilizar qualquer recurso para 
+	#disponibilizar o certificado para os seu clientes baixarem e instalarem no seu dispositivo.
+
+	#criando o diretório de download do certifico no Apache2
+	#opção do comando mkdir: -v (verbose)
+	mkdir -v /var/www/html/ca
+
+	#copiando o certificado assinado para o diretório
+	#opção do comando cp: -v (verbose)
+	sudo cp -v /etc/ssl/newcerts/pti-ca.crt /var/www/html/ca/
+
+	#verificando o arquivo copiado
+	#opção do comando ls: -l (long listing), -h (human readable), -a (all)
+	ls -lha /var/www/html/ca/pti-ca*

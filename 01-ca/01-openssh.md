@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 05/02/2024<br>
-#Versão: 0.07<br>
+#Data de atualização: 06/04/2024<br>
+#Versão: 0.08<br>
 
 Site Oficial do OpenSSH: https://www.openssh.com/<br>
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
@@ -211,6 +211,11 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 	#reiniciar o serviço do OpenSSH Server
 	sudo systemctl restart ssh
 	sudo systemctl status ssh
+
+	#analisando os Log's e mensagens de erro do Servidor do OpenSSH
+	#opção do comando journalctl: -t (identifier), x (catalog), e (pager-end), u (unit)
+	sudo journalctl -t sshd
+	sudo journalctl -xeu ssh
 
 #06_ Testando novamente a conexão com o OpenSSH e Certificado no Ubuntu Server<br>
 
