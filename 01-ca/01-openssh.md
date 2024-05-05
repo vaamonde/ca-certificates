@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 06/04/2024<br>
-#Versão: 0.08<br>
+#Data de atualização: 05/05/2024<br>
+#Versão: 0.09<br>
 
 Site Oficial do OpenSSH: https://www.openssh.com/<br>
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
@@ -81,7 +81,7 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 		Terminal:
 			ssh vaamonde@172.16.1.20 (alterar o usuário e endereço IPv4 do seu servidor)
 	
-#02_ Verificando as informações de usuários logados remotamente no Ubuntu Server
+#02_ Verificando as informações de usuários logados remotamente no Ubuntu Server<br>
 
 	#verificando os usuários logados remotamente no Ubuntu Server
 	#opção do comando who: -H (heading), -a (all)
@@ -107,7 +107,11 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 
 	Linux Mint Terminal: Ctrl+Alt+T
 		
-		#gerando o par de chaves no perfil do usuário local
+		#OBSERVAÇÃO IMPORTANTE: O nome do Par de Chaves Pública/Privada pode ser qualquer um,
+		#recomendo criar o nome da chave com base no serviço, nome do servidor ou usuário que 
+		#você está permitindo o acesso, exemplo: wsvaamonde - vaamonde - guacamole - etc...
+		
+		#gerando o par de chaves Pública/Privada no perfil do usuário local
 		ssh-keygen
 			Enter file in which to save the key (/home/vaamonde/.ssh/id_rsa): /home/vaamonde/.ssh/vaamonde <Enter>
 			Enter passphrase (empty for no passphrase): <Enter>
@@ -128,14 +132,24 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 		ssh vaamonde@172.16.1.20 "ls -lh ~/.ssh/vaamonde*"
 
 	#OBSERVAÇÃO IMPORTANTE: No Microsoft Windows utilizando o Powershell ou no macOS utilizando o Terminal,
-	#o procedimento de Geração das Chaves Pública/Privada é o mesmo comando: ssh-keygen.
+	#o procedimento de Geração das Chaves Pública/Privada utiliza o mesmo comando: ssh-keygen.
 
 	#OBSERVAÇÃO: A geração das Chaves Pública/Privada no PuTTY segue o mesmo padrão do comando: ssh-keygen,
 	#sua utilização é mais simples, seguindo o procedimento abaixo:
 
 	Windows
 		Pesquisa do Windows
-			PuTTY
+			PuTTYgen
+				<Generate>
+					#OBSERVAÇÃO IMPORTANTE: PARA GERAR O PAR DE CHAVES PÚBLICA/PRIVA UTILIZANDO O
+					#PUTTYGEN, APÓS CLICAR EM: <GENERATE> VOCÊ PRECISAR MOVIMENTO O MOUSE DENTRO
+					#DATA ÁREA EM BRANCO (MOVING THE MOUSE OVER THE BLANK AREA) PARA INICIAR O
+					#PROCESSO DE GERAÇÃO DAS CHAVES.
+				<Save public key>
+					C:\Users\vaamonde\.ssh\vaamonde.pub
+				<Save private key>
+					<YES>
+						C:\Users\vaamonde\.ssh\vaamonde
 
 #04_ Importando o Par de Chaves Pública/Privada utilizando o Powershell (Windows)<br>
 
@@ -165,7 +179,11 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 	
 		Segunda etapa: Powershell do perfil do usuário sem ser como administrador
 			
-			#adicionar a chave privada no perfil do usuário
+			#acessar o diretório das chaves Pública/Privadas do SSH
+			cd C:\Users\vaamonde\.ssh
+			ls
+
+			#adicionar a chave privada no perfil do seu usuário
 			ssh-add .\vaamonde <Enter>
 
 #05_ Editando o arquivo de configuração do OpenSSH Server no Ubuntu Server<br>
@@ -191,7 +209,7 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 		# alterar as informações na linha 17
 		# mais informações veja o arquivo Hosts.Deny no Github:
 		# opção do comando date: -u (universal)
-		ALL: ALL: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-deny.log
+		ALL: ALL: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/hosts-deny.log
 
 	#salvar e sair do arquivo
 	ESC SHIFT :x <Enter>
@@ -203,7 +221,7 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 		# OBSERVAÇÃO: ALTERAR A REDE CONFORME A SUA NECESSIDADE
 		# mais informações veja o arquivo Hosts.Allow no Github:
 		# opção do comando date: -u (universal)
-		sshd: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-ssh.log
+		sshd: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/hosts-allow.log
 
 	#salvar e sair do arquivo
 	ESC SHIFT :x <Enter>
@@ -226,5 +244,5 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 	#verificando os Log's de acesso ao servidor
 	sudo cat /var/log/auth.log | grep ssh
 	sudo cat /var/log/syslog | grep ssh
-	sudo cat /var/log/tcpwrappers-deny.log
-	sudo cat /var/log/tcpwrappers-allow-ssh.log
+	sudo cat /var/log/hosts-deny.log
+	sudo cat /var/log/hosts-allow-ssh.log
