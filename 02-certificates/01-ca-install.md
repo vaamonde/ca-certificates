@@ -7,8 +7,30 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 06/04/2024<br>
-#Versão: 0.04<br>
+#Data de atualização: 30/05/2024<br>
+#Versão: 0.05<br>
+
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO CA SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM 
+A SEGUINTE FRASE: Instalação da CA realizado com sucesso!!! #BoraParaPrática
+
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
+MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+
+LINK DO SELO: 
+
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
+#ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafica #desaficertificado
+
+Conteúdo estudado nesse desafio:<br>
+#01_ Instalação da Autoridade Certificadora CA no Mozilla Firefox (GNU/Linux ou Microsoft Windows)<br>
+#02_ Instalação da Autoridade Certificadora CA no Google Chrome (GNU/Linux ou Microsoft Windows)<br>
+#03_ Instalação da Autoridade Certificadora CA no Microsoft Edge (GNU/Linux ou Microsoft Windows)<br>
+#04_ Instalação da Autoridade Certificadora CA no Opera (GNU/Linux ou Microsoft Windows)<br>
+#05_ Instalação da Autoridade Certificadora CA no GNU/Linux (Linux Mint ou Ubuntu)<br>
+#06_ Instalação da Autoridade Certificadora CA no Microsoft Windows (10 ou 11)<br>
+#07_ Instalação da Autoridade Certificadora CA no Android<br>
+#08_ Instalação da Autoridade Certificadora CA no MacOS Apple<br>
+#09_ Instalação da Autoridade Certificadora CA no iOS Apple
 
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
@@ -42,7 +64,7 @@ navegadores web.
 
 #01_ Instalação da Autoridade Certificadora CA no Mozilla Firefox (GNU/Linux ou Microsoft Windows)<br>
 
-	#baixando o certificado do nosso servidor de navegador:
+	#baixando o certificado do nosso servidor via navegador:
 	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 	#OBSERVAÇÃO IMPORTANTE: no Windows ou no GNU/Linux o Mozilla Firefox utiliza o seu próprio
@@ -64,9 +86,9 @@ navegadores web.
 					Bora para Pratica
 						wsvaamonde.pti.intra
 
-#02_ # Instalação da Autoridade Certificadora CA no Google Chrome (GNU/Linux ou Microsoft Windows)<br>
+#02_ Instalação da Autoridade Certificadora CA no Google Chrome (GNU/Linux ou Microsoft Windows)<br>
 
-	#baixando o certificado do nosso servidor de navegador:
+	#baixando o certificado do nosso servidor via navegador:
 	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 	#OBSERVAÇÃO IMPORTANTE: o Google Chrome no GNU/Linux utiliza o seu próprio sistema de
@@ -107,6 +129,8 @@ navegadores web.
 	sudo apt install libnss3-tools
 
 	#instalando a Unidades Certificadora no Microsoft Edge utilizando o comando certutil
+	#opções do comando certutil: -d (directory), -A (Add an existing certificate to a certificate database), 
+	#-t (trustargs), -n (nickname), -i (input_file), -L (List all the certificates)
 	certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n BoraParaPratica -i pti-ca.crt
 	certutil -d sql:$HOME/.pki/nssdb -L
 
@@ -118,7 +142,7 @@ navegadores web.
 
 #04_ Instalação da Autoridade Certificadora CA no Opera (GNU/Linux ou Microsoft Windows)<br>
 
-	#baixando o certificado do nosso servidor de navegador:
+	#baixando o certificado do nosso servidor via navegador:
 	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 	#OBSERVAÇÃO IMPORTANTE: O navegador Opera utiliza o mesmo gerenciador de Certificado do 
@@ -144,7 +168,7 @@ navegadores web.
 
 #05_ Instalação da Autoridade Certificadora CA no GNU/Linux (Linux Mint ou Ubuntu)<br>
 
-	#baixando o certificado do nosso servidor de navegador:
+	#baixando o certificado do nosso servidor via navegador:
 	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 	Pasta: Download
@@ -159,13 +183,14 @@ navegadores web.
 			sudo apt install ca-certificates
 			sudo update-ca-certificates
 
-			#verificando a criação do link PEM no Linux Mint
+			#verificando a criação do link PEM (Privacy Enhanced Mail) no Linux Mint
+			#opção do comando ls: -l (long listing), -h (human readable), -a (all)
 			ls -lha /etc/ssl/certs/pti-ca*
 
 #06_ Instalação da Autoridade Certificadora CA no Microsoft Windows (10 ou 11)<br>
 
-	#baixando o certificado do nosso servidor de navegador:
-	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
+	#baixando o certificado do nosso servidor via navegador:
+	edge, firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 	Pasta: Download
 		pti-ca.crt (clicar duas vezes em cima do certificado)
@@ -189,9 +214,9 @@ navegadores web.
 					Emitido para:
 						wsvaamonde.pti.intra
 
-#07_ Instalação da Autoridade Certificadora CA no Android<br>
+#07_ Instalação da Autoridade Certificadora CA no Smartphone Android<br>
 
-	#baixando o certificado do nosso servidor de navegador:
+	#baixando o certificado do nosso servidor via navegador:
 	google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 	Configurações
@@ -207,7 +232,7 @@ navegadores web.
 
 #08_ Instalação da Autoridade Certificadora CA no MacOS Apple<br>
 
-	#baixando o certificado do nosso servidor de navegador:
+	#baixando o certificado do nosso servidor via navegador:
 	safari ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 	Pasta: Download
@@ -216,7 +241,7 @@ navegadores web.
 
 #09_ Instalação da Autoridade Certificadora CA no iOS Apple<br>
 
-	#baixando o certificado do nosso servidor de navegador:
-	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
+	#baixando o certificado do nosso servidor via navegador:
+	safari ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 	
 	#EM DESENVOLVIMENTO

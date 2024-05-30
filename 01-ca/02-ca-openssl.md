@@ -7,8 +7,32 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 06/04/2024<br>
-#Versão: 0.07<br>
+#Data de atualização: 30/05/2024<br>
+#Versão: 0.08<br>
+
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO CA SE VOCÊ CONSEGUIU FAZER O A CRIAÇÃO COM 
+A SEGUINTE FRASE: Criação da CA realizado com sucesso!!! #BoraParaPrática
+
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
+MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+
+LINK DO SELO: 
+
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
+#ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafica #desaficertificado
+
+Conteúdo estudado nesse desafio:<br>
+#01_ Criando a estrutura de diretórios da CA (Certificate Authority) e dos Certificados no Ubuntu Server<br>
+#02_ Criando os arquivos de Banco de Dados dos Certificados Assinados no Ubuntu Server<br>
+#03_ Editando o arquivo de Configuração da CA (Certificate Authority) no Ubuntu Server<br>
+#04_ Criando o Chave Raiz RSA (Rivest-Shamir-Adleman) Privada da CA (Certificate Authority) no Ubuntu Server<br>
+#05_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada da CA (Certificate Authority) no Ubuntu Server<br>
+#06_ Verificando o arquivo de Chave Raiz RSA (Rivest-Shamir-Adleman) Privada da CA (Certificate Authority) no Ubuntu Server<br>
+#07_ Criando o arquivo CSR (Certificate Signing Request) da CA (Certificate Authority) no Ubuntu Server<br>
+#08_ Criando o arquivo CRT (Certificate Request Trust) da CA (Certificate Authority) no Ubuntu Server<br>
+#09_ Verificando o arquivo CRT (Certificate Request Trust) da CA (Certificate Authority) no Ubuntu Server<br>
+#10_ Instalando o certificado CRT (Certificate Request Trust) e criando o arquivo PEM (Privacy Enhanced Mail) da CA (Certificate Authority) no Ubuntu Server<br>
+#11_ Disponibilizando o certificado CRT (Certificate Request Trust) para download<br>
 
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
@@ -81,13 +105,13 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	#adicionando um valor de sequência numérica de solicitações de certificados
 	#assinados no arquivo serial para o controle e gerenciamentos dos certificados
 	#emitidos pela nossa CA, número está em Hexadecimal
-	#opção do redirecionador |: Conecta a saída padrão com a entrada padrão de outro comando
+	#opção do redirecionador | (pipe): Conecta a saída padrão com a entrada padrão de outro comando
 	echo "1234" | sudo tee /etc/ssl/serial
 
 	#adicionando o valor de: unique_subject=no - no arquivo index.txt.attr
 	echo "unique_subject = no" | sudo tee /etc/ssl/index.txt.attr
 
-	#verificando os arquivos e diretórios criados
+	#verificando os arquivos e diretórios criados da CA
 	#opções do comando ls: -l (long listing), -h (human-readable), -a (all)
 	ls -lha /etc/ssl/
 
@@ -129,9 +153,9 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 
 #05_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada da CA (Certificate Authority) no Ubuntu Server<br>
 
-	OBSERVAÇÃO IMPORTANTE: algumas aplicações não entende muito bem o conceito de senha no certificado,
-	geralmente isso está associado os software/aplicativo não a CA ou certificado, na maioria dos casos
-	recomendamos remover a senha para facilitar a configuração sem perder a segurança.
+	#OBSERVAÇÃO IMPORTANTE: algumas aplicações não entende muito bem o conceito de senha no certificado,
+	#geralmente isso está associado os software/aplicativos não a CA ou certificado, na maioria dos casos
+	#recomendamos remover a senha para facilitar a configuração sem perder a segurança.
 	
 	#removendo a senha do arquivo de chave raiz privada e criando o novo arquivo sem senha
 	#opções do comando openssl: rsa (command processes RSA keys), -in (The input file to read from, or 
@@ -140,7 +164,7 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	sudo openssl rsa -in /etc/ssl/private/pti-ca.key.old -out /etc/ssl/private/pti-ca.key -passin pass:pti@2018
 	
 	#removendo o arquivo temporário de Chave Raiz RSA com senha
-	# opção do comando rm: -v (verbose)	
+	#opção do comando rm: -v (verbose)	
 	sudo rm -v /etc/ssl/private/pti-ca.key.old
 
 #06_ Verificando o arquivo de Chave Raiz RSA (Rivest-Shamir-Adleman) Privada da CA (Certificate Authority) no Ubuntu Server<br>
@@ -148,7 +172,7 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	#opções do comando openssl: rsa (command processes RSA keys), -noout (Do not output the encoded 
 	#version of the key), -modulus (Print the value of the modulus of the key), -in (The input file 
 	#to read from, or standard input if not specified), md5 (The message digest to use MD5 checksums)
-	#opção do redirecionador de saída |: Conecta a saída padrão com a entrada padrão de outro comando
+	#opção do redirecionador de saída | (pipe): Conecta a saída padrão com a entrada padrão de outro comando
 	sudo openssl rsa -noout -modulus -in /etc/ssl/private/pti-ca.key | openssl md5
 
 #07_ Criando o arquivo CSR (Certificate Signing Request) da CA (Certificate Authority) no Ubuntu Server<br>
@@ -156,11 +180,11 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	#Assinatura da chave de criptografia privada com as opções de: -md5, -sha1, -sha224, -sha256, -sha384 
 	#ou -sha512, padrão utilizado: sha256
 
-	#opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 	#opções do comando openssl: req (command primarily creates and processes certificate requests in 
 	#PKCS#10 format), -new (Generate a new certificate request), -nodes (Do not encrypt the private key), 
 	#-key (The file to read the private key from), -out (The output file to write to, or standard output 
 	#if not specified), -config (Specify an alternative configuration file)
+	#opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 	sudo openssl req -new -sha256 -nodes -key /etc/ssl/private/pti-ca.key -out /etc/ssl/requests/pti-ca.csr \
 	-config /etc/ssl/conf/ca.conf
 
@@ -169,7 +193,6 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	#Assinatura da chave de criptografia privada com as opções de: -md5, -sha1, -sha224, -sha256, -sha384 
 	#ou -sha512, padrão utilizado: -sha256
 
-	#opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 	#opções do comando openssl: req (command primarily creates and processes certificate requests in 
 	#PKCS#10 format), -copy_extensions (Determines how to handle X.509 extensions when converting from a 
 	#certificate to a request using the -x509toreq option or converting from a request to a certificate 
@@ -178,6 +201,7 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	#-in (The input file to read from, or standard input if not specified), -key (The file to read the 
 	#private key from), -out (The output file to write to, or standard output if not specified), -config 
 	#(Specify an alternative configuration file).
+	#opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grande
 	sudo openssl req -copy_extensions copyall -new -x509 -sha256 -days 3650 -in /etc/ssl/requests/pti-ca.csr \
 	-key /etc/ssl/private/pti-ca.key -out /etc/ssl/newcerts/pti-ca.crt -config /etc/ssl/conf/ca.conf
 
@@ -187,7 +211,7 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	#the encoded version of the request), -modulus (Print the value of the modulus of the public key contained 
 	#in the certificate), -text (Print the full certificate in text form), -in (The input file to read from, 
 	#or standard input if not specified), md5 (The message digest to use MD5 checksums)
-	#opção do redirecionador de saída |: Conecta a saída padrão com a entrada padrão de outro comando
+	#opção do redirecionador de saída | (pipe): Conecta a saída padrão com a entrada padrão de outro comando
 	sudo openssl x509 -noout -modulus -in /etc/ssl/newcerts/pti-ca.crt | openssl md5
 	sudo openssl x509 -noout -text -in /etc/ssl/newcerts/pti-ca.crt
 
@@ -202,7 +226,7 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	sudo apt install ca-certificates
 	sudo update-ca-certificates
 
-	#verificando a criação do link PEM no Ubuntu Server
+	#verificando a criação do link PEM (Privacy Enhanced Mail) no Ubuntu Server
 	#opção do comando ls: -l (long listing), -h (human readable), -a (all)
 	ls -lha /etc/ssl/certs/pti-ca*
 
@@ -212,14 +236,14 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	#serviço do Apache2 Server, caso não tenha, você pode utilizar qualquer recurso para 
 	#disponibilizar o certificado para os seu clientes baixarem e instalarem no seu dispositivo.
 
-	#criando o diretório de download do certifico no Apache2
+	#criando o diretório de download do certificado no Apache2
 	#opção do comando mkdir: -v (verbose)
 	mkdir -v /var/www/html/ca
 
-	#copiando o certificado assinado para o diretório
+	#copiando o certificado assinado para o diretório no Apache2
 	#opção do comando cp: -v (verbose)
 	sudo cp -v /etc/ssl/newcerts/pti-ca.crt /var/www/html/ca/
 
-	#verificando o arquivo copiado
+	#verificando o arquivo copiado no diretório do Apache2
 	#opção do comando ls: -l (long listing), -h (human readable), -a (all)
 	ls -lha /var/www/html/ca/pti-ca*

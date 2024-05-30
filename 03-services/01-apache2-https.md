@@ -10,6 +10,32 @@
 #Data de atualização: 06/04/2023<br>
 #Versão: 0.02<br>
 
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO APACHE2 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM 
+A SEGUINTE FRASE: Instalação da Certificado no Apache2 realizado com sucesso!!! #BoraParaPrática
+
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
+MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+
+LINK DO SELO: 
+
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
+#ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafiapache2 #desaficertificado
+
+Conteúdo estudado nesse desafio:<br>
+#01_ Fazendo o download do Arquivo de Configuração do Certificado do Apache2 Server<br>
+#02_ Editando o arquivo de Arquivo de Configuração do Certificado do Apache2 Server<br>
+#03_ Criando o Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache2 Server no Ubuntu Server<br>
+#04_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache2 Server no Ubuntu Server<br>
+#05_ Verificando o arquivo de Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache2 Server no Ubuntu Server<br>
+#06_ Criando o arquivo CSR (Certificate Signing Request) do Apache2 Server no Ubuntu Server<br>
+#07_ Criando o arquivo CRT (Certificate Request Trust) do Apache2 Server no Ubuntu Server<br>
+#08_ Verificando o arquivo CRT (Certificate Request Trust) do Apache2 Server no Ubuntu Server<b
+#09_ Fazendo o download do Arquivo de Configuração do HTTPS do Apache2 Server<br>
+#11_ Habilitando o suporte ao TLS/SSL no Site HTTPS do Apache2 Server no Ubuntu Server<br>
+#12_ Verificando a Porta de Conexão do Apache2 Server no Ubuntu Server<br>
+#14_ Testando o HTTP e HTTPs do Apache2 Server no navegador<br>
+#15_ Desativar o Site Padrão HTTP do Apache2 Server no Ubuntu Server.
+
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
 Site Oficial do Certbot (Let's Encrypt): https://certbot.eff.org/
@@ -108,7 +134,7 @@ base o servidor web NCSA HTTPd criado por Rob McCool.
 	#opções do comando openssl: rsa (command processes RSA keys), -noout (Do not output the encoded 
 	#version of the key), -modulus (Print the value of the modulus of the key), -in (The input file 
 	#to read from, or standard input if not specified), md5 (The message digest to use MD5 checksums)
-	#opção do redirecionador de saída |: Conecta a saída padrão com a entrada padrão de outro comando
+	#opção do redirecionador de saída | (pipe): Conecta a saída padrão com a entrada padrão de outro comando
 	sudo openssl rsa -noout -modulus -in /etc/ssl/private/apache2.key | openssl md5
 
 #06_ Criando o arquivo CSR (Certificate Signing Request) do Apache2 Server no Ubuntu Server<br>
@@ -116,12 +142,12 @@ base o servidor web NCSA HTTPd criado por Rob McCool.
 	#Assinatura da chave de criptografia privada com as opções de: -md5, -sha1, -sha224, -sha256, -sha384 
 	#ou -sha512, padrão utilizado: sha256
 
-	#opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 	#opções do comando openssl: req (command primarily creates and processes certificate requests in 
 	#PKCS#10 format), -new (Generate a new certificate request), -nodes (Do not encrypt the private 
 	#key), -key (The file to read the private key from), -out (The output file to write to, or standard 
 	#output if not specified), -extensions (Specify alternative sections to include certificate extensions), 
 	#-config (Specify an alternative configuration file)
+	#opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 	sudo openssl req -new -sha256 -nodes -key /etc/ssl/private/apache2.key -out /etc/ssl/requests/apache2.csr \
 	-extensions v3_req -config /etc/ssl/conf/apache2.conf
 
@@ -130,31 +156,32 @@ base o servidor web NCSA HTTPd criado por Rob McCool.
 	#Assinatura da chave de criptografia privada com as opções de: -md5, -sha1, -sha224, -sha256, -sha384 
 	#ou -sha512, padrão utilizado: -sha256
 
-	#opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 	#opções do comando openssl: ca (command is a minimal certificate authority (CA) application), -in (The input 
 	#file to read from, or standard input if not specified), -out (The output file to write to, or standard output 
 	#if none is specified), -config (Specify an alternative configuration file), -extensions (The section to add 
 	#certificate extensions from), -extfile (File containing certificate extensions to use).
+	#opção do caractere: \ (contra barra): utilizado para quebra de linha em comandos grandes
 	#
 	# Sign the certificate? [y/n]: y <Enter>
 	# 1 out of 1 certificate request certified, commit? [y/n]: y <Enter>	
 	sudo openssl ca -in /etc/ssl/requests/apache2.csr -out /etc/ssl/newcerts/apache2.crt -config /etc/ssl/conf/ca.conf \
 	-extensions v3_req -extfile /etc/ssl/conf/apache2.conf
 
-08_ Verificando o arquivo CRT (Certificate Request Trust) do Apache2 Server no Ubuntu Server<br>
+#08_ Verificando o arquivo CRT (Certificate Request Trust) do Apache2 Server no Ubuntu Server<br>
 
 	#opções do comando openssl: x509 (command is a multi-purpose certificate utility), -noout (Do not output 
 	#the encoded version of the request), -modulus (Print the value of the modulus of the public key contained 
 	#in the certificate), -text (Print the full certificate in text form), -in (The input file to read from, 
 	#or standard input if not specified), md5 (The message digest to use MD5 checksums)
-	#opção do redirecionador de saída |: Conecta a saída padrão com a entrada padrão de outro comando
+	#opção do redirecionador de saída | (pipe): Conecta a saída padrão com a entrada padrão de outro comando
 	sudo openssl x509 -noout -modulus -in /etc/ssl/newcerts/apache2.crt | openssl md5
 	sudo openssl x509 -noout -text -in /etc/ssl/newcerts/apache2.crt
 
-	#listando o conteúdo do banco de dados do certificados emitidos
-	sudo cat /etc/ssl/index.txt
-	sudo cat /etc/ssl/index.txt.attr
-	sudo cat /etc/ssl/serial
+	#listando o conteúdo do banco de dados do certificados emitidos e assinados da nossa CA
+	#opção do comando cat: -n (number line)
+	sudo cat -n /etc/ssl/index.txt
+	sudo cat -n /etc/ssl/index.txt.attr
+	sudo cat -n /etc/ssl/serial
 
 #09_ Fazendo o download do Arquivo de Configuração do HTTPS do Apache2 Server<br>
 
@@ -185,19 +212,28 @@ base o servidor web NCSA HTTPd criado por Rob McCool.
 	#salvar e sair do arquivo
 	ESC SHIFT :x <Enter>
 
+	#editando o arquivo de portas do Apache2 Server
+	sudo vim /etc/apache2/ports.conf
+	INSERT
+
+		#verificar as variáveis
+
+	#salvar e sair do arquivo
+	ESC SHIFT :x <Enter>
+
 #11_ Habilitando o suporte ao TLS/SSL no Site HTTPS do Apache2 Server no Ubuntu Server<br>
 
 	#habilitando os módulos do TLS/SSL e cabeçalhos do Apache2 Server
-	a2enmod ssl headers
+	sudo a2enmod ssl headers
 	
 	#verificando as informações do arquivo do HTTPS do Apache2 Server
-	apache2ctl configtest
+	sudo apache2ctl configtest
 
 	#habilitando o Site HTTPS do Apache2 Server
-	a2ensite default-ssl
+	sudo a2ensite default-ssl
 
 	#reiniciando o Serviços do Apache2 Server
-	sudo systemctl restart apache2
+	sudo systemctl reload apache2
 	sudo systemctl status apache2
 
 	#analisando os Log's e mensagens de erro do Servidor do Apache2
@@ -215,7 +251,7 @@ base o servidor web NCSA HTTPd criado por Rob McCool.
 	#opção do comando lsof: -n (network number), -P (port number), -i (list IP Address), -s (alone directs)
 	sudo lsof -nP -iTCP:'80,443' -sTCP:LISTEN
 
-#13_ Testando o Certificado TLS/SSL do Apache2 Server no ubuntu Server<br>
+#13_ Testando o Certificado TLS/SSL do Apache2 Server no Ubuntu Server<br>
 
 	#testando o certificado do Apache2 Server no Ubuntu Server
 	#opção do comando echo: | (piper, faz a função de Enter no comando)
@@ -231,3 +267,24 @@ base o servidor web NCSA HTTPd criado por Rob McCool.
 	#utilizar os navegadores para testar o HTTP e HTTPS
 	firefox ou google chrome: http://endereço_ipv4_ubuntuserver
 	firefox ou google chrome: https://endereço_ipv4_ubuntuserver/
+
+#15_ Desativar o Site Padrão HTTP do Apache2 Server no Ubuntu Server<br>
+
+	#desabilitando o Site HTTP do Apache2 Server
+	sudo a2dissite 000-default.conf
+
+	#reiniciando o Serviços do Apache2 Server
+	sudo systemctl reload apache2
+	sudo systemctl status apache2
+
+	#analisando os Log's e mensagens de erro do Servidor do Apache2
+	#opção do comando journalctl: x (catalog), e (pager-end), u (unit)
+	sudo journalctl -xeu apache2
+
+	#verificando as portas 80 HTTP e 443 HTTPS do Apache2 Server 
+	#opção do comando lsof: -n (network number), -P (port number), -i (list IP Address), -s (alone directs)
+	sudo lsof -nP -iTCP:'80,443' -sTCP:LIST
+
+	#utilizar os navegadores para testar o HTTP e HTTPS
+	firefox ou google chrome: http://endereço_ipv4_ubuntuserver
+	firefox ou google chrome: https://endereço_ipv4_ubuntuserver

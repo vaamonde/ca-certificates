@@ -7,8 +7,27 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 05/05/2024<br>
-#Versão: 0.09<br>
+#Data de atualização: 30/05/2024<br>
+#Versão: 0.10<br>
+
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO OPENSSH SE VOCÊ CONSEGUIU FAZER O A SEGURANÇA COM 
+A SEGUINTE FRASE: Segurança do OpenSSH realizado com sucesso!!! #BoraParaPrática
+
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
+MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+
+LINK DO SELO: 
+
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
+#ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafioopenssh #desafiossh
+
+Conteúdo estudado nesse desafio:<br>
+#01_ Acessando remotamente o OpenSSH Server via Terminal, Powershell e pelo software PuTTY<br>
+#02_ Verificando as informações de usuários logados remotamente no Ubuntu Server<br>
+#03_ Gerando os pares de Chaves Pública/Privada utilizando o GNU/Linux (Mint)<br>
+#04_ Importando o Par de Chaves Pública/Privada utilizando o Powershell (Windows 10)<br>
+#05_ Editando o arquivo de configuração do OpenSSH Server no Ubuntu Server<br>
+#06_ Testando novamente a conexão com o OpenSSH e Certificado no Ubuntu Server
 
 Site Oficial do OpenSSH: https://www.openssh.com/<br>
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
@@ -89,7 +108,7 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 	#opção do comando grep: -i (ignore-case)
 	#opção do comando netstat: -t (tcp), -n (numeric), -p (program), -a (all)
 	#opção do comando ps: -a (all processes), -x (must have a tty), -f (full-format listing), -j (Jobs format)
-	#opção do redirecionador |: Conecta a saída padrão com a entrada padrão de outro comando
+	#opção do redirecionador | (pipe): Conecta a saída padrão com a entrada padrão de outro comando
 	sudo who -Ha
 	sudo w
 	sudo users
@@ -99,7 +118,7 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 	sudo ps -axfj | grep sshd
 
 	#verificando as informações de Log de Autenticação no Ubuntu Server
-	#opção do redirecionador |: Conecta a saída padrão com a entrada padrão de outro comando
+	#opção do redirecionador | (pipe): Conecta a saída padrão com a entrada padrão de outro comando
 	sudo cat /var/log/auth.log | grep ssh
 	sudo cat /var/log/syslog | grep ssh
 
@@ -113,9 +132,9 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 		
 		#gerando o par de chaves Pública/Privada no perfil do usuário local
 		ssh-keygen
-			Enter file in which to save the key (/home/vaamonde/.ssh/id_rsa): /home/vaamonde/.ssh/vaamonde <Enter>
-			Enter passphrase (empty for no passphrase): <Enter>
-			Enter same passphrase again: <Enter>
+			Enter file in which to save the key (/home/vaamonde/.ssh/id_rsa): /home/vaamonde/.ssh/vaamonde
+			Enter passphrase (empty for no passphrase):
+			Enter same passphrase again:
 		
 		#verificando as chaves criadas no perfil do usuário local
 		#opção do comando ls: ~ (atalho do path $HOME), -l (long listing), -h (human readable), * (curinga qualquer coisa)
@@ -124,10 +143,10 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 		#OBSERVAÇÃO IMPORTANTE: arquivo vaamonde.pub é a Chave Pública criada é o arquivo: vaamonde é a
 		#Chave Privada criada.
 
-		#copiando a chave pública para o servidor Ubuntu
+		#copiando a Chave Pública para o servidor Ubuntu
 		ssh-copy-id vaamonde@172.16.1.20
 
-		#verificando remotamente a chave copiada para o servidor Ubuntu
+		#verificando remotamente a Chave Pública copiada para o servidor Ubuntu
 		#opção do comando ls: ~ (atalho do path $HOME), -l (long listing), -h (human readable), * (curinga qualquer coisa)
 		ssh vaamonde@172.16.1.20 "ls -lh ~/.ssh/vaamonde*"
 
@@ -141,17 +160,17 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 		Pesquisa do Windows
 			PuTTYgen
 				<Generate>
-					#OBSERVAÇÃO IMPORTANTE: PARA GERAR O PAR DE CHAVES PÚBLICA/PRIVA UTILIZANDO O
-					#PUTTYGEN, APÓS CLICAR EM: <GENERATE> VOCÊ PRECISAR MOVIMENTO O MOUSE DENTRO
-					#DATA ÁREA EM BRANCO (MOVING THE MOUSE OVER THE BLANK AREA) PARA INICIAR O
-					#PROCESSO DE GERAÇÃO DAS CHAVES.
+					#OBSERVAÇÃO IMPORTANTE: PARA GERAR O PAR DE CHAVES PÚBLICA/PRIVADA UTILIZANDO O
+					#PUTTYGEN, APÓS CLICAR EM: <GENERATE> VOCÊ PRECISAR MOVIMENTAR O MOUSE DENTRO
+					#DA ÁREA EM BRANCO (MOVING THE MOUSE OVER THE BLANK AREA) PARA INICIAR O PROCESSO 
+					#DE GERAÇÃO DAS CHAVES SE EXECUTADO.
 				<Save public key>
 					C:\Users\vaamonde\.ssh\vaamonde.pub
 				<Save private key>
 					<YES>
 						C:\Users\vaamonde\.ssh\vaamonde
 
-#04_ Importando o Par de Chaves Pública/Privada utilizando o Powershell (Windows)<br>
+#04_ Importando o Par de Chaves Pública/Privada utilizando o Powershell (Windows 10)<br>
 
 	#OBSERVAÇÃO IMPORTANTE: se você fez a geração das Chaves Pública/Privada utilizando o GNU/Linux,
 	#para importar essas chaves em outro equipamento você precisar enviar a chaves por email, pendrive,
@@ -166,7 +185,7 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 			Get-Service ssh-agent
 			
 			#alterar a inicialização do serviço do SSH-Agent
-			Set-Service ssh-agent -StartupType Automatic <Enter> (Ou mudar para: Manual)
+			Set-Service ssh-agent -StartupType Automatic (Ou mudar para: Manual)
 			
 			#iniciar o serviço do SSH-Agent
 			Start-Service ssh-agent
@@ -175,16 +194,18 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 			exit
 
 	#OBSERVAÇÃO IMPORTANTE: Copiar a Chave Privada para o diretório padrão de Chaves do SSH no
-	#Perfil do Usuário do Windows em: C:\Users\SEU_USUÁRIO\.ssh
+	#Perfil do Usuário do Windows 10 em: C:\Users\SEU_USUÁRIO\.ssh
 	
 		Segunda etapa: Powershell do perfil do usuário sem ser como administrador
 			
 			#acessar o diretório das chaves Pública/Privadas do SSH
 			cd C:\Users\vaamonde\.ssh
+			
+			#listar o conteúdo do diretório
 			ls
 
 			#adicionar a chave privada no perfil do seu usuário
-			ssh-add .\vaamonde <Enter>
+			ssh-add .\vaamonde
 
 #05_ Editando o arquivo de configuração do OpenSSH Server no Ubuntu Server<br>
 
@@ -241,8 +262,10 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 	Terminal: Ctrl + Alt + T
 		ssh vaamonde@172.16.1.20 (alterar o usuário e endereço IPv4 do seu servidor)
 	
-	#verificando os Log's de acesso ao servidor
-	sudo cat /var/log/auth.log | grep ssh
-	sudo cat /var/log/syslog | grep ssh
-	sudo cat /var/log/hosts-deny.log
-	sudo cat /var/log/hosts-allow-ssh.log
+	#verificando os Log's de acesso remoto do servidor Ubuntu
+	#opção do comando cat: -n (number line)
+	#opção do redirecionador | (pipe): Conecta a saída padrão com a entrada padrão de outro comando
+	sudo cat -n /var/log/auth.log | grep ssh
+	sudo cat -n /var/log/syslog | grep ssh
+	sudo cat -n /var/log/hosts-deny.log
+	sudo cat -n /var/log/hosts-allow-ssh.log
