@@ -247,3 +247,16 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	#verificando o arquivo copiado no diretório do Apache2
 	#opção do comando ls: -l (long listing), -h (human readable), -a (all)
 	ls -lha /var/www/html/ca/pti-ca*
+
+=========================================================================================
+
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO CA SE VOCÊ CONSEGUIU FAZER O A CRIAÇÃO COM 
+A SEGUINTE FRASE: Criação da CA realizado com sucesso!!! #BoraParaPrática
+
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
+MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+
+LINK DO SELO: 
+
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
+#ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafica #desaficertifica

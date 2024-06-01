@@ -1,0 +1,15 @@
+[Unit]
+Description=WebSSH Terminal Interface
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+ExecStart=/usr/local/bin/wssh \
+	--address='172.16.1.20' --port=2222 --policy=reject --encoding='utf-8' 
+
+RestartSec=10
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
