@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 30/05/2024<br>
-#Versão: 0.10<br>
+#Data de atualização: 02/06/2024<br>
+#Versão: 0.11<br>
 
 OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO OPENSSH SE VOCÊ CONSEGUIU FAZER O A SEGURANÇA COM 
 A SEGUINTE FRASE: Segurança do OpenSSH realizado com sucesso!!! #BoraParaPrática
@@ -129,6 +129,10 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 		#OBSERVAÇÃO IMPORTANTE: O nome do Par de Chaves Pública/Privada pode ser qualquer um,
 		#recomendo criar o nome da chave com base no serviço, nome do servidor ou usuário que 
 		#você está permitindo o acesso, exemplo: wsvaamonde - vaamonde - guacamole - etc...
+
+		#OBSERVAÇÃO IMPORTANTE: na geração do Par de Chaves Pública/Privada você pode adicionar
+		#uma senha para a abertura das chaves, muitas aplicações infelizmente não entende esse
+		#recurso, pois isso e recomendado deixar sem senha (Enter passphrase).
 		
 		#gerando o par de chaves Pública/Privada no perfil do usuário local
 		ssh-keygen

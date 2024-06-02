@@ -121,9 +121,9 @@ servidores ssh. Está escrito em Python, baseado em tornado, paramiko e xterm.js
 		Port: 22
 		Username: vaamonde
 		Password: pti@2018
-		Private Key: (SERÁ CONFIGURADO FUTURAMENTE QUANDO GERAR O CERTIFICADO DO SSH)
-		Passphrase: (SÓ UTILIZAR ESSA OPÇÃO SE O SEU CERTIFICADO TEM TENHA DE ACESSO)
-		Totp (time-based one-time password): 
+		Private Key: /home/vaamonde/.ssh/wsvaamonde
+		Passphrase: (SÓ UTILIZAR ESSA OPÇÃO SE O SEU CERTIFICADO TIVER SENHA DE ACESSO)
+		Totp (time-based one-time password): (UTILIZAR ESSA OPÇÃO SOMENTE SE VOCÊ TIVER O 2FA)
 		<Connect>
 
 =========================================================================================
