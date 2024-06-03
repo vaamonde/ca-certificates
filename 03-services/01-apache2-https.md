@@ -36,6 +36,7 @@ Conteúdo estudado nesse desafio:<br>
 #14_ Testando o HTTP e HTTPs do Apache2 Server no navegador<br>
 #15_ Desativar o Site Padrão HTTP do Apache2 Server no Ubuntu Server.
 
+Site Oficial do Apache2: https://httpd.apache.org/<br>
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
 Site Oficial do Certbot (Let's Encrypt): https://certbot.eff.org/
@@ -66,9 +67,9 @@ aplicativos como navegação na web, email, mensagens instantâneas e voz sobre 
 Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e<br>
 navegadores web.
 
-O Servidor HTTP Apache ou Servidor Apache ou HTTP Daemon Apache ou somente Apache, é o<br>
-servidor web livre criado em 1995 por um grupo de desenvolvedores da NCSA, tendo como<br>
-base o servidor web NCSA HTTPd criado por Rob McCool.
+O Servidor HTTP Apache ou Servidor Apache ou HTTP Daemon Apache ou somente Apache, é o servidor<br>
+web livre criado em 1995 por um grupo de desenvolvedores da NCSA, tendo como base o servidor<br>
+web NCSA HTTPd criado por Rob McCool.
 
 #01_ Fazendo o download do Arquivo de Configuração do Certificado do Apache2 Server<br>
 

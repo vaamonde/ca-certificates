@@ -10,6 +10,9 @@
 #Data de atualização: 18/12/2023<br>
 #Versão: 0.02<br>
 
+Site Oficial do Apache2: https://httpd.apache.org/<br>
+Site Oficial do Apache Tomcat: https://tomcat.apache.org/<br>
+Site Oficial do OpenJDK: https://openjdk.org/<br>
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
 Site Oficial do Certbot (Let's Encrypt): https://certbot.eff.org/

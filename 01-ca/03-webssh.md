@@ -109,7 +109,7 @@ servidores ssh. Está escrito em Python, baseado em tornado, paramiko e xterm.js
 #07_ Localização do Binário e Arquivos de Configuração do WebSSH<br>
 
 	/usr/local/bin/wssh                               Binário do WebSSH
-	/usr/local/lib/python3.10/dist-packages/webssh/*  Diretório do arquivos de configuração do WebSSH
+	/usr/local/lib/python3.10/dist-packages/webssh/*  Diretório dos arquivos de configuração do WebSSH
 	/etc/systemd/system/webssh.service                Arquivo de Serviço do WebSSH
 
 #08_ Testando WebSSH no navegador<br>

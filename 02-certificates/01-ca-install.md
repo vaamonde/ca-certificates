@@ -244,4 +244,8 @@ navegadores web.
 	#baixando o certificado do nosso servidor via navegador:
 	safari ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 	
-	#EM DESENVOLVIMENTO
+	Pasta: Download
+		Ajustes
+			Instalar
+				Digite sua senha do dispositivo
+			<Instalar>
