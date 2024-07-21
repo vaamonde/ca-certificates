@@ -10,8 +10,8 @@
 #Data de atualização: 21/07/2024<br>
 #Versão: 0.03<br>
 
-OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO TOMCAT10 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM 
-A SEGUINTE FRASE: Instalação da Certificado no Tomcat10 realizado com sucesso!!! #BoraParaPrática
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO WEBSSH SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM 
+A SEGUINTE FRASE: Instalação da Certificado no WebSSH-TLS realizado com sucesso!!! #BoraParaPrática
 
 COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
 MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
@@ -22,28 +22,23 @@ LINK DO SELO:
 #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafitomcat10 #desaficertificado
 
 Conteúdo estudado nesse desafio:<br>
-#01_ Fazendo o download do Arquivo de Configuração do Certificado do Apache TomCAT 10 Server<br>
-#02_ Editando o arquivo de Arquivo de Configuração do Certificado do Apache TomCAT 10 Server<br>
-#03_ Criando o Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache TomCAT 10 Server no Ubuntu Server<br>
-#04_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache TomCAT 10 Server no Ubuntu Server<br>
-#05_ Verificando o arquivo de Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache TomCAT 10 Server no Ubuntu Server<br>
-#06_ Criando o arquivo CSR (Certificate Signing Request) do Apache TomCAT 10 Server no Ubuntu Server<br>
-#07_ Criando o arquivo CRT (Certificate Request Trust) do Apache TomCAT 10 Server no Ubuntu Server<br>
-#08_ Verificando o arquivo CRT (Certificate Request Trust) do Apache TomCAT 10 Server no Ubuntu Server<br>
-#09_ Exportando o certificado PKCS#12 PEM (Privacy Enhanced Mail) do Apache TomCAT 10 Server no Ubuntu Server<br>
-#10_ Importando o certificado PKCS#12 PEM (Privacy Enhanced Mail) no arquivo JKS (Java KeyStore) do Apache TomCAT 10 Server no Ubuntu Server<br>
-#11_ Fazendo o download do Arquivo de Configuração do HTTPS do Apache TomCAT 10 Server<br>
-#12_ Editando o arquivo de Configuração do HTTPS do Apache TomCAT 10 Server<br>
-#13_ Reinicializar o Serviço do Apache TomCAT Server no Ubuntu Server<br>
-#14_ Verificando a Porta de Conexão do Apache TomCAT Server no Ubuntu Server<br>
-#15_ Testando o Certificado TLS/SSL do Apache TomCAT Server no ubuntu Server<br>
-#16_ Testando o HTTPS do Apache TomCAT Server no navegador<br>
-#17_ Usuário e Senha de Administração do Apache TomCAT Server
+#01_ Fazendo o download do Arquivo de Configuração do Certificado do WebSSH<b
+#02_ Editando o arquivo de Arquivo de Configuração do Certificado do WebSSH<br>
+#03_ Criando o Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do WebSSH no Ubuntu Server<br>
+#04_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do WebSSH no Ubuntu Server<br>
+#05_ Verificando o arquivo de Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do WebSSH no Ubuntu Server<br>
+#06_ Criando o arquivo CSR (Certificate Signing Request) do WebSSH no Ubuntu Server<br>
+#07_ Criando o arquivo CRT (Certificate Request Trust) do WebSSH no Ubuntu Server<br>
+#08_ Verificando o arquivo CRT (Certificate Request Trust) do WebSSH no Ubuntu Server<br>
+#09_ Editando o arquivo de Serviço do WebSSH no Ubuntu Server<br>
+#10_ Reinicializar o Serviço do WebSSH no Ubuntu Server<br>
+#11_ Verificando a Porta de Conexão do WebSSH no Ubuntu Server<br
+#12_ Testando o Certificado TLS/SSL do WebSSH no ubuntu Server<br>
+#13_ Testando o HTTPS do WebSSH no navegador
 
-Site Oficial do Apache2: https://httpd.apache.org/<br>
-Site Oficial do Apache Tomcat: https://tomcat.apache.org/<br>
-Site Oficial do OpenJDK: https://openjdk.org/<br>
+Site Oficial do OpenSSH: https://www.openssh.com/<br>
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
+Site Oficial do WebSSH: https://github.com/huashengdun/webssh<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
 Site Oficial do Certbot (Let's Encrypt): https://certbot.eff.org/
 
@@ -73,22 +68,23 @@ aplicativos como navegação na web, email, mensagens instantâneas e voz sobre 
 Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e<br>
 navegadores web.
 
-O Tomcat é um servidor web Java, mais especificamente, um container de servlets. O Tomcat<br>
-implementa, dentre outras de menor relevância, as tecnologias Java Servlet e JavaServer<br>
-Pages e não é um container Enterprise JavaBeans. Desenvolvido pela Apache Software Foundation,<br>
-é distribuído como software livre.
+OpenSSH é um conjunto de utilitários de rede relacionado à segurança que provém a criptografia<br> 
+em sessões de comunicações em uma rede de computadores usando o protocolo SSH.
 
-#01_ Fazendo o download do Arquivo de Configuração do Certificado do Apache TomCAT 10 Server<br>
+WebSSH é um aplicativo web simples para ser usado como cliente ssh para conectar-se aos seus <br>
+servidores ssh. Está escrito em Python, baseado em tornado, paramiko e xterm.js.
+
+#01_ Fazendo o download do Arquivo de Configuração do Certificado do WebSSH<br>
 ```bash
-#download do arquivo de configuração do Certificado do Apache TomCAT 10 Server
+#download do arquivo de configuração do Certificado do WebSSH
 #opção do comando wget: -v (verbose), -O (output file)
-sudo wget -v -O /etc/ssl/conf/tomcat10.conf https://raw.githubusercontent.com/vaamonde/ca-certificates/main/conf/tomcat10.conf
+sudo wget -v -O /etc/ssl/conf/webssh.conf https://raw.githubusercontent.com/vaamonde/ca-certificates/main/conf/webssh.conf
 ```
 
-#02_ Editando o arquivo de Arquivo de Configuração do Certificado do Apache TomCAT 10 Server<br>
+#02_ Editando o arquivo de Arquivo de Configuração do Certificado do WebSSH<br>
 ```bash
-#editando o arquivo de configuração do Certificado do Apache TomCAT 10 Server
-sudo vim /etc/ssl/conf/tomcat10.conf
+#editando o arquivo de configuração do Certificado do WebSSH
+sudo vim /etc/ssl/conf/webssh.conf
 INSERT
 
 	#alterar as informações principais do Subject da CA a partir da linha: 23
@@ -106,14 +102,14 @@ INSERT
 	# Esta seção define extensões x509 v3 a serem solicitadas em nossas solicitações.
 
 	#alterar as informações principais dos Nomes Alternativos do Certificado a partir da linha: 92
-	# Bloco de configuração dos nomes alternativos do certificado do Apache TomCAT 10 Server
-	# Adicionar todos os Nomes e Endereços IPv4 de acesso ao Servidor Apache TomCAT 10 Server
+	# Bloco de configuração dos nomes alternativos do certificado do WebSSH
+	# Adicionar todos os Nomes e Endereços IPv4 de acesso ao Servidor WebSSH
 
 #salvar e sair do arquivo
 ESC SHIFT : x <Enter>
 ```
 
-#03_ Criando o Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache TomCAT 10 Server no Ubuntu Server<br>
+#03_ Criando o Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do WebSSH no Ubuntu Server<br>
 ```bash
 #Tipo de criptografia da chave raiz privada com as opções de: -aes128, -aes192, -aes256, -camellia128, 
 #-camellia192, -camellia256, -des, -des3 ou -idea, padrão utilizado: -aes256
@@ -121,36 +117,36 @@ ESC SHIFT : x <Enter>
 #Tamanho da chave raiz privada utilizada em todas as configurações dos certificados, opções de: 1024, 
 #2048, 3072 ou 4096, padrão utilizado: 2048 bits
 
-#criando a chave raiz priva do Apache TomCAT 10 Server
+#criando a chave raiz priva do WebSSH
 #opções do comando openssl: genrsa (command generates an RSA private key), -out (The output file to 
 #write to, or standard output if not specified), -passout (The output file password source), pass: 
 #(The actual password is password), bits (The size of the private key to generate in bits)
-sudo openssl genrsa -aes256 -out /etc/ssl/private/tomcat10.old -passout pass:pti@2018 2048
+sudo openssl genrsa -aes256 -out /etc/ssl/private/webssh.old -passout pass:pti@2018 2048
 ```
 
-#04_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache TomCAT 10 Server no Ubuntu Server<br>
+#04_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do WebSSH no Ubuntu Server<br>
 ```bash
 #removendo a senha do arquivo de chave raiz privada e criando o novo arquivo sem senha
 #opções do comando openssl: rsa (command processes RSA keys), -in (The input file to read from, or 
 #standard input if not specified), -out (The output file to write to, or standard output if not 
 # specified), -passin (The key password source), pass: (The actual password is password)
-sudo openssl rsa -in /etc/ssl/private/tomcat10.key.old -out /etc/ssl/private/tomcat10.key -passin pass:pti@2018
+sudo openssl rsa -in /etc/ssl/private/webssh.key.old -out /etc/ssl/private/webssh.key -passin pass:pti@2018
 
 #removendo o arquivo temporário de Chave Raiz RSA com senha
 # opção do comando rm: -v (verbose)	
-sudo rm -v /etc/ssl/private/tomcat10.key.old
+sudo rm -v /etc/ssl/private/webssh.key.old
 ```
 
-#05_ Verificando o arquivo de Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache TomCAT 10 Server no Ubuntu Server<br>
+#05_ Verificando o arquivo de Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do WebSSH no Ubuntu Server<br>
 ```bash
 #opções do comando openssl: rsa (command processes RSA keys), -noout (Do not output the encoded 
 #version of the key), -modulus (Print the value of the modulus of the key), -in (The input file 
 #to read from, or standard input if not specified), md5 (The message digest to use MD5 checksums)
 #opção do redirecionador de saída |: Conecta a saída padrão com a entrada padrão de outro comando
-sudo openssl rsa -noout -modulus -in /etc/ssl/private/tomcat10.key | openssl md5
+sudo openssl rsa -noout -modulus -in /etc/ssl/private/webssh.key | openssl md5
 ```
 
-#06_ Criando o arquivo CSR (Certificate Signing Request) do Apache TomCAT 10 Server no Ubuntu Server<br>
+#06_ Criando o arquivo CSR (Certificate Signing Request) do WebSSH no Ubuntu Server<br>
 ```bash
 #Assinatura da chave de criptografia privada com as opções de: -md5, -sha1, -sha224, -sha256, -sha384 
 #ou -sha512, padrão utilizado: sha256
@@ -161,11 +157,11 @@ sudo openssl rsa -noout -modulus -in /etc/ssl/private/tomcat10.key | openssl md5
 #key), -key (The file to read the private key from), -out (The output file to write to, or standard 
 #output if not specified), -extensions (Specify alternative sections to include certificate extensions), 
 #-config (Specify an alternative configuration file)
-sudo openssl req -new -sha256 -nodes -key /etc/ssl/private/tomca10.key -out /etc/ssl/requests/tomcat10.csr \
--extensions v3_req -config /etc/ssl/conf/tomcat10.conf
+sudo openssl req -new -sha256 -nodes -key /etc/ssl/private/webssh.key -out /etc/ssl/requests/webssh.csr \
+-extensions v3_req -config /etc/ssl/conf/webssh.conf
 ```
 
-#07_ Criando o arquivo CRT (Certificate Request Trust) do Apache TomCAT 10 Server no Ubuntu Server<br>
+#07_ Criando o arquivo CRT (Certificate Request Trust) do WebSSH no Ubuntu Server<br>
 ```bash
 #Assinatura da chave de criptografia privada com as opções de: -md5, -sha1, -sha224, -sha256, -sha384 
 #ou -sha512, padrão utilizado: -sha256
@@ -178,19 +174,19 @@ sudo openssl req -new -sha256 -nodes -key /etc/ssl/private/tomca10.key -out /etc
 #
 # Sign the certificate? [y/n]: y <Enter>
 # 1 out of 1 certificate request certified, commit? [y/n]: y <Enter>	
-sudo openssl ca -in /etc/ssl/requests/tomcat10.csr -out /etc/ssl/newcerts/tomcat10.crt -config /etc/ssl/conf/ca.conf \
--extensions v3_req -extfile /etc/ssl/conf/tomcat10.conf
+sudo openssl ca -in /etc/ssl/requests/webssh.csr -out /etc/ssl/newcerts/webssh.crt -config /etc/ssl/conf/ca.conf \
+-extensions v3_req -extfile /etc/ssl/conf/webssh.conf
 ```
 
-#08_ Verificando o arquivo CRT (Certificate Request Trust) do Apache TomCAT 10 Server no Ubuntu Server<br>
+#08_ Verificando o arquivo CRT (Certificate Request Trust) do WebSSH no Ubuntu Server<br>
 ```bash
 #opções do comando openssl: x509 (command is a multi-purpose certificate utility), -noout (Do not output 
 #the encoded version of the request), -modulus (Print the value of the modulus of the public key contained 
 #in the certificate), -text (Print the full certificate in text form), -in (The input file to read from, 
 #or standard input if not specified), md5 (The message digest to use MD5 checksums)
 #opção do redirecionador de saída |: Conecta a saída padrão com a entrada padrão de outro comando
-sudo openssl x509 -noout -modulus -in /etc/ssl/newcerts/tomcat10.crt | openssl md5
-sudo openssl x509 -noout -text -in /etc/ssl/newcerts/tomcat10.crt
+sudo openssl x509 -noout -modulus -in /etc/ssl/newcerts/webssh.crt | openssl md5
+sudo openssl x509 -noout -text -in /etc/ssl/newcerts/webssh.crt
 
 #listando o conteúdo do banco de dados do certificados emitidos
 sudo cat /etc/ssl/index.txt
@@ -198,98 +194,61 @@ sudo cat /etc/ssl/index.txt.attr
 sudo cat /etc/ssl/serial
 ```
 
-#09_ Exportando o certificado PKCS#12 PEM (Privacy Enhanced Mail) do Apache TomCAT 10 Server no Ubuntu Server<br>
+#09_ Editando o arquivo de Serviço do WebSSH no Ubuntu Server<br>
 ```bash
-#criando o certificado PEM do Apache TomCAT Server
-#opções do comando openssl: pkcs12: (PKCS#12 Data Management) -export: (The export file PEM PKCS#12 file 
-#export with private key data and root certification unit), -in: (The input file to read from, or standard 
-#input if not specified), -inkey: (The input file private key), -out: (The output file to write to, or 
-#standard output if none is specified), -name: (The alias name of the certificate export), -CAfile: (The 
-#file containing the unit's signed certificate Root Certificate), -caname: (The Root certification unit 
-#name), -passout (The output file password source), pass: (The actual password is password)
-sudo openssl pkcs12 -export -in /etc/ssl/newcerts/tomcat10.crt -inkey /etc/ssl/private/tomcat10.key \
--out /opt/tomcat/conf/tomcat10.pem -name tomcat -CAfile /etc/ssl/newcerts/pti-ca.crt -caname root \
--passout pass:pti@2018
-```
-
-#10_ Importando o certificado PKCS#12 PEM (Privacy Enhanced Mail) no arquivo JKS (Java KeyStore) do Apache TomCAT 10 Server no Ubuntu Server<br>
-```bash
-#criando o arquivo de chaves JKS do Apache TomCAT Server
-#opções do comando keytool: importkeystore: (Imports one or all entries from another keystore),
-#-deststorepass: (Destination keystore password), -destkeypass: (Destination key password)
-#-destkeystore: (Destination keystore name), -srckeystore: (Source keystore name), -srcstoretype: 
-#(Source keystore type), -srcstorepass: (Source keystore password), -alias: (Source alias)
-sudo keytool -importkeystore -deststorepass pti@2018 -destkeypass pti@2018 -destkeystore \
-/opt/tomcat/conf/tomcat10.jks -srckeystore /opt/tomcat/conf/tomcat10.pem -srcstoretype PKCS12 \
--srcstorepass pti@2018 -alias tomcat
-```
-
-#11_ Fazendo o download do Arquivo de Configuração do HTTPS do Apache TomCAT 10 Server<br>
-```bash
-#download do arquivo de configuração do HTTPS do Apache TomCAT 10 Server
-#opção do comando wget: -v (verbose), -O (output file)
-sudo wget -v -O /opt/tomcat/conf/server.xml https://raw.githubusercontent.com/vaamonde/ca-certificates/main/conf/server.xml
-```
-
-#12_ Editando o arquivo de Configuração do HTTPS do Apache TomCAT 10 Server<br>
-```bash
-#editando o arquivo de configuração do HTTPS do Apache TomCAT 10 Server
-sudo vim /opt/tomcat/conf/server.xml
+#editando o arquivo de serviço do WebSSH
+sudo vim /etc/systemd/system/webssh.service
 INSERT
 
-	#comentar as configurações de HTTP do Apache TomCAT Server a partir da linha: 34
-	# Configuração principal do Tomcat referente a Porta padrão (8080 - HTTPS), Timeout e
-	# Porta Segura (8443 - HTTPS)
-
-	#descomentar as configurações de HTTPs do Apache TomCAT Server a partir da linha: 42
-	# Configuração do suporte ao SSL/TLS do Tomcat utilizando o software Keytool
-	# e Certificados Assinados utilizando o OpenSSL
-	# Comando para a geração do certificado do Tomcat SSL/TLS não assinado pela CA
-	# keytool -genkey -alias tomcat -keyalg RSA -keystore /opt/tomcat/conf/tomcat10.jks 
-	# Descomentar as linhas abaixo depois de configurar o TLS/SSL do Apache Tomcat
+	#OBSERVAÇÃO IMPORTANTE: descomentar as configurações do TLS/SSL a partir da linha: 10
+	#configuração do certificado para as conexões em HTTPS
+	--certfile='/etc/ssl/newcerts/webssh.crt' --keyfile='/etc/ssl/private/webssh.key'
+	--ssladdress='172.16.1.20' --redirect='true' --sslport='4433'
 
 #salvar e sair do arquivo
-ESC SHIFT :x <Enter>
+ESC SHIFT : x <Enter>
 ```
 
-#13_ Reinicializar o Serviço do Apache TomCAT Server no Ubuntu Server<br>
+#10_ Reinicializar o Serviço do WebSSH no Ubuntu Server<br>
 ```bash
-#reiniciando o Serviços do Apache TomCAT Server
-sudo systemctl restart tomcat10
-sudo systemctl status tomcat10
+#reiniciando o Serviços do WebSSH
+sudo systemctl restart webssh
+sudo systemctl status webssh
 ```
 
-#14_ Verificando a Porta de Conexão do Apache TomCAT Server no Ubuntu Server<br>
+#11_ Verificando a Porta de Conexão do WebSSH no Ubuntu Server<br>
 ```bash
-#verificando as portas 80 HTTP e 443 HTTPS do Apache TomCAT Server
+#verificando as portas 80 HTTP e 443 HTTPS do WebSSH
 #opção do comando lsof: -n (network number), -P (port number), -i (list IP Address), -s (alone directs)
-sudo lsof -nP -iTCP:'8443' -sTCP:LISTEN
+sudo lsof -nP -iTCP:'4433' -sTCP:LISTEN
 ```
 
-#15_ Testando o Certificado TLS/SSL do Apache TomCAT Server no ubuntu Server<br>
+#12_ Testando o Certificado TLS/SSL do WebSSH no ubuntu Server<br>
 ```bash
-#testando o certificado do Apache TomCAT Server no Ubuntu Server
+#testando o certificado do WebSSH no Ubuntu Server
 #opção do comando echo: | (piper, faz a função de Enter no comando)
 #opções do comando openssl: s_client (command implements a generic SSL/TLS client which 
 #connects to a remote host using SSL/TLS), -connect (The host and port to connect to),
 #-servername (Include the TLS Server Name Indication (SNI) extension in the ClientHello 
 #message), -showcerts (Display the whole server certificate chain: normally only the server 
 #certificate itself is displayed)
-echo | openssl s_client -connect localhost:8443 -servername 172.16.1.20 -showcerts
+echo | openssl s_client -connect localhost:4433 -servername 172.16.1.20 -showcerts
 ```
 
-#16_ Testando o HTTPS do Apache TomCAT Server no navegador<br>
+#13_ Testando o HTTPS do WebSSH no navegador<br>
 ```bash
 #utilizar os navegadores para testar o HTTPS
-firefox ou google chrome: https://endereço_ipv4_ubuntuserver:8443
-```
+firefox ou google chrome: https://endereço_ipv4_ubuntuserver:4433
 
-#17_ Usuário e Senha de Administração do Apache TomCAT Server<br>
-```bash
-Clique em: Manager App
-	Usuário padrão: admin
-	Senha padrão..: pti@2018
-<Fazer Login>
+
+	Hostname: 172.16.1.20
+	Port: 22
+	Username: vaamonde
+	Password: pti@2018
+	Private Key: /home/vaamonde/.ssh/wsvaamonde
+	Passphrase: (SÓ UTILIZAR ESSA OPÇÃO SE O SEU CERTIFICADO TIVER SENHA DE ACESSO)
+	Totp (time-based one-time password): (UTILIZAR ESSA OPÇÃO SOMENTE SE VOCÊ TIVER O 2FA)
+	<Connect>
 ```
 
 =========================================================================================
