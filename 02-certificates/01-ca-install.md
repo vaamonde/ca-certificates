@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 30/05/2024<br>
-#Versão: 0.05<br>
+#Data de atualização: 21/07/2024<br>
+#Versão: 0.06<br>
 
 OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO CA SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM 
 A SEGUINTE FRASE: Instalação da CA realizado com sucesso!!! #BoraParaPrática
@@ -63,189 +63,226 @@ Os sites podem usar o TLS para proteger todas as comunicações entre seus servi
 navegadores web.
 
 #01_ Instalação da Autoridade Certificadora CA no Mozilla Firefox (GNU/Linux ou Microsoft Windows)<br>
+```bash
+#baixando o certificado do nosso servidor via navegador:
+firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
-	#baixando o certificado do nosso servidor via navegador:
-	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
+#OBSERVAÇÃO IMPORTANTE: no Windows ou no GNU/Linux o Mozilla Firefox utiliza o seu próprio
+#sistema de gerenciamento de Unidades Certificadoras e Certificados Assinados, ele não usa
+#o do sistema operacional.
 
-	#OBSERVAÇÃO IMPORTANTE: no Windows ou no GNU/Linux o Mozilla Firefox utiliza o seu próprio
-	#sistema de gerenciamento de Unidades Certificadoras e Certificados Assinados, ele não usa
-	#o do sistema operacional.
-
-	Abrir menu de Aplicativo
-		Preferências ou Opções ou Configurações
-			Pesquisar em preferências: Ver certificados
-				Autoridades
-					Importar: pti-ca.crt
-						Yes: Confiar nesta CA para identificar sites
-						Yes: Confiar nesta autoridade certificadora para identificar usuários de email
-						<Ver> Examinar certificado da CA
-					<OK>
+#instalando o certificado no Firefox
+Abrir menu de Aplicativo
+	Preferências ou Opções ou Configurações
+		Pesquisar em preferências: Ver certificados
+			Autoridades
+				Importar: pti-ca.crt
+					Yes: Confiar nesta CA para identificar sites
+					Yes: Confiar nesta autoridade certificadora para identificar usuários de email
+					<Ver> Examinar certificado da CA
 				<OK>
-
-				Autoridades
-					Bora para Pratica
-						wsvaamonde.pti.intra
-
-#02_ Instalação da Autoridade Certificadora CA no Google Chrome (GNU/Linux ou Microsoft Windows)<br>
-
-	#baixando o certificado do nosso servidor via navegador:
-	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
-
-	#OBSERVAÇÃO IMPORTANTE: o Google Chrome no GNU/Linux utiliza o seu próprio sistema de
-	#gerenciamento de Unidades Certificadoras e Certificados Assinados, ele não usa o do
-	#sistema operacional GNU/Linux, já no Windows ele usa do próprio sistema operacional
-	#não sendo necessário fazer esse procedimento.
-
-	chrome://settings/certificates
-		Autoridades
-			Importar: pti-ca.crt
-				Yes: Confiar neste certificado para a identificação de websites.
-				Yes: Confiar neste certificado para identificar usuários de e-mail
-				Yes: Confiar neste certificado para a identificação de criadores de software
 			<OK>
 
-		Autoridades
-			org-Bora para Pratica
-				wsvaamonde.pti.intra
-	chrome://restart
+#consultando o certificado no Firefox
+Autoridades
+	Bora para Pratica
+		wsvaamonde.pti.intra
+```
+
+#02_ Instalação da Autoridade Certificadora CA no Google Chrome (GNU/Linux ou Microsoft Windows)<br>
+```bash
+#baixando o certificado do nosso servidor via navegador:
+firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
+
+#OBSERVAÇÃO IMPORTANTE: o Google Chrome no GNU/Linux utiliza o seu próprio sistema de
+#gerenciamento de Unidades Certificadoras e Certificados Assinados, ele não usa o do
+#sistema operacional GNU/Linux, já no Windows ele usa do próprio sistema operacional
+#não sendo necessário fazer esse procedimento.
+
+#instalando o certificado no Google Chrome
+chrome://settings/certificates
+	Autoridades
+		Importar: pti-ca.crt
+			Yes: Confiar neste certificado para a identificação de websites.
+			Yes: Confiar neste certificado para identificar usuários de e-mail
+			Yes: Confiar neste certificado para a identificação de criadores de software
+		<OK>
+
+#consultando o certificado no Google Chrome
+Autoridades
+	org-Bora para Pratica
+		wsvaamonde.pti.intra
+
+#reiniciando o navegador Google Chrome
+chrome://restart
+```
 
 #03_ Instalação da Autoridade Certificadora CA no Microsoft Edge (GNU/Linux ou Microsoft Windows)<br>
+```bash
+#baixando o certificado do nosso servidor de navegador:
+firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
-	#baixando o certificado do nosso servidor de navegador:
-	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
+#OBSERVAÇÃO IMPORTANTE: o Microsoft Edge no GNU/Linux utiliza o seu próprio sistema de
+#gerenciamento de Unidades Certificadoras e Certificados Assinados, ele não usa o do
+#sistema operacional GNU/Linux, já no Windows ele usa do próprio sistema operacional
+#não sendo necessário fazer esse procedimento.
 
-	#OBSERVAÇÃO IMPORTANTE: o Microsoft Edge no GNU/Linux utiliza o seu próprio sistema de
-	#gerenciamento de Unidades Certificadoras e Certificados Assinados, ele não usa o do
-	#sistema operacional GNU/Linux, já no Windows ele usa do próprio sistema operacional
-	#não sendo necessário fazer esse procedimento.
+#OBSERVAÇÃO IMPORTANTE: O Microsoft Edge é um navegador baseado no Chromium e usa um 
+#armazenamento privado semelhante ao Chromium. O Edge usa um keystore em ~/.pki e você 
+#precisa do programa utilitário CertUtil para instalar o certificado no Edge.
+#Mais informações acesse: https://chromium.googlesource.com/chromium/src/+/master/docs/linux/cert_management.md
 
-	#OBSERVAÇÃO IMPORTANTE: O Microsoft Edge é um navegador baseado no Chromium e usa um 
-	#armazenamento privado semelhante ao Chromium. O Edge usa um keystore em ~/.pki e você 
-	#precisa do programa utilitário CertUtil para instalar o certificado no Edge.
-	#Mais informações acesse: https://chromium.googlesource.com/chromium/src/+/master/docs/linux/cert_management.md
+#instalando a biblioteca Libnss3
+sudo apt update
+sudo apt install libnss3-tools
 
-	#instalando a biblioteca Libnss3
-	sudo apt update
-	sudo apt install libnss3-tools
+#instalando a Unidades Certificadora no Microsoft Edge utilizando o comando certutil
+#opções do comando certutil: -d (directory), -A (Add an existing certificate to a certificate database), 
+#-t (trustargs), -n (nickname), -i (input_file), -L (List all the certificates)
+certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n BoraParaPratica -i pti-ca.crt
+certutil -d sql:$HOME/.pki/nssdb -L
 
-	#instalando a Unidades Certificadora no Microsoft Edge utilizando o comando certutil
-	#opções do comando certutil: -d (directory), -A (Add an existing certificate to a certificate database), 
-	#-t (trustargs), -n (nickname), -i (input_file), -L (List all the certificates)
-	certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n BoraParaPratica -i pti-ca.crt
-	certutil -d sql:$HOME/.pki/nssdb -L
-
-	Abrir menu de Aplicativo
-		Configurações
-			Gerenciar Certificados
-				Autoridades
-					Importar
+#instalando o certificado no Microsoft Edge
+Abrir menu de Aplicativo
+	Configurações
+		Gerenciar Certificados
+			Autoridades
+				Importar
+```
 
 #04_ Instalação da Autoridade Certificadora CA no Opera (GNU/Linux ou Microsoft Windows)<br>
+```bash
+#baixando o certificado do nosso servidor via navegador:
+firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
-	#baixando o certificado do nosso servidor via navegador:
-	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
+#OBSERVAÇÃO IMPORTANTE: O navegador Opera utiliza o mesmo gerenciador de Certificado do 
+#Google Chrome, se você já importou o certificado no Google Chrome na hora de importar
+#o certificado no Navegador Opera a seguinte mensagem de erro aparece para você: 
+#Certification Authority Import Error: The file contained one certificate, which was not 
+#imported: wsvaamonde.pti.intra: Certificate already exists.
 
-	#OBSERVAÇÃO IMPORTANTE: O navegador Opera utiliza o mesmo gerenciador de Certificado do 
-	#Google Chrome, se você já importou o certificado no Google Chrome na hora de importar
-	#o certificado no Navegador Opera a seguinte mensagem de erro aparece para você: 
-	#Certification Authority Import Error: The file contained one certificate, which was not 
-	#imported: wsvaamonde.pti.intra: Certificate already exists.
+#instalando o certificado no Opera
+Abrir o Menu de Configuração Fácil
+	Ir para as configurações completas do navegador
+		Configurações de pesquisa: certificado
+			Segurança
+				Gerenciar Certificados
+					Autoridades
+						Importar
+							Yes: Confie neste certificado para identificar sites
+							Yes: Confie neste certificado para identificar usuários de e-mail
+							Yes: Confie neste certificado para identificar fabricantes de software
+						<OK>
 
-	Abrir o Menu de Configuração Fácil
-		Ir para as configurações completas do navegador
-			Configurações de pesquisa: certificado
-				Segurança
-					Gerenciar Certificados
-						Autoridades
-							Importar
-								Yes: Confie neste certificado para identificar sites
-								Yes: Confie neste certificado para identificar usuários de e-mail
-								Yes: Confie neste certificado para identificar fabricantes de software
-							<OK>
-						Autoridades
-							org-Bora para Pratica
-								wsvaamonde.pti.intra
+#consultando o certificado no Opera
+Autoridades
+	org-Bora para Pratica
+		wsvaamonde.pti.intra
+```
 
 #05_ Instalação da Autoridade Certificadora CA no GNU/Linux (Linux Mint ou Ubuntu)<br>
+```bash
+#baixando o certificado do nosso servidor via navegador:
+firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
-	#baixando o certificado do nosso servidor via navegador:
-	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
+#instalando o certificado no Linux Mint
+Pasta: Download
+	Abrir como Root (Botão direito do Mouse: Abrir como root)
+		Copiar: pti-ca.crt
+		Para: /usr/local/share/ca-certificates/
+	Abrir o Terminal como Root (Botão direito do Mouse: Abrir no Terminal)
 
-	Pasta: Download
-		Abrir como Root (Botão direito do Mouse: Abrir como root)
-			Copiar: pti-ca.crt
-			Para: /usr/local/share/ca-certificates/
+#instalando e atualizando as Unidades Certificadores Raiz no Linux Mint
+sudo apt update
+sudo apt install ca-certificates
+sudo update-ca-certificates
 
-		Abrir o Terminal como Root (Botão direito do Mouse: Abrir no Terminal)
-
-			#instalando e atualizando as Unidades Certificadores Raiz no Linux Mint
-			sudo apt update
-			sudo apt install ca-certificates
-			sudo update-ca-certificates
-
-			#verificando a criação do link PEM (Privacy Enhanced Mail) no Linux Mint
-			#opção do comando ls: -l (long listing), -h (human readable), -a (all)
-			ls -lha /etc/ssl/certs/pti-ca*
+#verificando a criação do link PEM (Privacy Enhanced Mail) no Linux Mint
+#opção do comando ls: -l (long listing), -h (human readable), -a (all)
+ls -lha /etc/ssl/certs/pti-ca*
+```
 
 #06_ Instalação da Autoridade Certificadora CA no Microsoft Windows (10 ou 11)<br>
+```bash
+#baixando o certificado do nosso servidor via navegador:
+edge, firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
-	#baixando o certificado do nosso servidor via navegador:
-	edge, firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
+#instalando a CA no sistema operacional Microsoft
+Pasta: Download
+	pti-ca.crt (clicar duas vezes em cima do certificado)
+		Abrir
+			Instalar Certificado...
+				Assistente para Importação de Certificados
+					Máquina Local <Avançar>
+						Deseja permitir que este aplicativo faça alterações no seu dispositivo? <sim>
+							Colocar todos os certificados no repositório a seguir
+								Repositório de Certificados <Procurar>
+									Autoridades de Certificação Raiz Confiáveis <OK>
+									<Avançar>
+									<Concluir>
+									<OK>
+									<OK>
 
-	Pasta: Download
-		pti-ca.crt (clicar duas vezes em cima do certificado)
-			Abrir
-				Instalar Certificado...
-					Assistente para Importação de Certificados
-						Máquina Local <Avançar>
-							Deseja permitir que este aplicativo faça alterações no seu dispositivo? <sim>
-								Colocar todos os certificados no repositório a seguir
-									Repositório de Certificados <Procurar>
-										Autoridades de Certificação Raiz Confiáveis <OK>
-										<Avançar>
-										<Concluir>
-										<OK>
-										<OK>
-
-	Pesquisa do Windows
-		Gerenciar Certificados de Computador <Sim>
-			Autoridades de Certificação Raiz Confiáveis
-				Certificados
-					Emitido para:
-						wsvaamonde.pti.intra
+#pesquisando o certificado instalado no sistema operacional Microsoft
+Pesquisa do Windows
+	Gerenciar Certificados de Computador <Sim>
+		Autoridades de Certificação Raiz Confiáveis
+			Certificados
+				Emitido para:
+					wsvaamonde.pti.intra
+```
 
 #07_ Instalação da Autoridade Certificadora CA no Smartphone Android<br>
+```bash
+#baixando o certificado do nosso servidor via navegador:
+google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
-	#baixando o certificado do nosso servidor via navegador:
-	google chrome: http://endereço_ipv4_ubuntuserver/ca/
-
-	Configurações
-		Senhas e Segurança
-			Privacidade
-				Criptografia e Credenciais
-					Armazenamento de Credenciais: Credenciais confiáveis
-						Sistema: Utilizado em todo o sistema 
-						Usuário: Específico para o usuário
-				Instalar do Cartão SD
-					Menu: Download
-						Arquivo: pti-ca.crt
+#instalando o certificado no Android
+Configurações
+	Senhas e Segurança
+		Privacidade
+			Criptografia e Credenciais
+				Armazenamento de Credenciais: Credenciais confiáveis
+					Sistema: Utilizado em todo o sistema 
+					Usuário: Específico para o usuário
+			Instalar do Cartão SD
+				Menu: Download
+					Arquivo: pti-ca.crt
+```
 
 #08_ Instalação da Autoridade Certificadora CA no MacOS Apple<br>
+```bash
+#baixando o certificado do nosso servidor via navegador:
+safari ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
-	#baixando o certificado do nosso servidor via navegador:
-	safari ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
-
-	Pasta: Download
-		pti-ca.crt (clicar duas vezes em cima do certificado)
-			Abrir
+#instalando o certificado no MacOS
+Pasta: Download
+	pti-ca.crt (clicar duas vezes em cima do certificado)
+		Abrir
+```
 
 #09_ Instalação da Autoridade Certificadora CA no iOS Apple<br>
+```bash
+#baixando o certificado do nosso servidor via navegador:
+safari ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
-	#baixando o certificado do nosso servidor via navegador:
-	safari ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
-	
-	Pasta: Download
-		Ajustes
-			Instalar
-				Digite sua senha do dispositivo
-			<Instalar>
+#instalando o certificado no iOS
+Pasta: Download
+	Ajustes
+		Instalar
+			Digite sua senha do dispositivo
+		<Instalar>
+```
+
+=========================================================================================
+
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO CA SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM 
+A SEGUINTE FRASE: Instalação da CA realizado com sucesso!!! #BoraParaPrática
+
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
+MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+
+LINK DO SELO: 
+
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
+#ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafica #desaficertificado
