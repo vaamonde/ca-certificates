@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 01/06/2024<br>
-#Data de atualização: 21/07/2024<br>
-#Versão: 0.02<br>
+#Data de atualização: 25/07/2024<br>
+#Versão: 0.03<br>
 
 OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO WEBSSH SE VOCÊ CONSEGUIU FAZER O A IMPLEMENTAÇÃO COM 
 A SEGUINTE FRASE: Implementação do WebSSH realizado com sucesso!!! #BoraParaPrática
@@ -29,7 +29,8 @@ Conteúdo estudado nesse desafio:<br>
 #05_ Habilitando o Serviço do WebSSH e verificando sua Versão no Ubuntu Server<br>
 #06_ Verificando a Porta de Conexão do WebSSH<br>
 #07_ Localização do Binário e Arquivos de Configuração do WebSSH<br>
-#08_ Testando WebSSH no navegador<br>
+#08_ Liberando no Firewall a Conexão na Porta do WebSSH<br>
+#09_ Testando WebSSH no navegador<br>
 
 Site Oficial do OpenSSH: https://www.openssh.com/<br>
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
@@ -126,7 +127,17 @@ sudo lsof -nP -iTCP:'2222' -sTCP:LISTEN
 /etc/systemd/system/webssh.service                Arquivo de Serviço do WebSSH
 ```
 
-#08_ Testando WebSSH no navegador<br>
+#08_ Liberando no Firewall UFW a Conexão na Porta 2222 do WebSSH<br>
+```bash
+#Limitando (LIMIT) e Logando Tudo (LOG-ALL) da Sub-rede 172.16.1.0/24 (FROM) acessar o servidor
+#(TO) do WebSSH na porta (PORT) 2222 via protocolo TCP (PROTO TCP)
+sudo ufw limit log-all from 172.16.1.0/24 to 172.16.1.20 port 2222 proto tcp comment 'Limitando a sub-rede para acessar o WebSSH'
+
+#Verificando as Regras Detalhadas padrão do UFW em modo Numerado
+sudo ufw status verbose
+```
+
+#09_ Testando WebSSH no navegador<br>
 ```bash
 #utilizar os navegadores para testar suas páginas
 firefox ou google chrome: http://endereço_ipv4_ubuntuserver:2222

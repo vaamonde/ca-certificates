@@ -77,29 +77,29 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 #com o comando: rm -v ~/.ssh/known_hosts
 
 1) Windows
-	Pesquisa do Windows
-		Powershell
-			ssh vaamonde@172.16.1.20 (alterar para o endereço IPv4 do seu servidor)
+  Pesquisa do Windows
+    Powershell
+      ssh vaamonde@172.16.1.20 (alterar para o endereço IPv4 do seu servidor)
 
 #Link de download do PuTTY: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 2) Windows
-	Pesquisa do Windows
-		PuTTY
+  Pesquisa do Windows
+    PuTTY
 
-	Category
-		Session
-			Host Name (or IP address): vaamonde@172.16.1.20 (alterar para o endereço IPv4 do seu servidor)
-			Port: 22
-			SSH: On
-	<Open>
+Category
+  Session
+    Host Name (or IP address): vaamonde@172.16.1.20 (alterar para o endereço IPv4 do seu servidor)
+      Port: 22
+      SSH: On
+    <Open>
 
 3) Linux
-	Terminal: Ctrl + Alt + T
-		ssh vaamonde@172.16.1.20 (alterar o usuário e endereço IPv4 do seu servidor)
+Terminal: Ctrl + Alt + T
+  ssh vaamonde@172.16.1.20 (alterar o usuário e endereço IPv4 do seu servidor)
 
 4) macOS
-	Terminal:
-		ssh vaamonde@172.16.1.20 (alterar o usuário e endereço IPv4 do seu servidor)
+Terminal:
+  ssh vaamonde@172.16.1.20 (alterar o usuário e endereço IPv4 do seu servidor)
 ```
 
 #02_ Verificando as informações de usuários logados remotamente no Ubuntu Server<br>
@@ -137,9 +137,9 @@ sudo cat /var/log/syslog | grep ssh
 
 #gerando o par de chaves Pública/Privada no perfil do usuário local
 ssh-keygen
-	Enter file in which to save the key (/home/vaamonde/.ssh/id_rsa): /home/vaamonde/.ssh/vaamonde
-	Enter passphrase (empty for no passphrase):
-	Enter same passphrase again:
+  Enter file in which to save the key (/home/vaamonde/.ssh/id_rsa): /home/vaamonde/.ssh/vaamonde
+  Enter passphrase (empty for no passphrase):
+  Enter same passphrase again:
 
 #verificando as chaves criadas no perfil do usuário local
 #opção do comando ls: ~ (atalho do path $HOME), -l (long listing), -h (human readable), * (curinga qualquer coisa)
@@ -163,18 +163,18 @@ ssh vaamonde@172.16.1.20 "ls -lh ~/.ssh/vaamonde*"
 #ssh-keygen, sua utilização é mais simples, seguindo o procedimento abaixo:
 
 Windows
-	Pesquisa do Windows
-		PuTTYgen
-			<Generate>
-				#OBSERVAÇÃO IMPORTANTE: PARA GERAR O PAR DE CHAVES PÚBLICA/PRIVADA UTILIZANDO O
-				#PUTTYGEN, APÓS CLICAR EM: <GENERATE> VOCÊ PRECISAR MOVIMENTAR O MOUSE DENTRO
-				#DA ÁREA EM BRANCO (MOVING THE MOUSE OVER THE BLANK AREA) PARA INICIAR O PROCESSO 
-				#DE GERAÇÃO DAS CHAVES.
-			<Save public key>
-				C:\Users\vaamonde\.ssh\vaamonde.pub
-			<Save private key>
-				<YES>
-					C:\Users\vaamonde\.ssh\vaamonde
+  Pesquisa do Windows
+    PuTTYgen
+      <Generate>
+        #OBSERVAÇÃO IMPORTANTE: PARA GERAR O PAR DE CHAVES PÚBLICA/PRIVADA UTILIZANDO O
+        #PUTTYGEN, APÓS CLICAR EM: <GENERATE> VOCÊ PRECISAR MOVIMENTAR O MOUSE DENTRO
+        #DA ÁREA EM BRANCO (MOVING THE MOUSE OVER THE BLANK AREA) PARA INICIAR O PROCESSO 
+        #DE GERAÇÃO DAS CHAVES.
+        <Save public key>
+          C:\Users\vaamonde\.ssh\vaamonde.pub
+        <Save private key>
+          <YES>
+        C:\Users\vaamonde\.ssh\vaamonde
 ```
 
 #04_ Importando o Par de Chaves Pública/Privada utilizando o Powershell (Windows 10)<br>
@@ -184,35 +184,38 @@ Windows
 #servidor de arquivos, servidor web, etc... MUITO CUIDADO COM O ENVIO DAS CHAVES, POIS SE A MESMA
 #VAZAR (SER DESCOBERTA OU ENVIADA PARA OUTRA PESSOA) O PROCESSO DE SEGURANÇA SERÁ COMPROMETIDO.
 
-Windows Powershell: Menu, Powershell 
-	
-	Primeira etapa: clicar com o botão direito do mouse e selecionar: Abrir como Administrador
-		
-		#verificando o status do serviço do SSH-Agent
-		Get-Service ssh-agent
-		
-		#alterar a inicialização do serviço do SSH-Agent
-		Set-Service ssh-agent -StartupType Automatic (Ou mudar para: Manual)
-		
-		#iniciar o serviço do SSH-Agent
-		Start-Service ssh-agent
+Windows
+  Powershell: 
+    Menu:
+      Powershell 
 
-		#saindo do Powershell
-		exit
+Primeira etapa: clicar com o botão direito do mouse e selecionar: Abrir como Administrador
+	
+	#verificando o status do serviço do SSH-Agent
+	Get-Service ssh-agent
+	
+	#alterar a inicialização do serviço do SSH-Agent
+	Set-Service ssh-agent -StartupType Automatic (Ou mudar para: Manual)
+	
+	#iniciar o serviço do SSH-Agent
+	Start-Service ssh-agent
+
+	#saindo do Powershell
+	exit
 
 #OBSERVAÇÃO IMPORTANTE: Copiar a Chave Privada para o diretório padrão de Chaves do SSH no
 #Perfil do Usuário do Windows 10 em: C:\Users\SEU_USUÁRIO\.ssh
 
-	Segunda etapa: Powershell do perfil do usuário sem ser como administrador
-		
-		#acessar o diretório das chaves Pública/Privadas do SSH
-		cd C:\Users\vaamonde\.ssh
-		
-		#listar o conteúdo do diretório
-		ls
+Segunda etapa: Powershell do perfil do usuário sem ser como administrador
+	
+	#acessar o diretório das chaves Pública/Privadas do SSH
+	cd C:\Users\vaamonde\.ssh
+	
+	#listar o conteúdo do diretório
+	ls
 
-		#adicionar a chave privada no perfil do seu usuário
-		ssh-add .\vaamonde
+	#adicionar a chave privada no perfil do seu usuário
+	ssh-add .\vaamonde
 ```
 
 #05_ Editando o arquivo de configuração do OpenSSH Server no Ubuntu Server<br>
@@ -270,8 +273,8 @@ sudo journalctl -xeu ssh
 #06_ Testando novamente a conexão com o OpenSSH e Certificado no Ubuntu Server<br>
 ```bash
 Linux
-	Terminal: Ctrl + Alt + T
-		ssh vaamonde@172.16.1.20 (alterar o usuário e endereço IPv4 do seu servidor)
+  Terminal: Ctrl + Alt + T
+    ssh vaamonde@172.16.1.20 (alterar o usuário e endereço IPv4 do seu servidor)
 
 #verificando os Log's de acesso remoto do servidor Ubuntu
 #opção do comando cat: -n (number line)

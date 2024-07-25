@@ -91,7 +91,7 @@ sudo mkdir -v /etc/ssl/{certs,conf,crl,newcerts,private,requests}
 
 #listando o conteúdo do diretório padrão do OpenSSL
 #opções do comando ls: -l (long listing), -h (human-readable)
-sudo ls -lh /etc/ssl/
+ls -lh /etc/ssl/
 ```
 
 #02_ Criando os arquivos de Banco de Dados dos Certificados Assinados no Ubuntu Server<br>
@@ -252,7 +252,7 @@ ls -lha /etc/ssl/certs/pti-ca*
 
 #criando o diretório de download do certificado no Apache2
 #opção do comando mkdir: -v (verbose)
-mkdir -v /var/www/html/ca
+sudo mkdir -v /var/www/html/ca
 
 #copiando o certificado assinado para o diretório no Apache2
 #opção do comando cp: -v (verbose)
