@@ -149,11 +149,12 @@ ls -lh ~/.ssh/vaamonde*
 #é a Chave Privada criada.
 
 #copiando a Chave Pública para o servidor Ubuntu
-ssh-copy-id vaamonde@172.16.1.20
+#opção do comando ssh-copy-id: -i (identity_file)
+ssh-copy-id -i .ssh/vaamonde.pub vaamonde@172.16.1.20
 
 #verificando remotamente a Chave Pública copiada para o servidor Ubuntu
 #opção do comando ls: ~ (atalho do path $HOME), -l (long listing), -h (human readable), * (curinga qualquer coisa)
-ssh vaamonde@172.16.1.20 "ls -lh ~/.ssh/vaamonde*"
+ssh vaamonde@172.16.1.20 "ls -lh ~/.ssh/"
 
 #OBSERVAÇÃO IMPORTANTE: No Microsoft Windows utilizando o Powershell ou no macOS utilizando
 #o Terminal, o procedimento de Geração das Chaves Pública/Privada utiliza o mesmo comando: 
