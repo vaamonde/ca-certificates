@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 21/07/2024<br>
-#Versão: 0.12<br>
+#Data de atualização: 25/07/2024<br>
+#Versão: 0.13<br>
 
 OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO OPENSSH SE VOCÊ CONSEGUIU FAZER O A SEGURANÇA COM 
 A SEGUINTE FRASE: Segurança do OpenSSH realizado com sucesso!!! #BoraParaPrática
@@ -76,12 +76,13 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 #problema de forma simples, recomendo remover o arquivo de Finger Print do perfil do seu usuário
 #com o comando: rm -v ~/.ssh/known_hosts
 
-Windows
+1) Windows
 	Pesquisa do Windows
 		Powershell
 			ssh vaamonde@172.16.1.20 (alterar para o endereço IPv4 do seu servidor)
 
-Windows
+#Link de download do PuTTY: https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+2) Windows
 	Pesquisa do Windows
 		PuTTY
 
@@ -92,11 +93,11 @@ Windows
 			SSH: On
 	<Open>
 
-Linux
+3) Linux
 	Terminal: Ctrl + Alt + T
 		ssh vaamonde@172.16.1.20 (alterar o usuário e endereço IPv4 do seu servidor)
 
-macOS
+4) macOS
 	Terminal:
 		ssh vaamonde@172.16.1.20 (alterar o usuário e endereço IPv4 do seu servidor)
 ```
@@ -168,7 +169,7 @@ Windows
 				#OBSERVAÇÃO IMPORTANTE: PARA GERAR O PAR DE CHAVES PÚBLICA/PRIVADA UTILIZANDO O
 				#PUTTYGEN, APÓS CLICAR EM: <GENERATE> VOCÊ PRECISAR MOVIMENTAR O MOUSE DENTRO
 				#DA ÁREA EM BRANCO (MOVING THE MOUSE OVER THE BLANK AREA) PARA INICIAR O PROCESSO 
-				#DE GERAÇÃO DAS CHAVES SE EXECUTADO.
+				#DE GERAÇÃO DAS CHAVES.
 			<Save public key>
 				C:\Users\vaamonde\.ssh\vaamonde.pub
 			<Save private key>
@@ -180,7 +181,7 @@ Windows
 ```bash
 #OBSERVAÇÃO IMPORTANTE: se você fez a geração das Chaves Pública/Privada utilizando o GNU/Linux,
 #para importar essas chaves em outro equipamento você precisar enviar a chaves por email, pendrive,
-#servidor de arquivos, servidor web, etc... APENAS CUIDADO COM O ENVIO DAS CHAVES, POIS SE A MESMA
+#servidor de arquivos, servidor web, etc... MUITO CUIDADO COM O ENVIO DAS CHAVES, POIS SE A MESMA
 #VAZAR (SER DESCOBERTA OU ENVIADA PARA OUTRA PESSOA) O PROCESSO DE SEGURANÇA SERÁ COMPROMETIDO.
 
 Windows Powershell: Menu, Powershell 
@@ -274,11 +275,13 @@ Linux
 
 #verificando os Log's de acesso remoto do servidor Ubuntu
 #opção do comando cat: -n (number line)
+#opção do comando grep: -i (ignore-case)
 #opção do redirecionador | (pipe): Conecta a saída padrão com a entrada padrão de outro comando
 sudo cat -n /var/log/auth.log | grep ssh
 sudo cat -n /var/log/syslog | grep ssh
 sudo cat -n /var/log/hosts-deny.log
 sudo cat -n /var/log/hosts-allow-ssh.log
+sudo cat -n /var/log/ufw.log | grep -i dpt=22
 ```
 
 =========================================================================================
