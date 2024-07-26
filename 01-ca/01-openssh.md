@@ -68,6 +68,10 @@ possui ou algo que é inseparável do usuário.
 TCP Wrapper é um sistema de rede ACL baseado em host, usado para filtrar acesso à rede a servidores<br>
 de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BSD.
 
+[![OpenSSH Avançado](http://img.youtube.com/vi/Ri-_KMM361o/0.jpg)](https://www.youtube.com/watch?v=Ri-_KMM361o "OpenSSH Avançado")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=Ri-_KMM361o
+
 #01_ Acessando remotamente o OpenSSH Server via Terminal, Powershell e pelo software PuTTY<br>
 ```bash
 #OBSERVAÇÃO IMPORTANTE: Muitas vezes o erro de: WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!

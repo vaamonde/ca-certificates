@@ -83,5 +83,30 @@ Link da vídeo aula: https://www.youtube.com/watch?v=JfNKOOPCWRQ
 
 ================ PRIMEIRA ETAPA: CONFIGURAÇÃO DO OPENSSH ================
 
+## ** 🤩🤩 Configuração Avançadas e Segurança do OpenSSH no GNU/Linux Ubuntu Server 22.04.x LTS (Jammy Jellyfish) 🤩🤩**
+
+Vídeo de configuração avançada do OpenSSH Server no GNU/Linux Ubuntu Server 22.04.x LTS (Jammy Jellyfish) do Projeto do Bora para Prática. O objetivo desse vídeo é configurar os recursos de Chaves Públicas e Privadas utilizando o OpenSSL para prover seguranças de Acesso Remoto ao OpenSSH.
+
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO OPENSSH SE VOCÊ CONSEGUIU FAZER O A SEGURANÇA COM A SEGUINTE FRASE: Segurança do OpenSSH realizado com sucesso!!! #BoraParaPrática
+
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+
+LINK DO SELO: 
+
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafioopenssh #desafiossh
+
+Conteúdo estudado nesse desafio:<br>
+#01_ Acessando remotamente o OpenSSH Server via Terminal, Powershell e pelo software PuTTY<br>
+#02_ Verificando as informações de usuários logados remotamente no Ubuntu Server<br>
+#03_ Gerando os pares de Chaves Pública/Privada utilizando o GNU/Linux (Mint)<br>
+#04_ Importando o Par de Chaves Pública/Privada utilizando o Powershell (Windows 10)<br>
+#05_ Editando o arquivo de configuração do OpenSSH Server no Ubuntu Server<br>
+#06_ Testando novamente a conexão com o OpenSSH e Certificado no Ubuntu Server
+
+[![OpenSSH Avançado](http://img.youtube.com/vi/Ri-_KMM361o/0.jpg)](https://www.youtube.com/watch?v=Ri-_KMM361o "OpenSSH Avançado")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=Ri-_KMM361o
+
+Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/01-ca/01-openssh.md
 
 =============== SEGUNDA ETAPA: CRIAÇÃO E INSTALAÇÃO DA CA ===============
