@@ -16,7 +16,7 @@ A SEGUINTE FRASE: Implementação do WebSSH realizado com sucesso!!! #BoraParaPr
 COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
 MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
 
-LINK DO SELO: 
+LINK DO SELO: https://github.com/vaamonde/ca-certificates/tree/main/selos/03-webssh.png
 
 #boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
 #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafioopenssh #desafiowebssh
@@ -160,7 +160,7 @@ A SEGUINTE FRASE: Implementação do WebSSH realizado com sucesso!!! #BoraParaPr
 COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
 MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
 
-LINK DO SELO: 
+LINK DO SELO: https://github.com/vaamonde/ca-certificates/tree/main/selos/03-webssh.png
 
 #boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
 #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafioopenssh #desafiowebssh
