@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 21/07/2024<br>
-#Versão: 0.09<br>
+#Data de atualização: 30/07/2024<br>
+#Versão: 0.10<br>
 
 OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO CA SE VOCÊ CONSEGUIU FAZER O A CRIAÇÃO COM 
 A SEGUINTE FRASE: Criação da CA realizado com sucesso!!! #BoraParaPrática
@@ -68,8 +68,8 @@ aplicativos como navegação na web, email, mensagens instantâneas e voz sobre 
 Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e<br>
 navegadores web.
 
-A autoridade de certificação (CA), também conhecido como um Autoridade de Certificação,<br>
-é uma empresa ou organização que atua para validar as identidades de entidades (como sites,<br>
+A autoridade de certificação (CA), também conhecida como uma Autoridade de Certificação<br>
+Raiz, é uma empresa ou organização que atua para validar as identidades (como sites,<br>
 endereços de email, empresas ou pessoas físicas) e vinculá-las a chaves criptográficas<br> 
 através da emissão de documentos eletrônicos conhecidos como certificados digitais.
 
@@ -234,13 +234,15 @@ sudo openssl x509 -noout -text -in /etc/ssl/newcerts/pti-ca.crt
 #opção do comando cp: -v (verbose)
 sudo cp -v /etc/ssl/newcerts/pti-ca.crt /usr/local/share/ca-certificates/
 
-#instalando e atualizando as Unidades Certificadores Raiz no Ubuntu Server
+#instalando as Unidades Certificadoras Raiz no Ubuntu Server
 sudo apt update
 sudo apt install ca-certificates
+
+#atualizando as Unidades Certificadoras Raiz no Ubuntu Server
 sudo update-ca-certificates
 
 #verificando a criação do link PEM (Privacy Enhanced Mail) no Ubuntu Server
-#opção do comando ls: -l (long listing), -h (human readable), -a (all)
+#opção do comando ls: -l (long listing), -h (human readable), -a (all), * (asterisco - qualquer coisa)
 ls -lha /etc/ssl/certs/pti-ca*
 ```
 
@@ -248,7 +250,7 @@ ls -lha /etc/ssl/certs/pti-ca*
 ```bash
 #OBSERVAÇÃO IMPORTANTE: Nesse cenário temos em nosso servidor instalado e configurado o
 #serviço do Apache2 Server, caso não tenha, você pode utilizar qualquer recurso para 
-#disponibilizar o certificado para os seu clientes baixarem e instalarem no seu dispositivo.
+#disponibilizar o certificado para os seus clientes baixarem e instalarem no seu dispositivo.
 
 #criando o diretório de download do certificado no Apache2
 #opção do comando mkdir: -v (verbose)
@@ -259,7 +261,7 @@ sudo mkdir -v /var/www/html/ca
 sudo cp -v /etc/ssl/newcerts/pti-ca.crt /var/www/html/ca/
 
 #verificando o arquivo copiado no diretório do Apache2
-#opção do comando ls: -l (long listing), -h (human readable), -a (all)
+#opção do comando ls: -l (long listing), -h (human readable), -a (all), * (asterisco - qualquer coisa)
 ls -lha /var/www/html/ca/pti-ca*
 ```
 
