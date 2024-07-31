@@ -85,9 +85,9 @@ Conteúdo estudado nesse desafio:<br>
 #10_ Instalando o certificado CRT (Certificate Request Trust) e criando o arquivo PEM (Privacy Enhanced Mail) da CA (Certificate Authority) no Ubuntu Server<br>
 #11_ Disponibilizando o certificado CRT (Certificate Request Trust) para download<br>
 
-[![OpenSSL CA](http://img.youtube.com/vi//0.jpg)]( "OpenSSL CA")
+[![OpenSSL CA](http://img.youtube.com/vi/isv1W9QF32w/0.jpg)](https://www.youtube.com/watch?v=isv1W9QF32w "OpenSSL CA")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=isv1W9QF32w
 
 Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/01-ca/02-ca-openssl.md
 

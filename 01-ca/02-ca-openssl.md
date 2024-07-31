@@ -73,6 +73,10 @@ Raiz, é uma empresa ou organização que atua para validar as identidades (como
 endereços de email, empresas ou pessoas físicas) e vinculá-las a chaves criptográficas<br> 
 através da emissão de documentos eletrônicos conhecidos como certificados digitais.
 
+[![OpenSSL CA](http://img.youtube.com/vi/isv1W9QF32w/0.jpg)](https://www.youtube.com/watch?v=isv1W9QF32w "OpenSSL CA")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=isv1W9QF32w
+
 #01_ Criando a estrutura de diretórios da CA (Certificate Authority) e dos Certificados no Ubuntu Server<br>
 ```bash
 #conhecendo a estrutura de diretórios da CA e dos Certificados Assinados
@@ -263,6 +267,9 @@ sudo cp -v /etc/ssl/newcerts/pti-ca.crt /var/www/html/ca/
 #verificando o arquivo copiado no diretório do Apache2
 #opção do comando ls: -l (long listing), -h (human readable), -a (all), * (asterisco - qualquer coisa)
 ls -lha /var/www/html/ca/pti-ca*
+
+#utilizar os navegadores para acessar o diretório dos certificados
+firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca
 ```
 
 =========================================================================================
