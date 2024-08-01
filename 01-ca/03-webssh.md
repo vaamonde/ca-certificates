@@ -54,7 +54,7 @@ sudo apt install python3 python3-pip
 sudo pip3 --version
 ```
 
-#02_ Instalando o WebSSH via Python Pip no Ubuntu Server<br>
+#02_ Instalando o WebSSH via Python 3 Pip no Ubuntu Server<br>
 ```bash
 #instalando o Webssh via pip
 sudo pip3 install webssh
@@ -122,9 +122,9 @@ sudo lsof -nP -iTCP:'2222' -sTCP:LISTEN
 
 #07_ Localização do Binário e Arquivos de Configuração do WebSSH<br>
 ```bash
-/usr/local/bin/wssh                               Binário do WebSSH
-/usr/local/lib/python3.10/dist-packages/webssh/*  Diretório dos arquivos de configuração do WebSSH
-/etc/systemd/system/webssh.service                Arquivo de Serviço do WebSSH
+/usr/local/bin/wssh                               <-- Binário do WebSSH
+/usr/local/lib/python3.10/dist-packages/webssh/*  <-- Diretório dos arquivos de configuração do WebSSH
+/etc/systemd/system/webssh.service                <-- Arquivo de Serviço do WebSSH
 ```
 
 #08_ Liberando no Firewall UFW a Conexão na Porta 2222 do WebSSH<br>
@@ -137,7 +137,7 @@ sudo ufw limit log-all from 172.16.1.0/24 to 172.16.1.20 port 2222 proto tcp com
 sudo ufw status verbose
 ```
 
-#09_ Testando WebSSH no navegador<br>
+#09_ Testando o acesso ao WebSSH no navegador<br>
 ```bash
 #utilizar os navegadores para testar suas páginas
 firefox ou google chrome: http://endereço_ipv4_ubuntuserver:2222

@@ -234,7 +234,7 @@ INSERT
 	# Por padrão o Servidor de OpenSSH não trabalhar com Chaves Pública para autenticação, 
 	# utilizando o arquivo /etc/passwd para se autenticar no servidor, por motivos de segurança, 
 	# é recomendado utilizar chaves públicas e senhas para se autenticar no servidor
-	# Descomentar essa opção depois de configurar a chave pública no client e no servidor
+	# Descomentar essa opção depois de configurar a chave pública no cliente e no servidor
 	AuthenticationMethods publickey,password
 
 #salvar e sair do arquivo
