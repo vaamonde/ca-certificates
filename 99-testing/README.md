@@ -90,3 +90,36 @@ Conteúdo estudado nesse desafio:<br>
 Link da vídeo aula: https://www.youtube.com/watch?v=isv1W9QF32w
 
 Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/01-ca/02-ca-openssl.md
+
+## ** 🤩🤩 Configuração do WebSSH no GNU/Linux Ubuntu Server 22.04.x LTS (Jammy Jellyfish) 🤩🤩**
+
+Vídeo de configuração do WebSSH no Ubuntu Server 22.04.x LTS no Oracle VirtualBOX, nesse vídeo você vai aprender todos os procedimentos para configurar o acesso remoto seguro do nosso servidor via SSH Web utilizando um navegador junto com os certificado configurado anteriormente no nosso servidor.
+
+OpenSSH é um conjunto de utilitários de rede relacionado à segurança que provém a criptografia em sessões de comunicações em uma rede de computadores usando o protocolo SSH.
+
+WebSSH é um aplicativo web simples para ser usado como cliente ssh para conectar-se aos seus servidores ssh. Está escrito em Python, baseado em tornado, paramiko e xterm.js.
+
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO WEBSSH SE VOCÊ CONSEGUIU FAZER O A IMPLEMENTAÇÃO COM A SEGUINTE FRASE: Implementação do WebSSH realizado com sucesso!!! #BoraParaPrática
+
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+
+LINK DO SELO: https://github.com/vaamonde/ca-certificates/tree/main/selos/03-webssh.png
+
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafioopenssh #desafiowebssh
+
+Conteúdo estudado nesse desafio:<br>
+#01_ Instalando as Dependências do WebSHH no Ubuntu Server<br>
+#02_ Instalando o WebSSH via Python Pip no Ubuntu Server<br>
+#03_ Baixando o arquivo de Serviço do WebSSH no Ubuntu Server<br>
+#04_ Editando o arquivo de Serviço do WebSSH no Ubuntu Server<br>
+#05_ Habilitando o Serviço do WebSSH e verificando sua Versão no Ubuntu Server<br>
+#06_ Verificando a Porta de Conexão do WebSSH<br>
+#07_ Localização do Binário e Arquivos de Configuração do WebSSH<br>
+#08_ Liberando no Firewall a Conexão na Porta do WebSSH<br>
+#09_ Testando WebSSH no navegador<br>
+
+[![WebSSH](http://img.youtube.com/vi//0.jpg)]( "WebSSH")
+
+Link da vídeo aula: 
+
+Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/01-ca/03-webssh.md

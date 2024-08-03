@@ -62,6 +62,12 @@ aplicativos como navegação na web, email, mensagens instantâneas e voz sobre 
 Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e<br>
 navegadores web.
 
+A autoridade de certificação (CA), também conhecido como um Autoridade de Certificação,<br>
+é uma empresa ou organização que atua para validar as identidades de entidades (como<br>
+sites, endereços de email, empresas ou pessoas físicas) e vinculá-las a chaves<br>
+criptográficas através da emissão de documentos eletrônicos conhecidos como certificados<br>
+digitais.
+
 #01_ Instalação da Autoridade Certificadora CA no Mozilla Firefox (GNU/Linux ou Microsoft Windows)<br>
 ```bash
 #baixando o certificado do nosso servidor via navegador:
