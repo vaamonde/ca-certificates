@@ -136,7 +136,7 @@ firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 sudo apt update
 sudo apt install libnss3-tools
 
-#instalando a Unidades Certificadora no Microsoft Edge utilizando o comando certutil
+#instalando a Unidade Certificadora no Microsoft Edge utilizando o comando certutil
 #opções do comando certutil: -d (directory), -A (Add an existing certificate to a certificate database), 
 #-t (trustargs), -n (nickname), -i (input_file), -L (List all the certificates)
 certutil -d sql:$HOME/.pki/nssdb -A -t "C,," -n BoraParaPratica -i pti-ca.crt
