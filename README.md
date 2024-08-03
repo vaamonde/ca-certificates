@@ -149,3 +149,40 @@ Link da vídeo aula: https://www.youtube.com/watch?v=isv1W9QF32w
 Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/01-ca/02-ca-openssl.md
 
 =============== SEGUNDA ETAPA: CRIAÇÃO E INSTALAÇÃO DA CA ===============
+
+## ** 🤩🤩 Instalação da CA (Certificate Authority Trust) no Microsoft Windows e GNU/Linux 🤩🤩**
+
+Vídeo de configuração OpenSSL CA (Certificate Authority Trust) no GNU/Linux Ubuntu Server 22.04.x LTS (Jammy Jellyfish) do Projeto do Bora para Prática. O objetivo desse vídeo é configurar a estrutura de diretórios, arquivos e criação da Unidade Certificado Raiz Confiável CA (Certificate Authority Trust) para a emissão dos Certificados Assinados.
+
+OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
+
+O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux, Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows. O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para gerar certificados de autenticação de serviços/protocolos em servidores (servers).
+
+O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer (SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP).Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e navegadores web.
+
+A autoridade de certificação (CA), também conhecido como um Autoridade de Certificação, é uma empresa ou organização que atua para validar as identidades de entidades (como sites, endereços de email, empresas ou pessoas físicas) e vinculá-las a chaves criptográficas através da emissão de documentos eletrônicos conhecidos como certificados digitais.
+
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO CA SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da CA realizado com sucesso!!! #BoraParaPrática
+
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+
+LINK DO SELO: https://github.com/vaamonde/ca-certificates/blob/main/selos/03-install-ca.png
+
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafica #desaficertificado
+
+Conteúdo estudado nesse desafio:<br>
+#01_ Instalação da Autoridade Certificadora CA no Mozilla Firefox (GNU/Linux ou Microsoft Windows)<br>
+#02_ Instalação da Autoridade Certificadora CA no Google Chrome (GNU/Linux ou Microsoft Windows)<br>
+#03_ Instalação da Autoridade Certificadora CA no Microsoft Edge (GNU/Linux ou Microsoft Windows)<br>
+#04_ Instalação da Autoridade Certificadora CA no Opera (GNU/Linux ou Microsoft Windows)<br>
+#05_ Instalação da Autoridade Certificadora CA no GNU/Linux (Linux Mint ou Ubuntu)<br>
+#06_ Instalação da Autoridade Certificadora CA no Microsoft Windows (10 ou 11)<br>
+#07_ Instalação da Autoridade Certificadora CA no Android<br>
+#08_ Instalação da Autoridade Certificadora CA no MacOS Apple<br>
+#09_ Instalação da Autoridade Certificadora CA no iOS Apple
+
+[![Install CA](http://img.youtube.com/vi//0.jpg)]( "Install CA")
+
+Link da vídeo aula: 
+
+Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/02-certificates/01-ca-install.md

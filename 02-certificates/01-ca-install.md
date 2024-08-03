@@ -16,7 +16,7 @@ A SEGUINTE FRASE: Instalação da CA realizado com sucesso!!! #BoraParaPrática
 COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
 MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
 
-LINK DO SELO: 
+LINK DO SELO: https://github.com/vaamonde/ca-certificates/blob/main/selos/03-install-ca.png
 
 #boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
 #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafica #desaficertificado
