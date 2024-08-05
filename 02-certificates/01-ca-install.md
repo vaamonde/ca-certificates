@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 21/07/2024<br>
-#Versão: 0.06<br>
+#Data de atualização: 05/08/2024<br>
+#Versão: 0.07<br>
 
 OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO CA SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM 
 A SEGUINTE FRASE: Instalação da CA realizado com sucesso!!! #BoraParaPrática
@@ -79,20 +79,20 @@ firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 #instalando o certificado no Firefox
 Abrir menu de Aplicativo
-	Preferências ou Opções ou Configurações
-		Pesquisar em preferências: Ver certificados
-			Autoridades
-				Importar: pti-ca.crt
-					Yes: Confiar nesta CA para identificar sites
-					Yes: Confiar nesta autoridade certificadora para identificar usuários de email
-					<Ver> Examinar certificado da CA
-				<OK>
-			<OK>
+  Preferências ou Opções ou Configurações
+    Pesquisar em preferências: Ver certificados
+      Autoridades
+        Importar: pti-ca.crt
+          Yes: Confiar nesta CA para identificar sites
+          Yes: Confiar nesta autoridade certificadora para identificar usuários de email
+          <Ver> Examinar certificado da CA
+          <OK>
+        <OK>
 
 #consultando o certificado no Firefox
 Autoridades
-	Bora para Pratica
-		wsvaamonde.pti.intra
+  Bora para Pratica
+    wsvaamonde.pti.intra
 ```
 
 #02_ Instalação da Autoridade Certificadora CA no Google Chrome (GNU/Linux ou Microsoft Windows)<br>
@@ -107,17 +107,17 @@ firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 #instalando o certificado no Google Chrome
 chrome://settings/certificates
-	Autoridades
-		Importar: pti-ca.crt
-			Yes: Confiar neste certificado para a identificação de websites.
-			Yes: Confiar neste certificado para identificar usuários de e-mail
-			Yes: Confiar neste certificado para a identificação de criadores de software
-		<OK>
+  Autoridades
+    Importar: pti-ca.crt
+      Yes: Confiar neste certificado para a identificação de websites.
+      Yes: Confiar neste certificado para identificar usuários de e-mail
+      Yes: Confiar neste certificado para a identificação de criadores de software
+    <OK>
 
 #consultando o certificado no Google Chrome
 Autoridades
-	org-Bora para Pratica
-		wsvaamonde.pti.intra
+  org-Bora para Pratica
+    wsvaamonde.pti.intra
 
 #reiniciando o navegador Google Chrome
 chrome://restart
@@ -136,7 +136,8 @@ firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 #OBSERVAÇÃO IMPORTANTE: O Microsoft Edge é um navegador baseado no Chromium e usa um 
 #armazenamento privado semelhante ao Chromium. O Edge usa um keystore em ~/.pki e você 
 #precisa do programa utilitário CertUtil para instalar o certificado no Edge.
-#Mais informações acesse: https://chromium.googlesource.com/chromium/src/+/master/docs/linux/cert_management.md
+#Mais informações acesse: 
+https://chromium.googlesource.com/chromium/src/+/master/docs/linux/cert_management.md
 
 #instalando a biblioteca Libnss3
 sudo apt update
@@ -150,10 +151,10 @@ certutil -d sql:$HOME/.pki/nssdb -L
 
 #instalando o certificado no Microsoft Edge
 Abrir menu de Aplicativo
-	Configurações
-		Gerenciar Certificados
-			Autoridades
-				Importar
+  Configurações
+    Gerenciar Certificados
+      Autoridades
+        Importar
 ```
 
 #04_ Instalação da Autoridade Certificadora CA no Opera (GNU/Linux ou Microsoft Windows)<br>
@@ -182,8 +183,8 @@ Abrir o Menu de Configuração Fácil
 
 #consultando o certificado no Opera
 Autoridades
-	org-Bora para Pratica
-		wsvaamonde.pti.intra
+  org-Bora para Pratica
+    wsvaamonde.pti.intra
 ```
 
 #05_ Instalação da Autoridade Certificadora CA no GNU/Linux (Linux Mint ou Ubuntu)<br>
@@ -193,10 +194,10 @@ firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 #instalando o certificado no Linux Mint
 Pasta: Download
-	Abrir como Root (Botão direito do Mouse: Abrir como root)
-		Copiar: pti-ca.crt
-		Para: /usr/local/share/ca-certificates/
-	Abrir o Terminal como Root (Botão direito do Mouse: Abrir no Terminal)
+  Abrir como Root (Botão direito do Mouse: Abrir como root)
+    Copiar: pti-ca.crt
+    Para: /usr/local/share/ca-certificates/
+  Abrir o Terminal como Root (Botão direito do Mouse: Abrir no Terminal)
 
 #instalando e atualizando as Unidades Certificadores Raiz no Linux Mint
 sudo apt update
@@ -274,10 +275,10 @@ safari ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 #instalando o certificado no iOS
 Pasta: Download
-	Ajustes
-		Instalar
-			Digite sua senha do dispositivo
-		<Instalar>
+  Ajustes
+    Instalar
+      Digite sua senha do dispositivo
+    <Instalar>
 ```
 
 =========================================================================================
