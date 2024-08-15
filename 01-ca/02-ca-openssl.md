@@ -7,19 +7,16 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 30/07/2024<br>
-#Versão: 0.10<br>
+#Data de atualização: 15/08/2024<br>
+#Versão: 0.11<br>
 
-OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO CA SE VOCÊ CONSEGUIU FAZER O A CRIAÇÃO COM 
-A SEGUINTE FRASE: Criação da CA realizado com sucesso!!! #BoraParaPrática
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO CA SE VOCÊ CONSEGUIU FAZER O A CRIAÇÃO COM A SEGUINTE FRASE: Criação da CA realizado com sucesso!!! #BoraParaPrática
 
-COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
-MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
 
 LINK DO SELO: https://github.com/vaamonde/ca-certificates/tree/main/selos/02-openssl-ca.png
 
-#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
-#ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafica #desaficertificado
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafica #desaficertificado
 
 Conteúdo estudado nesse desafio:<br>
 #01_ Criando a estrutura de diretórios da CA (Certificate Authority) e dos Certificados no Ubuntu Server<br>
@@ -51,27 +48,13 @@ Projeto de Front-End da CA e Certificados: https://lab-ca.net/<br>
 Github do Projeto LAB-CA: https://github.com/hakwerk/labca<br>
 Webmin Certbot e CA Manager: https://www.webmin.com/cgi-bin/search_third.cgi?search=cert
 
-OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca<br>
-(escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza<br>
-várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta<br>
-biblioteca em várias outras linguagens. 
+OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
 
-O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux,<br>
-Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows.<br>
-O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para<br>
-gerar certificados de autenticação de serviços/protocolos em servidores (servers).
+O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux, Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows. O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para gerar certificados de autenticação de serviços/protocolos em servidores (servers).
 
-O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer<br>
-(SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações<br>
-sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em<br>
-aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP).<br>
-Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e<br>
-navegadores web.
+O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer (SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP). Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e navegadores web.
 
-A autoridade de certificação (CA), também conhecida como uma Autoridade de Certificação<br>
-Raiz, é uma empresa ou organização que atua para validar as identidades (como sites,<br>
-endereços de email, empresas ou pessoas físicas) e vinculá-las a chaves criptográficas<br> 
-através da emissão de documentos eletrônicos conhecidos como certificados digitais.
+A autoridade de certificação (CA), também conhecida como uma Autoridade de Certificação Raiz, é uma empresa ou organização que atua para validar as identidades (como sites, endereços de email, empresas ou pessoas físicas) e vinculá-las a chaves criptográficas através da emissão de documentos eletrônicos conhecidos como certificados digitais.
 
 [![OpenSSL CA](http://img.youtube.com/vi/isv1W9QF32w/0.jpg)](https://www.youtube.com/watch?v=isv1W9QF32w "OpenSSL CA")
 
@@ -274,13 +257,10 @@ firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca
 
 =========================================================================================
 
-OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO CA SE VOCÊ CONSEGUIU FAZER O A CRIAÇÃO COM 
-A SEGUINTE FRASE: Criação da CA realizado com sucesso!!! #BoraParaPrática
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO CA SE VOCÊ CONSEGUIU FAZER O A CRIAÇÃO COM A SEGUINTE FRASE: Criação da CA realizado com sucesso!!! #BoraParaPrática
 
-COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
-MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
 
 LINK DO SELO: https://github.com/vaamonde/ca-certificates/tree/main/selos/02-openssl-ca.png
 
-#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
-#ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafica #desaficertifica
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafica #desaficertificado

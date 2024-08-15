@@ -7,19 +7,16 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 05/08/2024<br>
-#Versão: 0.07<br>
+#Data de atualização: 15/08/2024<br>
+#Versão: 0.08<br>
 
-OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO CA SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM 
-A SEGUINTE FRASE: Instalação da CA realizado com sucesso!!! #BoraParaPrática
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO CA SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da CA realizado com sucesso!!! #BoraParaPrática
 
-COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
-MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
 
 LINK DO SELO: https://github.com/vaamonde/ca-certificates/blob/main/selos/03-install-ca.png
 
-#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
-#ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafica #desaficertificado
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafica #desaficertificado
 
 Conteúdo estudado nesse desafio:<br>
 #01_ Instalação da Autoridade Certificadora CA no Mozilla Firefox (GNU/Linux ou Microsoft Windows)<br>
@@ -45,28 +42,13 @@ Digicert: https://www.digicert.com<br>
 Verisign: https://www.verisign.com/<br>
 Let's Encrypt: https://letsencrypt.org/
 
-OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca<br>
-(escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza<br>
-várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta<br>
-biblioteca em várias outras linguagens. 
+OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
 
-O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux,<br>
-Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows.<br>
-O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para<br>
-gerar certificados de autenticação de serviços/protocolos em servidores (servers).
+O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux, Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows. O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para gerar certificados de autenticação de serviços/protocolos em servidores (servers).
 
-O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer<br>
-(SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações<br>
-sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em<br>
-aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP).<br>
-Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e<br>
-navegadores web.
+O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer (SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP). Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e navegadores web.
 
-A autoridade de certificação (CA), também conhecido como um Autoridade de Certificação,<br>
-é uma empresa ou organização que atua para validar as identidades de entidades (como<br>
-sites, endereços de email, empresas ou pessoas físicas) e vinculá-las a chaves<br>
-criptográficas através da emissão de documentos eletrônicos conhecidos como certificados<br>
-digitais.
+A autoridade de certificação (CA), também conhecida como uma Autoridade de Certificação Raiz, é uma empresa ou organização que atua para validar as identidades (como sites, endereços de email, empresas ou pessoas físicas) e vinculá-las a chaves criptográficas através da emissão de documentos eletrônicos conhecidos como certificados digitais.
 
 #01_ Instalação da Autoridade Certificadora CA no Mozilla Firefox (GNU/Linux ou Microsoft Windows)<br>
 ```bash
@@ -170,16 +152,16 @@ firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 #instalando o certificado no Opera
 Abrir o Menu de Configuração Fácil
-	Ir para as configurações completas do navegador
-		Configurações de pesquisa: certificado
-			Segurança
-				Gerenciar Certificados
-					Autoridades
-						Importar
-							Yes: Confie neste certificado para identificar sites
-							Yes: Confie neste certificado para identificar usuários de e-mail
-							Yes: Confie neste certificado para identificar fabricantes de software
-						<OK>
+  Ir para as configurações completas do navegador
+    Configurações de pesquisa: certificado
+      Segurança
+        Gerenciar Certificados
+          Autoridades
+            Importar
+              Yes: Confie neste certificado para identificar sites
+              Yes: Confie neste certificado para identificar usuários de e-mail
+              Yes: Confie neste certificado para identificar fabricantes de software
+            <OK>
 
 #consultando o certificado no Opera
 Autoridades
@@ -216,27 +198,27 @@ edge, firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 #instalando a CA no sistema operacional Microsoft
 Pasta: Download
-	pti-ca.crt (clicar duas vezes em cima do certificado)
-		Abrir
-			Instalar Certificado...
-				Assistente para Importação de Certificados
-					Máquina Local <Avançar>
-						Deseja permitir que este aplicativo faça alterações no seu dispositivo? <sim>
-							Colocar todos os certificados no repositório a seguir
-								Repositório de Certificados <Procurar>
-									Autoridades de Certificação Raiz Confiáveis <OK>
-									<Avançar>
-									<Concluir>
-									<OK>
-									<OK>
+  pti-ca.crt (clicar duas vezes em cima do certificado)
+    Abrir
+      Instalar Certificado...
+        Assistente para Importação de Certificados
+          Máquina Local <Avançar>
+            Deseja permitir que este aplicativo faça alterações no seu dispositivo? <sim>
+              Colocar todos os certificados no repositório a seguir
+                Repositório de Certificados <Procurar>
+                  Autoridades de Certificação Raiz Confiáveis <OK>
+                  <Avançar>
+                  <Concluir>
+                <OK>
+                <OK>
 
 #pesquisando o certificado instalado no sistema operacional Microsoft
 Pesquisa do Windows
-	Gerenciar Certificados de Computador <Sim>
-		Autoridades de Certificação Raiz Confiáveis
-			Certificados
-				Emitido para:
-					wsvaamonde.pti.intra
+  Gerenciar Certificados de Computador <Sim>
+    Autoridades de Certificação Raiz Confiáveis
+      Certificados
+        Emitido para:
+          wsvaamonde.pti.intra
 ```
 
 #07_ Instalação da Autoridade Certificadora CA no Smartphone Android<br>
@@ -246,15 +228,15 @@ google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 #instalando o certificado no Android
 Configurações
-	Senhas e Segurança
-		Privacidade
-			Criptografia e Credenciais
-				Armazenamento de Credenciais: Credenciais confiáveis
-					Sistema: Utilizado em todo o sistema 
-					Usuário: Específico para o usuário
-			Instalar do Cartão SD
-				Menu: Download
-					Arquivo: pti-ca.crt
+  Senhas e Segurança
+    Privacidade
+      Criptografia e Credenciais
+        Armazenamento de Credenciais: Credenciais confiáveis
+          Sistema: Utilizado em todo o sistema 
+          Usuário: Específico para o usuário
+        Instalar do Cartão SD
+          Menu: Download
+            Arquivo: pti-ca.crt
 ```
 
 #08_ Instalação da Autoridade Certificadora CA no MacOS Apple<br>
@@ -264,8 +246,8 @@ safari ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
 #instalando o certificado no MacOS
 Pasta: Download
-	pti-ca.crt (clicar duas vezes em cima do certificado)
-		Abrir
+  pti-ca.crt (clicar duas vezes em cima do certificado)
+    Abrir
 ```
 
 #09_ Instalação da Autoridade Certificadora CA no iOS Apple<br>
@@ -283,13 +265,10 @@ Pasta: Download
 
 =========================================================================================
 
-OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO CA SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM 
-A SEGUINTE FRASE: Instalação da CA realizado com sucesso!!! #BoraParaPrática
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO CA SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da CA realizado com sucesso!!! #BoraParaPrática
 
-COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
-MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
 
-LINK DO SELO: 
+LINK DO SELO: https://github.com/vaamonde/ca-certificates/blob/main/selos/03-install-ca.png
 
-#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
-#ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafica #desaficertificado
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafica #desaficertificado

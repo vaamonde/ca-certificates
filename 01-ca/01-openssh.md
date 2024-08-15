@@ -7,19 +7,16 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 25/07/2024<br>
-#Versão: 0.13<br>
+#Data de atualização: 15/08/2024<br>
+#Versão: 0.14<br>
 
-OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO OPENSSH SE VOCÊ CONSEGUIU FAZER O A SEGURANÇA COM 
-A SEGUINTE FRASE: Segurança do OpenSSH realizado com sucesso!!! #BoraParaPrática
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO OPENSSH SE VOCÊ CONSEGUIU FAZER O A SEGURANÇA COM A SEGUINTE FRASE: Segurança do OpenSSH realizado com sucesso!!! #BoraParaPrática
 
-COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
-MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
 
 LINK DO SELO: https://github.com/vaamonde/ca-certificates/tree/main/selos/01-openssh.png
 
-#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
-#ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafioopenssh #desafiossh
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafioopenssh #desafiossh
 
 Conteúdo estudado nesse desafio:<br>
 #01_ Acessando remotamente o OpenSSH Server via Terminal, Powershell e pelo software PuTTY<br>
@@ -39,34 +36,19 @@ Site Oficial do SSHGuard: https://www.sshguard.net/<br>
 Site Oficial do SSH 2FA: https://github.com/google/google-authenticator-libpam<br>
 Site Oficial do TCP Wrapper: https://redirect.cs.umbc.edu/~stephen/491sproj/index.html
 
-OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca<br>
-(escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza<br>
-várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta<br>
-biblioteca em várias outras linguagens. 
+OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
 
-O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux,<br>
-Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows.<br>
-O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para<br>
-gerar certificados de autenticação de serviços/protocolos em servidores (servers).
+O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux, Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows. O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para gerar certificados de autenticação de serviços/protocolos em servidores (servers).
 
-OpenSSH é um conjunto de utilitários de rede relacionado à segurança que provém a criptografia<br> 
-em sessões de comunicações em uma rede de computadores usando o protocolo SSH.
+OpenSSH é um conjunto de utilitários de rede relacionado à segurança que provém a criptografia em sessões de comunicações em uma rede de computadores usando o protocolo SSH.
 
-O Fail2Ban é uma ferramenta de segurança amplamente utilizada para proteger servidores contra<br>
-ataques de força bruta e outras atividades maliciosas. Ele monitora os logs do sistema em tempo<br>
-real e toma medidas contra IPs suspeitos, como bloquear temporariamente o acesso após várias<br>
-tentativas de acesso falhadas.
+O Fail2Ban é uma ferramenta de segurança amplamente utilizada para proteger servidores contra ataques de força bruta e outras atividades maliciosas. Ele monitora os logs do sistema em tempo real e toma medidas contra IPs suspeitos, como bloquear temporariamente o acesso após várias tentativas de acesso falhadas.
 
-SSHGuard é um daemon de código aberto que protege os hosts contra ataques de força bruta. Ele faz<br>
-isso por meio do monitoramento e agregação de logs do sistema, detectando ataques e bloqueando<br>
-invasores usando um dos back-ends de firewall do Linux: iptables, FirewallD, pf e ipfw.
+SSHGuard é um daemon de código aberto que protege os hosts contra ataques de força bruta. Ele faz isso por meio do monitoramento e agregação de logs do sistema, detectando ataques e bloqueando invasores usando um dos back-ends de firewall do Linux: iptables, FirewallD, pf e ipfw.
 
-2FA Autenticação por dois fatores oferece identificação aos usuários através da combinação de dois<br>
-componentes diferentes. Esses componentes podem ser algo que o usuário sabe, algo que o usuário<br>
-possui ou algo que é inseparável do usuário.
+2FA Autenticação por dois fatores oferece identificação aos usuários através da combinação de dois componentes diferentes. Esses componentes podem ser algo que o usuário sabe, algo que o usuário possui ou algo que é inseparável do usuário.
 
-TCP Wrapper é um sistema de rede ACL baseado em host, usado para filtrar acesso à rede a servidores<br>
-de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BSD.
+TCP Wrapper é um sistema de rede ACL baseado em host, usado para filtrar acesso à rede a servidores de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BSD.
 
 [![OpenSSH Avançado](http://img.youtube.com/vi/Ri-_KMM361o/0.jpg)](https://www.youtube.com/watch?v=Ri-_KMM361o "OpenSSH Avançado")
 
@@ -195,32 +177,32 @@ Windows
       Powershell 
 
 Primeira etapa: clicar com o botão direito do mouse e selecionar: Abrir como Administrador
-	
-	#verificando o status do serviço do SSH-Agent
-	Get-Service ssh-agent
-	
-	#alterar a inicialização do serviço do SSH-Agent
-	Set-Service ssh-agent -StartupType Automatic (Ou mudar para: Manual)
-	
-	#iniciar o serviço do SSH-Agent
-	Start-Service ssh-agent
 
-	#saindo do Powershell
-	exit
+#verificando o status do serviço do SSH-Agent
+Get-Service ssh-agent
+
+#alterar a inicialização do serviço do SSH-Agent
+Set-Service ssh-agent -StartupType Automatic (Ou mudar para: Manual)
+
+#iniciar o serviço do SSH-Agent
+Start-Service ssh-agent
+
+#saindo do Powershell
+exit
 
 #OBSERVAÇÃO IMPORTANTE: Copiar a Chave Privada para o diretório padrão de Chaves do SSH no
 #Perfil do Usuário do Windows 10 em: C:\Users\SEU_USUÁRIO\.ssh
 
 Segunda etapa: Powershell do perfil do usuário sem ser como administrador
-	
-	#acessar o diretório das chaves Pública/Privadas do SSH
-	cd C:\Users\vaamonde\.ssh
-	
-	#listar o conteúdo do diretório
-	ls
 
-	#adicionar a chave privada no perfil do seu usuário
-	ssh-add .\vaamonde
+#acessar o diretório das chaves Pública/Privadas do SSH
+cd C:\Users\vaamonde\.ssh
+
+#listar o conteúdo do diretório
+ls
+
+#adicionar a chave privada no perfil do seu usuário
+ssh-add .\vaamonde
 ```
 
 #05_ Editando o arquivo de configuração do OpenSSH Server no Ubuntu Server<br>
@@ -294,13 +276,10 @@ sudo cat -n /var/log/ufw.log | grep -i dpt=22
 
 =========================================================================================
 
-OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO OPENSSH SE VOCÊ CONSEGUIU FAZER O A SEGURANÇA COM 
-A SEGUINTE FRASE: Segurança do OpenSSH realizado com sucesso!!! #BoraParaPrática
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO OPENSSH SE VOCÊ CONSEGUIU FAZER O A SEGURANÇA COM A SEGUINTE FRASE: Segurança do OpenSSH realizado com sucesso!!! #BoraParaPrática
 
-COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
-MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
 
 LINK DO SELO: https://github.com/vaamonde/ca-certificates/tree/main/selos/01-openssh.png
 
-#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
-#ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafioopenssh #desafiossh
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafioopenssh #desafiosshssh
