@@ -150,9 +150,9 @@ Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/01
 
 =============== SEGUNDA ETAPA: CRIAÇÃO E INSTALAÇÃO DA CA ===============
 
-## ** 🤩🤩 Instalação da CA (Certificate Authority Trust) no Microsoft Windows e GNU/Linux 🤩🤩**
+## ** 🤩🤩 Instalação da CA (Certificate Authority Trust) no Microsoft Windows, GNU/Linux, MacOS e Android 🤩🤩**
 
-Vídeo de configuração OpenSSL CA (Certificate Authority Trust) no GNU/Linux Ubuntu Server 22.04.x LTS (Jammy Jellyfish) do Projeto do Bora para Prática. O objetivo desse vídeo é configurar a estrutura de diretórios, arquivos e criação da Unidade Certificado Raiz Confiável CA (Certificate Authority Trust) para a emissão dos Certificados Assinados.
+Vídeo de instalação da CA (Certificate Authority Trust) o Microsoft Windows, GNU/Linux, MacOS e Android do Projeto do Bora para Prática. O objetivo desse vídeo é instalar e configurar a Unidade Certificado Raiz Confiável CA (Certificate Authority Trust) nos dispositivos finais (Desktops e Smartphone) Microsoft Windows, GNU/Linux, MacOS e Android/IPhone.
 
 OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
 
@@ -181,8 +181,8 @@ Conteúdo estudado nesse desafio:<br>
 #08_ Instalação da Autoridade Certificadora CA no MacOS Apple<br>
 #09_ Instalação da Autoridade Certificadora CA no iOS Apple
 
-[![Install CA](http://img.youtube.com/vi//0.jpg)]( "Install CA")
+[![Install CA](http://img.youtube.com/vi/2Jp_4g2RYvI/0.jpg)](https://www.youtube.com/watch?v=2Jp_4g2RYvI "Install CA")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=2Jp_4g2RYvI
 
 Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/02-certificates/01-ca-install.md

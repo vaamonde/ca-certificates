@@ -50,6 +50,10 @@ O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Lay
 
 A autoridade de certificação (CA), também conhecida como uma Autoridade de Certificação Raiz, é uma empresa ou organização que atua para validar as identidades (como sites, endereços de email, empresas ou pessoas físicas) e vinculá-las a chaves criptográficas através da emissão de documentos eletrônicos conhecidos como certificados digitais.
 
+[![Install CA](http://img.youtube.com/vi/2Jp_4g2RYvI/0.jpg)](https://www.youtube.com/watch?v=2Jp_4g2RYvI "Install CA")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=2Jp_4g2RYvI
+
 #01_ Instalação da Autoridade Certificadora CA no Mozilla Firefox (GNU/Linux ou Microsoft Windows)<br>
 ```bash
 #baixando o certificado do nosso servidor via navegador:
@@ -59,7 +63,7 @@ firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 #sistema de gerenciamento de Unidades Certificadoras e Certificados Assinados, ele não usa
 #o do sistema operacional.
 
-#instalando o certificado no Firefox
+#instalando o certificado no Mozilla Firefox
 Abrir menu de Aplicativo
   Preferências ou Opções ou Configurações
     Pesquisar em preferências: Ver certificados
@@ -71,7 +75,7 @@ Abrir menu de Aplicativo
           <OK>
         <OK>
 
-#consultando o certificado no Firefox
+#consultando o certificado no Mozilla Firefox
 Autoridades
   Bora para Pratica
     wsvaamonde.pti.intra
@@ -124,6 +128,9 @@ https://chromium.googlesource.com/chromium/src/+/master/docs/linux/cert_manageme
 #instalando a biblioteca Libnss3
 sudo apt update
 sudo apt install libnss3-tools
+
+#acessar o diretório de Download do Linux Mint
+cd ~/Download
 
 #instalando a Unidade Certificadora no Microsoft Edge utilizando o comando certutil
 #opções do comando certutil: -d (directory), -A (Add an existing certificate to a certificate database), 
@@ -226,7 +233,11 @@ Pesquisa do Windows
 #baixando o certificado do nosso servidor via navegador:
 google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
-#instalando o certificado no Android
+#OBSERVAÇÃO IMPORTANTE: QUANDO VOCÊ FAZ O DOWNLOAD DE UNIDADES CERTIFICADORAS OU
+#CERTIFICADO VIA NAVEGADOR NO SMARTPHONE ANDROID ELE JÁ INICIAR O PROCEDIMENTO DE
+#INSTALAÇÃO DO CERTIFICADO.
+
+#instalando o certificado no Smartphone Android
 Configurações
   Senhas e Segurança
     Privacidade
@@ -244,10 +255,28 @@ Configurações
 #baixando o certificado do nosso servidor via navegador:
 safari ou google chrome: http://endereço_ipv4_ubuntuserver/ca/
 
-#instalando o certificado no MacOS
+#instalando o certificado no MacOS Apple
 Pasta: Download
   pti-ca.crt (clicar duas vezes em cima do certificado)
-    Abrir
+    Adicionar Certificados
+      Chaves: Sistema
+    <Adicionar>
+  Acesso às Chaves
+    Usuário: SEU_USUÁRIO
+    Senha: SUA_SENHA
+  <Modificar Chaves>
+
+#habilitando o certificado confiável da CA no MacOS Apple
+Acesso às Chaves
+  Sistema
+    wsvaamonde.pti.intra (clicar duas vezes em cima do certificado)
+      Confiança
+        Ao usar este certificado: Confiar Sempre
+      <Fechar>
+  Acesso às Chaves
+    Usuário: SEU_USUÁRIO
+    Senha: SUA_SENHA
+  <Atualizar Ajustes>
 ```
 
 #09_ Instalação da Autoridade Certificadora CA no iOS Apple<br>
