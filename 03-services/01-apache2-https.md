@@ -10,16 +10,13 @@
 #Data de atualização: 21/07/2023<br>
 #Versão: 0.03<br>
 
-OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO APACHE2 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM 
-A SEGUINTE FRASE: Instalação da Certificado no Apache2 realizado com sucesso!!! #BoraParaPrática
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO APACHE2 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Apache2 realizado com sucesso!!! #BoraParaPrática
 
-COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
-MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
 
 LINK DO SELO: 
 
-#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
-#ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafiapache2 #desaficertificado
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafiapache2 #desaficertificado
 
 Conteúdo estudado nesse desafio:<br>
 #01_ Fazendo o download do Arquivo de Configuração do Certificado do Apache2 Server<br>
@@ -50,26 +47,13 @@ Digicert: https://www.digicert.com<br>
 Verisign: https://www.verisign.com/<br>
 Let's Encrypt: https://letsencrypt.org/
 
-OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca<br>
-(escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza<br>
-várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta<br>
-biblioteca em várias outras linguagens. 
+OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
 
-O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux,<br>
-Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows.<br>
-O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para<br>
-gerar certificados de autenticação de serviços/protocolos em servidores (servers).
+O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux, Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows. O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para gerar certificados de autenticação de serviços/protocolos em servidores (servers).
 
-O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer<br>
-(SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações<br>
-sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em<br>
-aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP).<br>
-Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e<br>
-navegadores web.
+O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer (SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP). Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e navegadores web.
 
-O Servidor HTTP Apache ou Servidor Apache ou HTTP Daemon Apache ou somente Apache, é o servidor<br>
-web livre criado em 1995 por um grupo de desenvolvedores da NCSA, tendo como base o servidor<br>
-web NCSA HTTPd criado por Rob McCool.
+O Servidor HTTP Apache ou Servidor Apache ou HTTP Daemon Apache ou somente Apache, é o servidor web livre criado em 1995 por um grupo de desenvolvedores da NCSA, tendo como base o servidor web NCSA HTTPd criado por Rob McCool.
 
 #01_ Fazendo o download do Arquivo de Configuração do Certificado do Apache2 Server<br>
 ```bash
@@ -318,13 +302,10 @@ firefox ou google chrome: https://endereço_ipv4_ubuntuserver
 
 =========================================================================================
 
-OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO APACHE2 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM 
-A SEGUINTE FRASE: Instalação da Certificado no Apache2 realizado com sucesso!!! #BoraParaPrática
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO APACHE2 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Apache2 realizado com sucesso!!! #BoraParaPrática
 
-COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
-MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
 
 LINK DO SELO: 
 
-#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
-#ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafiapache2 #desaficertificado
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafiapache2 #desaficertificado

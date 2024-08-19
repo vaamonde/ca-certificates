@@ -10,16 +10,13 @@
 #Data de atualização: 21/07/2024<br>
 #Versão: 0.03<br>
 
-OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO TOMCAT10 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM 
-A SEGUINTE FRASE: Instalação da Certificado no Tomcat10 realizado com sucesso!!! #BoraParaPrática
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO TOMCAT10 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Tomcat10 realizado com sucesso!!! #BoraParaPrática
 
-COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
-MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
 
 LINK DO SELO: 
 
-#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
-#ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafitomcat10 #desaficertificado
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafitomcat10 #desaficertificado
 
 Conteúdo estudado nesse desafio:<br>
 #01_ Fazendo o download do Arquivo de Configuração do Certificado do Apache TomCAT 10 Server<br>
@@ -56,27 +53,13 @@ Digicert: https://www.digicert.com<br>
 Verisign: https://www.verisign.com/<br>
 Let's Encrypt: https://letsencrypt.org/
 
-OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca<br>
-(escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza<br>
-várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta<br>
-biblioteca em várias outras linguagens. 
+OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
 
-O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux,<br>
-Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows.<br>
-O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para<br>
-gerar certificados de autenticação de serviços/protocolos em servidores (servers).
+O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux, Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows. O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para gerar certificados de autenticação de serviços/protocolos em servidores (servers).
 
-O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer<br>
-(SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações<br>
-sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em<br>
-aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP).<br>
-Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e<br>
-navegadores web.
+O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer (SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP). Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e navegadores web.
 
-O Tomcat é um servidor web Java, mais especificamente, um container de servlets. O Tomcat<br>
-implementa, dentre outras de menor relevância, as tecnologias Java Servlet e JavaServer<br>
-Pages e não é um container Enterprise JavaBeans. Desenvolvido pela Apache Software Foundation,<br>
-é distribuído como software livre.
+O Tomcat é um servidor web Java, mais especificamente, um container de servlets. O Tomcat implementa, dentre outras de menor relevância, as tecnologias Java Servlet e JavaServer Pages e não é um container Enterprise JavaBeans. Desenvolvido pela Apache Software Foundation, é distribuído como software livre.
 
 #01_ Fazendo o download do Arquivo de Configuração do Certificado do Apache TomCAT 10 Server<br>
 ```bash
@@ -241,7 +224,7 @@ INSERT
 	# Configuração principal do Tomcat referente a Porta padrão (8080 - HTTPS), Timeout e
 	# Porta Segura (8443 - HTTPS)
 
-	#descomentar as configurações de HTTPs do Apache TomCAT Server a partir da linha: 42
+	#descomentar as configurações de HTTPS do Apache TomCAT Server a partir da linha: 42
 	# Configuração do suporte ao SSL/TLS do Tomcat utilizando o software Keytool
 	# e Certificados Assinados utilizando o OpenSSL
 	# Comando para a geração do certificado do Tomcat SSL/TLS não assinado pela CA
@@ -294,13 +277,10 @@ Clique em: Manager App
 
 =========================================================================================
 
-OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO TOMCAT10 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM 
-A SEGUINTE FRASE: Instalação da Certificado no Tomcat10 realizado com sucesso!!! #BoraParaPrática
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO TOMCAT10 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Tomcat10 realizado com sucesso!!! #BoraParaPrática
 
-COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM)
-MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
 
 LINK DO SELO: 
 
-#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver 
-#ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafitomcat10 #desaficertificado
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafitomcat10 #desaficertificado
