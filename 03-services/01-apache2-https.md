@@ -26,7 +26,7 @@ Conteúdo estudado nesse desafio:<br>
 #05_ Verificando o arquivo de Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache2 Server no Ubuntu Server<br>
 #06_ Criando o arquivo CSR (Certificate Signing Request) do Apache2 Server no Ubuntu Server<br>
 #07_ Criando o arquivo CRT (Certificate Request Trust) do Apache2 Server no Ubuntu Server<br>
-#08_ Verificando o arquivo CRT (Certificate Request Trust) do Apache2 Server no Ubuntu Server<b
+#08_ Verificando o arquivo CRT (Certificate Request Trust) do Apache2 Server no Ubuntu Server<br>
 #09_ Fazendo o download do Arquivo de Configuração do HTTPS do Apache2 Server<br>
 #11_ Habilitando o suporte ao TLS/SSL no Site HTTPS do Apache2 Server no Ubuntu Server<br>
 #12_ Verificando a Porta de Conexão do Apache2 Server no Ubuntu Server<br>
