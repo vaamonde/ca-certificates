@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 17/12/2023<br>
-#Data de atualização: 21/07/2024<br>
-#Versão: 0.03<br>
+#Data de atualização: 28/08/2024<br>
+#Versão: 0.04<br>
 
 OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO TOMCAT10 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Tomcat10 realizado com sucesso!!! #BoraParaPrática
 
@@ -220,11 +220,11 @@ sudo wget -v -O /opt/tomcat/conf/server.xml https://raw.githubusercontent.com/va
 sudo vim /opt/tomcat/conf/server.xml
 INSERT
 
-	#comentar as configurações de HTTP do Apache TomCAT Server a partir da linha: 34
+	#comentar as configurações de HTTP do Apache TomCAT Server a partir da linha: 39 41
 	# Configuração principal do Tomcat referente a Porta padrão (8080 - HTTPS), Timeout e
 	# Porta Segura (8443 - HTTPS)
 
-	#descomentar as configurações de HTTPS do Apache TomCAT Server a partir da linha: 42
+	#descomentar as configurações de HTTPS do Apache TomCAT Server a partir da linha: 49 até 63
 	# Configuração do suporte ao SSL/TLS do Tomcat utilizando o software Keytool
 	# e Certificados Assinados utilizando o OpenSSL
 	# Comando para a geração do certificado do Tomcat SSL/TLS não assinado pela CA
@@ -242,11 +242,11 @@ sudo systemctl restart tomcat10
 sudo systemctl status tomcat10
 ```
 
-#14_ Verificando a Porta de Conexão do Apache TomCAT Server no Ubuntu Server<br>
+#14_ Verificando as Portas de Conexões do Apache TomCAT Server no Ubuntu Server<br>
 ```bash
-#verificando as portas 80 HTTP e 443 HTTPS do Apache TomCAT Server
+#verificando as portas 8080 HTTP e 8443 HTTPS do Apache TomCAT Server
 #opção do comando lsof: -n (network number), -P (port number), -i (list IP Address), -s (alone directs)
-sudo lsof -nP -iTCP:'8443' -sTCP:LISTEN
+sudo lsof -nP -iTCP:'8080,8443' -sTCP:LISTEN
 ```
 
 #15_ Testando o Certificado TLS/SSL do Apache TomCAT Server no ubuntu Server<br>

@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 21/07/2023<br>
-#Versão: 0.03<br>
+#Data de atualização: 27/08/2023<br>
+#Versão: 0.04<br>
 
 OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO APACHE2 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Apache2 realizado com sucesso!!! #BoraParaPrática
 
@@ -54,6 +54,10 @@ O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo 
 O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer (SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP). Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e navegadores web.
 
 O Servidor HTTP Apache ou Servidor Apache ou HTTP Daemon Apache ou somente Apache, é o servidor web livre criado em 1995 por um grupo de desenvolvedores da NCSA, tendo como base o servidor web NCSA HTTPd criado por Rob McCool.
+
+[![HTTPS Apache2](http://img.youtube.com/vi//0.jpg)]( "HTTPS Apache2")
+
+Link da vídeo aula: 
 
 #01_ Fazendo o download do Arquivo de Configuração do Certificado do Apache2 Server<br>
 ```bash
@@ -239,7 +243,7 @@ sudo apache2ctl configtest
 sudo a2ensite default-ssl
 
 #reiniciando o Serviços do Apache2 Server
-sudo systemctl reload apache2
+sudo systemctl restart apache2
 sudo systemctl status apache2
 
 #analisando os Log's e mensagens de erro do Servidor do Apache2
@@ -247,7 +251,7 @@ sudo systemctl status apache2
 sudo journalctl -xeu apache2
 ```
 
-#12_ Verificando a Porta de Conexão do Apache2 Server no Ubuntu Server<br>
+#12_ Verificando as Portas de Conexões do Apache2 Server no Ubuntu Server<br>
 ```bash
 #OBSERVAÇÃO IMPORTANTE: no Ubuntu Server as Regras de Firewall utilizando o comando: 
 #iptables ou: ufw está desabilitado por padrão (INACTIVE), caso você tenha habilitado 
@@ -283,8 +287,19 @@ firefox ou google chrome: https://endereço_ipv4_ubuntuserver/
 #desabilitando o Site HTTP do Apache2 Server
 sudo a2dissite 000-default.conf
 
+#desativando a porta de conexão 80 HTTP do Apache2
+sudo vim /etc/apache2/ports.conf
+INSERT
+
+	#verificar as variáveis Listen a partir da 5
+	#Listen 80     #comentar a porta padrão do HTTP do Apache2
+	Listen 8888    #porta de conexão do GLPI Help Desk
+
+#salvar e sair do arquivo
+ESC SHIFT :x <Enter>
+
 #reiniciando o Serviços do Apache2 Server
-sudo systemctl reload apache2
+sudo systemctl restart apache2
 sudo systemctl status apache2
 
 #analisando os Log's e mensagens de erro do Servidor do Apache2
@@ -293,7 +308,7 @@ sudo journalctl -xeu apache2
 
 #verificando as portas 80 HTTP e 443 HTTPS do Apache2 Server 
 #opção do comando lsof: -n (network number), -P (port number), -i (list IP Address), -s (alone directs)
-sudo lsof -nP -iTCP:'80,443' -sTCP:LIST
+sudo lsof -nP -iTCP:'80,443' -sTCP:LISTEN
 
 #utilizar os navegadores para testar o HTTP e HTTPS
 firefox ou google chrome: http://endereço_ipv4_ubuntuserver

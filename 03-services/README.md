@@ -26,10 +26,88 @@ Github Procedimentos em TI: https://github.com/vaamonde<br>
 <a href="https://github.com/vaamonde/ca-certificates/blob/master/LICENSE"><img src="https://img.shields.io/github/license/vaamonde/ca-certificates?color=2b9348" alt="License Badge"/></a>
 </div>
 
-## **🤩🤩 Apresentação do NOVO CURSO GRATUITO CA (Certificate Authority Trust) Autoridade Certificadora Confiável no GNU/Linux Ubuntu Server 22.04.x LTS (Jammy Jellyfish) 🤩🤩**
+## ** 🤩🤩 Configuração do Certificado Assinado do Apache2 Server HTTPS TLS/SSL 🤩🤩**
 
-Vídeo de apresentação do NOVO Curso CA (Certificate Authority Trust) Autoridade Certificadora Confiável no GNU/Linux Ubuntu Server 22.04.x LTS (Jammy Jellyfish) do Projeto do Bora para Prática. O objetivo desse curso é mostrar os procedimentos básicos para instalar e configurar a Autoridade Certificadora Confiável e criar os Certificados Assinados dos principais serviços de rede.
+Vídeo de Criação e Configuração do Certificado Assinado do Apache2 Server para habilitar o recurso do HTTPS (Hyper-Text Transport Protocol Security) TLS/SSL onde oferece segurança e confiabilidade de acesso a Páginas de Internet e Aplicações.
 
-[![Apresentação do Curso](http://img.youtube.com/vi/JfNKOOPCWRQ/0.jpg)](https://www.youtube.com/watch?v=JfNKOOPCWRQ "Apresentação do Curso")
+OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
 
-Link da vídeo aula: https://www.youtube.com/watch?v=JfNKOOPCWRQ
+O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux, Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows. O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para gerar certificados de autenticação de serviços/protocolos em servidores (servers).
+
+O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer (SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP).Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e navegadores web.
+
+A autoridade de certificação (CA), também conhecido como um Autoridade de Certificação, é uma empresa ou organização que atua para validar as identidades de entidades (como sites, endereços de email, empresas ou pessoas físicas) e vinculá-las a chaves criptográficas através da emissão de documentos eletrônicos conhecidos como certificados digitais.
+
+O Servidor HTTP Apache ou Servidor Apache ou HTTP Daemon Apache ou somente Apache, é o servidor web livre criado em 1995 por um grupo de desenvolvedores da NCSA, tendo como base o servidor web NCSA HTTPd criado por Rob McCool.
+
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO APACHE2 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Apache2 realizado com sucesso!!! #BoraParaPrática
+
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+
+LINK DO SELO: https://github.com/vaamonde/ca-certificates/blob/main/selos/04-apache2.png
+
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafiapache2 #desaficertificado
+
+Conteúdo estudado nesse desafio:<br>
+#01_ Fazendo o download do Arquivo de Configuração do Certificado do Apache2 Server<br>
+#02_ Editando o arquivo de Arquivo de Configuração do Certificado do Apache2 Server<br>
+#03_ Criando o Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache2 Server no Ubuntu Server<br>
+#04_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache2 Server no Ubuntu Server<br>
+#05_ Verificando o arquivo de Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache2 Server no Ubuntu Server<br>
+#06_ Criando o arquivo CSR (Certificate Signing Request) do Apache2 Server no Ubuntu Server<br>
+#07_ Criando o arquivo CRT (Certificate Request Trust) do Apache2 Server no Ubuntu Server<br>
+#08_ Verificando o arquivo CRT (Certificate Request Trust) do Apache2 Server no Ubuntu Server<br>
+#09_ Fazendo o download do Arquivo de Configuração do HTTPS do Apache2 Server<br>
+#11_ Habilitando o suporte ao TLS/SSL no Site HTTPS do Apache2 Server no Ubuntu Server<br>
+#12_ Verificando a Porta de Conexão do Apache2 Server no Ubuntu Server<br>
+#14_ Testando o HTTP e HTTPs do Apache2 Server no navegador<br>
+#15_ Desativar o Site Padrão HTTP do Apache2 Server no Ubuntu Server.
+
+[![HTTPS Apache2](http://img.youtube.com/vi/7yqy-5Qo01k/0.jpg)](https://www.youtube.com/watch?v=7yqy-5Qo01k "HTTPS Apache2")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=7yqy-5Qo01k
+
+Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/03-services/01-apache2-https.md
+
+## ** 🤩🤩 Configuração do Certificado Assinado do ApacheTomCAT Server HTTPS TLS/SSL 🤩🤩**
+
+OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
+
+O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux, Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows. O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para gerar certificados de autenticação de serviços/protocolos em servidores (servers).
+
+O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer (SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP). Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e navegadores web.
+
+O Tomcat é um servidor web Java, mais especificamente, um container de servlets. O Tomcat implementa, dentre outras de menor relevância, as tecnologias Java Servlet e JavaServer Pages e não é um container Enterprise JavaBeans. Desenvolvido pela Apache Software Foundation, é distribuído como software livre.
+
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO TOMCAT10 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Tomcat10 realizado com sucesso!!! #BoraParaPrática
+
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+
+LINK DO SELO: https://github.com/vaamonde/ca-certificates/blob/main/selos/05-tomcat.png
+
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafitomcat10 #desaficertificado
+
+Conteúdo estudado nesse desafio:<br>
+#01_ Fazendo o download do Arquivo de Configuração do Certificado do Apache TomCAT 10 Server<br>
+#02_ Editando o arquivo de Arquivo de Configuração do Certificado do Apache TomCAT 10 Server<br>
+#03_ Criando o Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache TomCAT 10 Server no Ubuntu Server<br>
+#04_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache TomCAT 10 Server no Ubuntu Server<br>
+#05_ Verificando o arquivo de Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache TomCAT 10 Server no Ubuntu Server<br>
+#06_ Criando o arquivo CSR (Certificate Signing Request) do Apache TomCAT 10 Server no Ubuntu Server<br>
+#07_ Criando o arquivo CRT (Certificate Request Trust) do Apache TomCAT 10 Server no Ubuntu Server<br>
+#08_ Verificando o arquivo CRT (Certificate Request Trust) do Apache TomCAT 10 Server no Ubuntu Server<br>
+#09_ Exportando o certificado PKCS#12 PEM (Privacy Enhanced Mail) do Apache TomCAT 10 Server no Ubuntu Server<br>
+#10_ Importando o certificado PKCS#12 PEM (Privacy Enhanced Mail) no arquivo JKS (Java KeyStore) do Apache TomCAT 10 Server no Ubuntu Server<br>
+#11_ Fazendo o download do Arquivo de Configuração do HTTPS do Apache TomCAT 10 Server<br>
+#12_ Editando o arquivo de Configuração do HTTPS do Apache TomCAT 10 Server<br>
+#13_ Reinicializar o Serviço do Apache TomCAT Server no Ubuntu Server<br>
+#14_ Verificando a Porta de Conexão do Apache TomCAT Server no Ubuntu Server<br>
+#15_ Testando o Certificado TLS/SSL do Apache TomCAT Server no ubuntu Server<br>
+#16_ Testando o HTTPS do Apache TomCAT Server no navegador<br>
+#17_ Usuário e Senha de Administração do Apache TomCAT Server
+
+[![HTTPS TomCAT](http://img.youtube.com/vi//0.jpg)]( "HTTPS Apache2")
+
+Link da vídeo aula: 
+
+Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/03-services/02-tomcat10-https.md
