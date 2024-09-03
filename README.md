@@ -81,7 +81,7 @@ Vídeo de apresentação do NOVO Curso CA (Certificate Authority Trust) Autorida
 
 Link da vídeo aula: https://www.youtube.com/watch?v=JfNKOOPCWRQ
 
-================ PRIMEIRA ETAPA: CONFIGURAÇÃO DO OPENSSH ================
+================ PRIMEIRA ETAPA: CONFIGURAÇÃO DO OPENSSH e CA ================
 
 ## ** 🤩🤩 Configuração Avançadas e Segurança do OpenSSH no GNU/Linux Ubuntu Server 22.04.x LTS (Jammy Jellyfish) 🤩🤩**
 
@@ -148,7 +148,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=isv1W9QF32w
 
 Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/01-ca/02-ca-openssl.md
 
-=============== SEGUNDA ETAPA: CRIAÇÃO E INSTALAÇÃO DA CA ===============
+=============== SEGUNDA ETAPA: INSTALAÇÃO DA CA NO WINDOWS E LINUX ===============
 
 ## ** 🤩🤩 Instalação da CA (Certificate Authority Trust) no Microsoft Windows, GNU/Linux, MacOS e Android 🤩🤩**
 
@@ -191,7 +191,7 @@ Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/02
 
 ## ** 🤩🤩 Configuração do Certificado Assinado do Apache2 Server HTTPS TLS/SSL 🤩🤩**
 
-Vídeo de Criação e Configuração do Certificado Assinado do Apache2 Server para habilitar o recurso do HTTPS (Hyper-Text Transport Protocol Security) TLS/SSL onde oferece segurança e confiabilidade de acesso a Páginas de Internet e Aplicações.
+Vídeo de Criação e Configuração do Certificado Assinado do Apache2 Server para habilitar o recurso do HTTPS (Hyper-Text Transport Protocol Security) TLS/SSL onde oferece segurança e confiabilidade de acesso a Páginas de Internet e Aplicações desenvolvidas em HTML, PHP, JavaScript, etc.
 
 OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
 
@@ -232,7 +232,9 @@ Link da vídeo aula: https://www.youtube.com/watch?v=7yqy-5Qo01k
 
 Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/03-services/01-apache2-https.md
 
-## ** 🤩🤩 Configuração do Certificado Assinado do ApacheTomCAT Server HTTPS TLS/SSL 🤩🤩**
+## ** 🤩🤩 Configuração do Certificado Assinado do Apache TomCAT Server HTTPS TLS/SSL 🤩🤩**
+
+Vídeo de Criação e Configuração do Certificado Assinado do Apache TomCAT 10 para habilitar o recurso do HTTPS (Hyper-Text Transport Protocol Security) TLS/SSL onde oferece segurança e confiabilidade de acesso a Páginas de Internet e Aplicações desenvolvidas em Java.
 
 OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
 
@@ -269,8 +271,51 @@ Conteúdo estudado nesse desafio:<br>
 #16_ Testando o HTTPS do Apache TomCAT Server no navegador<br>
 #17_ Usuário e Senha de Administração do Apache TomCAT Server
 
-[![HTTPS TomCAT](http://img.youtube.com/vi//0.jpg)]( "HTTPS Apache2")
+[![HTTPS TomCAT](http://img.youtube.com/vi//0.jpg)]( "HTTPS TomCAT")
 
 Link da vídeo aula: 
 
 Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/03-services/02-tomcat10-https.md
+
+## ** 🤩🤩 Configuração do Certificado Assinado do Node.JS HTTPS TLS/SSL 🤩🤩**
+
+Vídeo de Criação e Configuração do Certificado Assinado do Node.JS para habilitar o recurso do HTTPS (Hyper-Text Transport Protocol Security) TLS/SSL onde oferece segurança e confiabilidade de acesso a Páginas de Internet e Aplicações desenvolvidas em JavaScript.
+
+OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
+
+O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux, Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows. O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para gerar certificados de autenticação de serviços/protocolos em servidores (servers).
+
+O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer (SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP). Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e navegadores web.
+
+O Node.js é um software de código aberto, multiplataforma, baseado no interpretador V8 do Google e que permite a execução de códigos JavaScript fora de um navegador web. A principal característica do Node.js é sua arquitetura assíncrona e orientada por eventos.
+
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO NODE.JS SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Node.JS realizado com sucesso!!! #BoraParaPrática
+
+COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
+
+LINK DO SELO: https://github.com/vaamonde/ca-certificates/blob/main/selos/06-nodejs.png
+
+#boraparapratica #boraparaprática #vaamonde #robsonvaamonde #procedimentosemti #ubuntuserver #ubuntuserver2204 #desafiovaamonde #desafioboraparapratica #desafinodejs #desaficertificado
+
+Conteúdo estudado nesse desafio:<br>
+#01_ Fazendo o download do Arquivo de Configuração do Certificado do Node.JS<br>
+#02_ Editando o arquivo de Arquivo de Configuração do Certificado do Node.JS<br>
+#03_ Criando o Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Node.JS no Ubuntu Server<br>
+#04_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Node.JS no Ubuntu Server<br>
+#05_ Verificando o arquivo de Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Node.JS no Ubuntu Server<br>
+#06_ Criando o arquivo CSR (Certificate Signing Request) do Node.JS no Ubuntu Server<br>
+#07_ Criando o arquivo CRT (Certificate Request Trust) do Node.JS no Ubuntu Server<br>
+#08_ Verificando o arquivo CRT (Certificate Request Trust) do Node.JS no Ubuntu Server<br>
+#09_ Acessando o diretório do Projeto Simples de Teste do Node.JS<br>
+#10_ Atualizando o Código do Node.JS do Projeto de Teste<br>
+#11_ Executando o Projeto Simples do Node.JS utilizando o Express e HTTPS<br>
+#12_ Verificando a Porta de Conexão do Node.JS Express e HTTPS<br>
+#13_ Testando o Certificado TLS/SSL do Node.JS no ubuntu Server<br>
+#14_ Acessando o Projeto Simples do Node.JS via HTTPS<br>
+#15_ Finalizando a Execução do Projeto Simples do Node.JS Express e HTTPS
+
+[![HTTPS Node.JS](http://img.youtube.com/vi//0.jpg)]( "HTTPS Node.JS")
+
+Link da vídeo aula: 
+
+Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/03-services/03-nodejs-https.md
