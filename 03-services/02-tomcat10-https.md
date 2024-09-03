@@ -211,8 +211,8 @@ sudo keytool -importkeystore -deststorepass pti@2018 -destkeypass pti@2018 -dest
 #11_ Alterando as Permissões do Certificado PKCS#12 do Apache TOMCAT 10 Server no Ubuntu Server<br>
 ```bash
 #alterando as permissões de Dono e Grupo padrão dos Certificados
-#opção do comando chown: -v (verbose)
-sudo chown -v tomcat:tomcat tomcat10.jks tomcat10.pem
+#opção do comando chown: -v (verbose), tomcat (user), tomcat (group)
+sudo chown -v tomcat:tomcat /opt/tomcat/conf/tomcat10.jks /opt/tomcat/conf/tomcat10.pem
 
 #listando os arquivos de Certificados do Apache TomCAT
 #opção do comando ls: -l (long listing format), -h (human-readable)

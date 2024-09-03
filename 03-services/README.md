@@ -69,7 +69,7 @@ Link da vídeo aula: https://www.youtube.com/watch?v=7yqy-5Qo01k
 
 Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/03-services/01-apache2-https.md
 
-## ** 🤩🤩 Configuração do Certificado Assinado do ApacheTomCAT Server HTTPS TLS/SSL 🤩🤩**
+## ** 🤩🤩 Configuração do Certificado Assinado do Apache TomCAT Server HTTPS TLS/SSL 🤩🤩**
 
 OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
 
