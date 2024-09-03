@@ -21,7 +21,7 @@ LINK DO SELO: https://github.com/vaamonde/ca-certificates/blob/main/selos/06-nod
 Conteúdo estudado nesse desafio:<br>
 #01_ Fazendo o download do Arquivo de Configuração do Certificado do Node.JS<br>
 #02_ Editando o arquivo de Arquivo de Configuração do Certificado do Node.JS<br>
-#03_ Criando o Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Node.JS no Ubuntu Server<br
+#03_ Criando o Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Node.JS no Ubuntu Server<br>
 #04_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Node.JS no Ubuntu Server<br>
 #05_ Verificando o arquivo de Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Node.JS no Ubuntu Server<br>
 #06_ Criando o arquivo CSR (Certificate Signing Request) do Node.JS no Ubuntu Server<br>
