@@ -220,7 +220,7 @@ sudo wget -v -O /opt/tomcat/conf/server.xml https://raw.githubusercontent.com/va
 sudo vim /opt/tomcat/conf/server.xml
 INSERT
 
-	#comentar as configurações de HTTP do Apache TomCAT Server a partir da linha: 39 41
+	#comentar as configurações de HTTP do Apache TomCAT Server a partir da linha: 39 até 41
 	# Configuração principal do Tomcat referente a Porta padrão (8080 - HTTPS), Timeout e
 	# Porta Segura (8443 - HTTPS)
 
