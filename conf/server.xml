@@ -11,7 +11,7 @@
 #LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 #Data de criação: 19/01/2023
 #Data de atualização: 03/09/2024
-#Versão: 0.06
+#Versão: 0.07
 -->
 <Server port="-1" shutdown="SHUTDOWN">
   <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
