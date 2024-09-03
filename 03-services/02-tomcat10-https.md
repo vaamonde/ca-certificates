@@ -288,6 +288,12 @@ Clique em: Manager App
 <Fazer Login>
 ```
 
+#19_ Testando a Aplicação Agenda via HTTPS do Apache TomCAT Server no navegador<br>
+```bash
+#utilizar os navegadores para testar o HTTPS
+firefox ou google chrome: https://endereço_ipv4_ubuntuserver:8443/agenda
+```
+
 =========================================================================================
 
 OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO TOMCAT10 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Tomcat10 realizado com sucesso!!! #BoraParaPrática

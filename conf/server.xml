@@ -31,7 +31,7 @@
               pathname="conf/tomcat-users.xml" />
   </GlobalNamingResources>
   <!--
-   # Configuração principal do Tomcat referente a Porta padrão (8080 - HTTPS), Timeout e
+   # Configuração principal do Tomcat referente a Porta padrão (8080 - HTTP), Timeout e
    # Porta Segura (8443 - HTTPS)
   -->
   <Service name="Catalina">

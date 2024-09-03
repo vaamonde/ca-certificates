@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 02/09/2024<br>
-#Data de atualização: 02/09/2024<br>
-#Versão: 0.01<br>
+#Data de atualização: 03/09/2024<br>
+#Versão: 0.02<br>
 
 OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO NODE.JS SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Node.JS realizado com sucesso!!! #BoraParaPrática
 
@@ -174,9 +174,9 @@ sudo openssl x509 -noout -modulus -in /etc/ssl/newcerts/nodejs.crt | openssl md5
 sudo openssl x509 -noout -text -in /etc/ssl/newcerts/nodejs.crt
 
 #listando o conteúdo do banco de dados do certificados emitidos
-sudo cat /etc/ssl/index.txt
-sudo cat /etc/ssl/index.txt.attr
-sudo cat /etc/ssl/serial
+#opção do comando cat: -n (numeric)
+sudo cat -n /etc/ssl/index.txt
+sudo cat -n /etc/ssl/serial
 ```
 
 #09_ Acessando o diretório do Projeto Simples de Teste do Node.JS<br>
@@ -219,7 +219,7 @@ ESC d G
 INSERT
 ```
 ```js
-// Criando as variáveis do Express e do App do Node.JS
+// Criando as variáveis do Express, HTTPS, FS e do App do Node.JS
 var express = require('express'); 
 var https = require('https');
 var fs = require('fs');
@@ -229,13 +229,13 @@ var app = express();
 var options = {
     key: fs.readFileSync('/etc/ssl/private/nodejs.key'),
     cert: fs.readFileSync('/etc/ssl/newcerts/nodejs.crt'),
-    // Opcional: adicionar se precisar validar a cadeia de certificação
+    // Opcional: adicionar se precisar validar a cadeia de certificação com a CA
     ca: fs.readFileSync('/etc/ssl/certs/pti-ca.pem')
 };
 
 // Mensagem que será mostrada no browser (navegador) 
 app.get('/', function (req, res) {
-    res.send('Seu Nome e Sobrenome #BoraParaPrática!!!');
+    res.send('Robson Vaamonde - Projeto #BoraParaPrática!!!');
 });
 
 // Porta padrão utilizada pela aplicação do Node.JS com HTTPS

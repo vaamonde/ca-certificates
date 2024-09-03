@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 27/08/2023<br>
-#Versão: 0.04<br>
+#Data de atualização: 03/09/2023<br>
+#Versão: 0.05<br>
 
 OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO APACHE2 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Apache2 realizado com sucesso!!! #BoraParaPrática
 
@@ -176,7 +176,6 @@ sudo openssl x509 -noout -text -in /etc/ssl/newcerts/apache2.crt
 #listando o conteúdo do banco de dados do certificados emitidos e assinados da nossa CA
 #opção do comando cat: -n (number line)
 sudo cat -n /etc/ssl/index.txt
-sudo cat -n /etc/ssl/index.txt.attr
 sudo cat -n /etc/ssl/serial
 ```
 
@@ -313,6 +312,15 @@ sudo lsof -nP -iTCP:'80,443' -sTCP:LISTEN
 #utilizar os navegadores para testar o HTTP e HTTPS
 firefox ou google chrome: http://endereço_ipv4_ubuntuserver
 firefox ou google chrome: https://endereço_ipv4_ubuntuserver
+```
+
+#16_ Testando Sites do Apache2 Server no Ubuntu Server (NÃO COMENTADO NO VÍDEO)<br>
+```bash
+#testando o site de Teste do Apache2
+firefox ou google chrome: https://endereço_ipv4_ubuntuserver/teste
+
+#testando o site do Wordpress instalado no Apache2
+firefox ou google chrome: https://endereço_ipv4_ubuntuserver/wp
 ```
 
 =========================================================================================
