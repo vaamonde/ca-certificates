@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 17/12/2023<br>
-#Data de atualização: 28/08/2024<br>
-#Versão: 0.04<br>
+#Data de atualização: 03/09/2024<br>
+#Versão: 0.05<br>
 
 OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO TOMCAT10 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Tomcat10 realizado com sucesso!!! #BoraParaPrática
 
@@ -29,13 +29,14 @@ Conteúdo estudado nesse desafio:<br>
 #08_ Verificando o arquivo CRT (Certificate Request Trust) do Apache TomCAT 10 Server no Ubuntu Server<br>
 #09_ Exportando o certificado PKCS#12 PEM (Privacy Enhanced Mail) do Apache TomCAT 10 Server no Ubuntu Server<br>
 #10_ Importando o certificado PKCS#12 PEM (Privacy Enhanced Mail) no arquivo JKS (Java KeyStore) do Apache TomCAT 10 Server no Ubuntu Server<br>
-#11_ Fazendo o download do Arquivo de Configuração do HTTPS do Apache TomCAT 10 Server<br>
-#12_ Editando o arquivo de Configuração do HTTPS do Apache TomCAT 10 Server<br>
-#13_ Reinicializar o Serviço do Apache TomCAT Server no Ubuntu Server<br>
-#14_ Verificando a Porta de Conexão do Apache TomCAT Server no Ubuntu Server<br>
-#15_ Testando o Certificado TLS/SSL do Apache TomCAT Server no ubuntu Server<br>
-#16_ Testando o HTTPS do Apache TomCAT Server no navegador<br>
-#17_ Usuário e Senha de Administração do Apache TomCAT Server
+#11_ Alterando as Permissões do Certificado PKCS#12 do Apache TOMCAT 10 Server no Ubuntu Server<br>
+#12_ Fazendo o download do Arquivo de Configuração do HTTPS do Apache TomCAT 10 Server<br>
+#13_ Editando o arquivo de Configuração do HTTPS do Apache TomCAT 10 Server<br>
+#14_ Reinicializar o Serviço do Apache TomCAT Server no Ubuntu Server<br>
+#15_ Verificando a Porta de Conexão do Apache TomCAT Server no Ubuntu Server<br>
+#16_ Testando o Certificado TLS/SSL do Apache TomCAT Server no ubuntu Server<br>
+#17_ Testando o HTTPS do Apache TomCAT Server no navegador<br>
+#18_ Usuário e Senha de Administração do Apache TomCAT Server
 
 Site Oficial do Apache2: https://httpd.apache.org/<br>
 Site Oficial do Apache Tomcat: https://tomcat.apache.org/<br>
@@ -176,9 +177,9 @@ sudo openssl x509 -noout -modulus -in /etc/ssl/newcerts/tomcat10.crt | openssl m
 sudo openssl x509 -noout -text -in /etc/ssl/newcerts/tomcat10.crt
 
 #listando o conteúdo do banco de dados do certificados emitidos
-sudo cat /etc/ssl/index.txt
-sudo cat /etc/ssl/index.txt.attr
-sudo cat /etc/ssl/serial
+#opção do comando cat: -n (numeric)
+sudo cat -n /etc/ssl/index.txt
+sudo cat -n /etc/ssl/serial
 ```
 
 #09_ Exportando o certificado PKCS#12 PEM (Privacy Enhanced Mail) do Apache TomCAT 10 Server no Ubuntu Server<br>
@@ -207,14 +208,26 @@ sudo keytool -importkeystore -deststorepass pti@2018 -destkeypass pti@2018 -dest
 -srcstorepass pti@2018 -alias tomcat
 ```
 
-#11_ Fazendo o download do Arquivo de Configuração do HTTPS do Apache TomCAT 10 Server<br>
+#11_ Alterando as Permissões do Certificado PKCS#12 do Apache TOMCAT 10 Server no Ubuntu Server<br>
+```bash
+#alterando as permissões de Dono e Grupo padrão dos Certificados
+#opção do comando chown: -v (verbose)
+sudo chown -v tomcat:tomcat tomcat10.jks tomcat10.pem
+
+#listando os arquivos de Certificados do Apache TomCAT
+#opção do comando ls: -l (long listing format), -h (human-readable)
+sudo ls -lh /opt/tomcat/conf/tomcat10.jks
+sudo ls -lh /opt/tomcat/conf/tomcat10.pem
+```
+
+#12_ Fazendo o download do Arquivo de Configuração do HTTPS do Apache TomCAT 10 Server<br>
 ```bash
 #download do arquivo de configuração do HTTPS do Apache TomCAT 10 Server
 #opção do comando wget: -v (verbose), -O (output file)
 sudo wget -v -O /opt/tomcat/conf/server.xml https://raw.githubusercontent.com/vaamonde/ca-certificates/main/conf/server.xml
 ```
 
-#12_ Editando o arquivo de Configuração do HTTPS do Apache TomCAT 10 Server<br>
+#13_ Editando o arquivo de Configuração do HTTPS do Apache TomCAT 10 Server<br>
 ```bash
 #editando o arquivo de configuração do HTTPS do Apache TomCAT 10 Server
 sudo vim /opt/tomcat/conf/server.xml
@@ -224,7 +237,7 @@ INSERT
 	# Configuração principal do Tomcat referente a Porta padrão (8080 - HTTPS), Timeout e
 	# Porta Segura (8443 - HTTPS)
 
-	#descomentar as configurações de HTTPS do Apache TomCAT Server a partir da linha: 49 até 63
+	#descomentar as configurações de HTTPS do Apache TomCAT Server a partir da linha: 50 até 61
 	# Configuração do suporte ao SSL/TLS do Tomcat utilizando o software Keytool
 	# e Certificados Assinados utilizando o OpenSSL
 	# Comando para a geração do certificado do Tomcat SSL/TLS não assinado pela CA
@@ -235,21 +248,21 @@ INSERT
 ESC SHIFT :x <Enter>
 ```
 
-#13_ Reinicializar o Serviço do Apache TomCAT Server no Ubuntu Server<br>
+#14_ Reinicializar o Serviço do Apache TomCAT Server no Ubuntu Server<br>
 ```bash
 #reiniciando o Serviços do Apache TomCAT Server
 sudo systemctl restart tomcat10
 sudo systemctl status tomcat10
 ```
 
-#14_ Verificando as Portas de Conexões do Apache TomCAT Server no Ubuntu Server<br>
+#15_ Verificando as Portas de Conexões do Apache TomCAT Server no Ubuntu Server<br>
 ```bash
 #verificando as portas 8080 HTTP e 8443 HTTPS do Apache TomCAT Server
 #opção do comando lsof: -n (network number), -P (port number), -i (list IP Address), -s (alone directs)
 sudo lsof -nP -iTCP:'8080,8443' -sTCP:LISTEN
 ```
 
-#15_ Testando o Certificado TLS/SSL do Apache TomCAT Server no ubuntu Server<br>
+#16_ Testando o Certificado TLS/SSL do Apache TomCAT Server no ubuntu Server<br>
 ```bash
 #testando o certificado do Apache TomCAT Server no Ubuntu Server
 #opção do comando echo: | (piper, faz a função de Enter no comando)
@@ -261,13 +274,13 @@ sudo lsof -nP -iTCP:'8080,8443' -sTCP:LISTEN
 echo | openssl s_client -connect localhost:8443 -servername 172.16.1.20 -showcerts
 ```
 
-#16_ Testando o HTTPS do Apache TomCAT Server no navegador<br>
+#17_ Testando o HTTPS do Apache TomCAT Server no navegador<br>
 ```bash
 #utilizar os navegadores para testar o HTTPS
 firefox ou google chrome: https://endereço_ipv4_ubuntuserver:8443
 ```
 
-#17_ Usuário e Senha de Administração do Apache TomCAT Server<br>
+#18_ Usuário e Senha de Administração do Apache TomCAT Server<br>
 ```bash
 Clique em: Manager App
 	Usuário padrão: admin
