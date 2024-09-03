@@ -108,7 +108,7 @@ ESC SHIFT : x <Enter>
 #opções do comando openssl: genrsa (command generates an RSA private key), -out (The output file to 
 #write to, or standard output if not specified), -passout (The output file password source), pass: 
 #(The actual password is password), bits (The size of the private key to generate in bits)
-sudo openssl genrsa -aes256 -out /etc/ssl/private/tomcat10.old -passout pass:pti@2018 2048
+sudo openssl genrsa -aes256 -out /etc/ssl/private/tomcat10.key.old -passout pass:pti@2018 2048
 ```
 
 #04_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Apache TomCAT 10 Server no Ubuntu Server<br>
@@ -144,7 +144,7 @@ sudo openssl rsa -noout -modulus -in /etc/ssl/private/tomcat10.key | openssl md5
 #key), -key (The file to read the private key from), -out (The output file to write to, or standard 
 #output if not specified), -extensions (Specify alternative sections to include certificate extensions), 
 #-config (Specify an alternative configuration file)
-sudo openssl req -new -sha256 -nodes -key /etc/ssl/private/tomca10.key -out /etc/ssl/requests/tomcat10.csr \
+sudo openssl req -new -sha256 -nodes -key /etc/ssl/private/tomcat10.key -out /etc/ssl/requests/tomcat10.csr \
 -extensions v3_req -config /etc/ssl/conf/tomcat10.conf
 ```
 
