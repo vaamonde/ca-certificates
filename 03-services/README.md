@@ -108,9 +108,9 @@ Conteúdo estudado nesse desafio:<br>
 #16_ Testando o HTTPS do Apache TomCAT Server no navegador<br>
 #17_ Usuário e Senha de Administração do Apache TomCAT Server
 
-[![HTTPS TomCAT](http://img.youtube.com/vi//0.jpg)]( "HTTPS TomCAT")
+[![HTTPS TomCAT](http://img.youtube.com/vi/1atX9c7dVa0/0.jpg)](https://www.youtube.com/watch?v=1atX9c7dVa0 "HTTPS TomCAT")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=1atX9c7dVa0
 
 Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/03-services/02-tomcat10-https.md
 

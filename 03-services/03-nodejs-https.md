@@ -59,6 +59,10 @@ O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Lay
 
 O Node.js é um software de código aberto, multiplataforma, baseado no interpretador V8 do Google e que permite a execução de códigos JavaScript fora de um navegador web. A principal característica do Node.js é sua arquitetura assíncrona e orientada por eventos.
 
+[![HTTPS Node.JS](http://img.youtube.com/vi//0.jpg)]( "HTTPS Node.JS")
+
+Link da vídeo aula: 
+
 #01_ Fazendo o download do Arquivo de Configuração do Certificado do Node.JS<br>
 ```bash
 #download do arquivo de configuração do Certificado do Node.JS

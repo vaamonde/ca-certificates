@@ -55,9 +55,9 @@ O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Lay
 
 O Servidor HTTP Apache ou Servidor Apache ou HTTP Daemon Apache ou somente Apache, é o servidor web livre criado em 1995 por um grupo de desenvolvedores da NCSA, tendo como base o servidor web NCSA HTTPd criado por Rob McCool.
 
-[![HTTPS Apache2](http://img.youtube.com/vi//0.jpg)]( "HTTPS Apache2")
+[![HTTPS Apache2](http://img.youtube.com/vi/7yqy-5Qo01k/0.jpg)](https://www.youtube.com/watch?v=7yqy-5Qo01k "HTTPS Apache2")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=7yqy-5Qo01k 
 
 #01_ Fazendo o download do Arquivo de Configuração do Certificado do Apache2 Server<br>
 ```bash

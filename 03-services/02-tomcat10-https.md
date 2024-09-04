@@ -62,6 +62,10 @@ O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Lay
 
 O Tomcat é um servidor web Java, mais especificamente, um container de servlets. O Tomcat implementa, dentre outras de menor relevância, as tecnologias Java Servlet e JavaServer Pages e não é um container Enterprise JavaBeans. Desenvolvido pela Apache Software Foundation, é distribuído como software livre.
 
+[![HTTPS TomCAT](http://img.youtube.com/vi/1atX9c7dVa0/0.jpg)](https://www.youtube.com/watch?v=1atX9c7dVa0 "HTTPS TomCAT")
+
+Link da vídeo aula: https://www.youtube.com/watch?v=1atX9c7dVa0
+
 #01_ Fazendo o download do Arquivo de Configuração do Certificado do Apache TomCAT 10 Server<br>
 ```bash
 #download do arquivo de configuração do Certificado do Apache TomCAT 10 Server
