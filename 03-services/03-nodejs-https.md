@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 02/09/2024<br>
-#Data de atualização: 03/09/2024<br>
-#Versão: 0.02<br>
+#Data de atualização: 05/09/2024<br>
+#Versão: 0.03<br>
 
 OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO NODE.JS SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Node.JS realizado com sucesso!!! #BoraParaPrática
 
@@ -28,12 +28,13 @@ Conteúdo estudado nesse desafio:<br>
 #07_ Criando o arquivo CRT (Certificate Request Trust) do Node.JS no Ubuntu Server<br>
 #08_ Verificando o arquivo CRT (Certificate Request Trust) do Node.JS no Ubuntu Server<br>
 #09_ Acessando o diretório do Projeto Simples de Teste do Node.JS<br>
-#10_ Atualizando o Código do Node.JS do Projeto de Teste<br>
-#11_ Executando o Projeto Simples do Node.JS utilizando o Express e HTTPS<br>
-#12_ Verificando a Porta de Conexão do Node.JS Express e HTTPS<br>
-#13_ Testando o Certificado TLS/SSL do Node.JS no ubuntu Server<br>
-#14_ Acessando o Projeto Simples do Node.JS via HTTPS<br>
-#15_ Finalizando a Execução do Projeto Simples do Node.JS Express e HTTPS
+#10_ Copiando a Chave Privada e Certificado Assinado do Node.JS para o diretório de Projeto<br>
+#11_ Atualizando o Código do Node.JS do Projeto de Teste<br>
+#12_ Executando o Projeto Simples do Node.JS utilizando o Express e HTTPS<br>
+#13_ Verificando a Porta de Conexão do Node.JS Express e HTTPS<br>
+#14_ Testando o Certificado TLS/SSL do Node.JS no ubuntu Server<br>
+#15_ Acessando o Projeto Simples do Node.JS via HTTPS<br>
+#16_ Finalizando a Execução do Projeto Simples do Node.JS Express e HTTPS
 
 Site Oficial do Node.JS: https://nodejs.org/en/<br>
 Site Oficial do NPM: https://www.npmjs.com/<br>
@@ -110,7 +111,7 @@ ESC SHIFT : x <Enter>
 #opções do comando openssl: genrsa (command generates an RSA private key), -out (The output file to 
 #write to, or standard output if not specified), -passout (The output file password source), pass: 
 #(The actual password is password), bits (The size of the private key to generate in bits)
-sudo openssl genrsa -aes256 -out /etc/ssl/private/nodejs.old -passout pass:pti@2018 2048
+sudo openssl genrsa -aes256 -out /etc/ssl/private/nodejs.key.old -passout pass:pti@2018 2048
 ```
 
 #04_ Removendo a Senha da Chave Raiz RSA (Rivest-Shamir-Adleman) Privada do Node.JS no Ubuntu Server<br>
@@ -192,16 +193,36 @@ cd nodejs-hello/
 #opção do comando ls: -l (long listing), -h (human-readable)
 ls -lh
 
-#Instalando o Módulo/Pacote HTTPS do Node.JS
+#Instalando o Módulo/Pacote HTTPS e Express do Node.JS
 #opção do comando npm: install (install package in directory)
-npm install https
+npm install https express
 
-#Listando o conteúdo do diretório do projeto do Node.JS
+#Listando o conteúdo do diretório Modules do projeto do Node.JS
 #opção do comando ls: -l (long listing), -h (human-readable), -a (all)
-ls -lha
+ls -lha node_modules/
 ```
 
-#10_ Atualizando o Código do Node.JS do Projeto de Teste<br>
+#10_ Copiando a Chave Privada e Certificado Assinado do Node.JS para o diretório de Projeto<br>
+```bash
+#OBSERVAÇÃO IMPORTANTE: Por padrão usuário comuns não tem direito de executar ou listar o conteúdo
+#do diretório: /etc/ssl, para facilitar essa configuração será copiado para o diretório de projeto
+#do Node.JS a Chave Privada e Certificado Assinado.
+
+#criando o diretório para armazenar a chave e certificado do Node.JS
+#opção do comando mkdir: -v (verbose)
+mkdir -v tls/
+
+#copiando a chave privada e certificado assinado do Node.JS para o diretório tls
+#opção do comando cp: -v (verbose)
+sudo cp -v /etc/ssl/private/nodejs.key tls/
+sudo cp -v /etc/ssl/newcerts/nodejs.crt tls/
+
+#alterando as permissões da chave privada e certificado assinado do Node.JS
+#opção do comando chown: -v (verbose), vaamonde (owner), vaamonde (group)
+sudo chown -v vaamonde:vaamonde tls/*
+```
+
+#11_ Atualizando o Código do Node.JS do Projeto de Teste<br>
 ```bash
 #OBSERVAÇÃO IMPORTANTE: no Microsoft Windows utilizando o Powershell no processo de copiar e 
 #colar o código JavaScript ele desconfigura o código, recomendo no Windows utilizar o software 
@@ -231,20 +252,24 @@ var app = express();
 
 // Carregando os certificados assinados do Node.JS
 var options = {
-    key: fs.readFileSync('/etc/ssl/private/nodejs.key'),
-    cert: fs.readFileSync('/etc/ssl/newcerts/nodejs.crt'),
+    key: fs.readFileSync('tls/nodejs.key'),
+    cert: fs.readFileSync('tls/nodejs.crt'),
     // Opcional: adicionar se precisar validar a cadeia de certificação com a CA
     ca: fs.readFileSync('/etc/ssl/certs/pti-ca.pem')
 };
 
 // Mensagem que será mostrada no browser (navegador) 
 app.get('/', function (req, res) {
-    res.send('Robson Vaamonde - Projeto #BoraParaPrática!!!');
+    // Obtém a data e hora atual
+    var dataHoraAtual = new Date().toLocaleString();
+    // Mensagem que será enviada com a data e hora atual
+    var mensagem = 'Meu novo projeto em Node.JS - Robson Vaamonde<br>Data e hora atual: ' + dataHoraAtual;
+    res.send(mensagem);
 });
 
 // Porta padrão utilizada pela aplicação do Node.JS com HTTPS
-https.createServer(options, app).listen(3000, function() {
-    console.log('Aplicativo de exemplo ouvindo na porta 3000 com HTTPS');
+https.createServer(options, app).listen(3030, function() {
+    console.log('Aplicativo de exemplo ouvindo na porta 3030 com HTTPS');
 });
 ```
 ```bash
@@ -268,7 +293,7 @@ node index.js &
 #e Protocolo TCP do Serviço corresponde nas tabelas do firewall e testar a conexão..
 
 #opção do comando lsof: -n (network number), -P (port number), -i (list IP Address), -s (alone directs)
-sudo lsof -nP -iTCP:'3000' -sTCP:LISTEN
+sudo lsof -nP -iTCP:'3030' -sTCP:LISTEN
 ```
 
 #13_ Testando o Certificado TLS/SSL do Node.JS no ubuntu Server<br>
@@ -280,13 +305,13 @@ sudo lsof -nP -iTCP:'3000' -sTCP:LISTEN
 #-servername (Include the TLS Server Name Indication (SNI) extension in the ClientHello 
 #message), -showcerts (Display the whole server certificate chain: normally only the server 
 #certificate itself is displayed)
-echo | openssl s_client -connect localhost:3000 -servername 172.16.1.20 -showcerts
+echo | openssl s_client -connect localhost:3030 -servername 172.16.1.20 -showcerts
 ```
 
 #14_ Acessando o Projeto Simples do Node.JS via HTTPS<br>
 ```bash
 #utilizar os navegadores para testar o Node.JS
-firefox ou google chrome: https://endereço_ipv4_ubuntuserver:3000
+firefox ou google chrome: https://endereço_ipv4_ubuntuserver:3030
 ```
 
 #15_ Finalizando a Execução do Projeto Simples do Node.JS Express e HTTPS<br>
