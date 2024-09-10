@@ -10,7 +10,7 @@
 #Data de atualização: 05/09/2024<br>
 #Versão: 0.03<br>
 
-OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO NODE.JS SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Node.JS realizado com sucesso!!! #BoraParaPrática
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO NODE.JS SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Configuração do Certificado no Node.JS realizado com sucesso!!! #BoraParaPrática
 
 COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
 
@@ -60,9 +60,9 @@ O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Lay
 
 O Node.js é um software de código aberto, multiplataforma, baseado no interpretador V8 do Google e que permite a execução de códigos JavaScript fora de um navegador web. A principal característica do Node.js é sua arquitetura assíncrona e orientada por eventos.
 
-[![HTTPS Node.JS](http://img.youtube.com/vi//0.jpg)]( "HTTPS Node.JS")
+[![HTTPS Node.JS](http://img.youtube.com/vi/IUQ8ttXm7w4/0.jpg)](https://www.youtube.com/watch?v=IUQ8ttXm7w4 "HTTPS Node.JS")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=IUQ8ttXm7w4
 
 #01_ Fazendo o download do Arquivo de Configuração do Certificado do Node.JS<br>
 ```bash
@@ -340,7 +340,7 @@ kill -9 15939
 
 =========================================================================================
 
-OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO NODE.JS SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Node.JS realizado com sucesso!!! #BoraParaPrática
+OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO NODE.JS SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Configuração do Certificado no Node.JS realizado com sucesso!!! #BoraParaPrática
 
 COMPARTILHAR O SELO DO DESAFIO NAS SUAS REDES SOCIAIS (LINKEDIN, FACEBOOK, INSTAGRAM) MARCANDO: ROBSON VAAMONDE COM AS HASHTAGS E COPIANDO O CONTEÚDO DO DESAFIO ABAIXO: 
 

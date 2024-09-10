@@ -151,8 +151,8 @@ Conteúdo estudado nesse desafio:<br>
 #14_ Acessando o Projeto Simples do Node.JS via HTTPS<br>
 #15_ Finalizando a Execução do Projeto Simples do Node.JS Express e HTTPS
 
-[![HTTPS Node.JS](http://img.youtube.com/vi//0.jpg)]( "HTTPS Node.JS")
+[![HTTPS Node.JS](http://img.youtube.com/vi/IUQ8ttXm7w4/0.jpg)](https://www.youtube.com/watch?v=IUQ8ttXm7w4 "HTTPS Node.JS")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=IUQ8ttXm7w4
 
 Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/03-services/03-nodejs-https.md

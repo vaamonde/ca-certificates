@@ -193,14 +193,6 @@ Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/02
 
 Vídeo de Criação e Configuração do Certificado Assinado do Apache2 Server para habilitar o recurso do HTTPS (Hyper-Text Transport Protocol Security) TLS/SSL onde oferece segurança e confiabilidade de acesso a Páginas de Internet e Aplicações desenvolvidas em HTML, PHP, JavaScript, etc.
 
-OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
-
-O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux, Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows. O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para gerar certificados de autenticação de serviços/protocolos em servidores (servers).
-
-O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer (SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP).Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e navegadores web.
-
-A autoridade de certificação (CA), também conhecido como um Autoridade de Certificação, é uma empresa ou organização que atua para validar as identidades de entidades (como sites, endereços de email, empresas ou pessoas físicas) e vinculá-las a chaves criptográficas através da emissão de documentos eletrônicos conhecidos como certificados digitais.
-
 O Servidor HTTP Apache ou Servidor Apache ou HTTP Daemon Apache ou somente Apache, é o servidor web livre criado em 1995 por um grupo de desenvolvedores da NCSA, tendo como base o servidor web NCSA HTTPd criado por Rob McCool.
 
 OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO APACHE2 SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Apache2 realizado com sucesso!!! #BoraParaPrática
@@ -232,15 +224,9 @@ Link da vídeo aula: https://www.youtube.com/watch?v=7yqy-5Qo01k
 
 Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/03-services/01-apache2-https.md
 
-## ** 🤩🤩 Configuração do Certificado Assinado do Apache TomCAT Server HTTPS TLS/SSL 🤩🤩**
+## ** 🤩🤩 Configuração do Certificado Assinado do Apache Tom CAT 10 Server HTTPS TLS/SSL 🤩🤩**
 
 Vídeo de Criação e Configuração do Certificado Assinado do Apache TomCAT 10 para habilitar o recurso do HTTPS (Hyper-Text Transport Protocol Security) TLS/SSL onde oferece segurança e confiabilidade de acesso a Páginas de Internet e Aplicações desenvolvidas em Java.
-
-OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
-
-O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux, Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows. O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para gerar certificados de autenticação de serviços/protocolos em servidores (servers).
-
-O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer (SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP). Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e navegadores web.
 
 O Tomcat é um servidor web Java, mais especificamente, um container de servlets. O Tomcat implementa, dentre outras de menor relevância, as tecnologias Java Servlet e JavaServer Pages e não é um container Enterprise JavaBeans. Desenvolvido pela Apache Software Foundation, é distribuído como software livre.
 
@@ -281,12 +267,6 @@ Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/03
 
 Vídeo de Criação e Configuração do Certificado Assinado do Node.JS para habilitar o recurso do HTTPS (Hyper-Text Transport Protocol Security) TLS/SSL onde oferece segurança e confiabilidade de acesso a Páginas de Internet e Aplicações desenvolvidas em JavaScript.
 
-OpenSSL é uma implementação de código aberto dos protocolos SSL e TLS. A biblioteca (escrita na linguagem C) implementa as funções básicas de criptografia e disponibiliza várias funções utilitárias. Também estão disponíveis wrappers que permitem o uso desta biblioteca em várias outras linguagens. 
-
-O OpenSSL está disponível para a maioria dos sistemas do tipo Unix, incluindo Linux, Mac OS X, as quatro versões do BSD de código aberto e também para o Microsoft Windows. O OpenSSL é baseado no SSLeay de Eric Young e Tim Hudson. O OpenSSL é utilizado para gerar certificados de autenticação de serviços/protocolos em servidores (servers).
-
-O Transport Layer Security (TLS), assim como o seu antecessor Secure Sockets Layer (SSL), é um protocolo de segurança projetado para fornecer segurança nas comunicações sobre uma rede de computadores. Várias versões do protocolo encontram amplo uso em aplicativos como navegação na web, email, mensagens instantâneas e voz sobre IP (VoIP). Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e navegadores web.
-
 O Node.js é um software de código aberto, multiplataforma, baseado no interpretador V8 do Google e que permite a execução de códigos JavaScript fora de um navegador web. A principal característica do Node.js é sua arquitetura assíncrona e orientada por eventos.
 
 OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO NODE.JS SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Instalação da Certificado no Node.JS realizado com sucesso!!! #BoraParaPrática
@@ -314,8 +294,8 @@ Conteúdo estudado nesse desafio:<br>
 #14_ Acessando o Projeto Simples do Node.JS via HTTPS<br>
 #15_ Finalizando a Execução do Projeto Simples do Node.JS Express e HTTPS
 
-[![HTTPS Node.JS](http://img.youtube.com/vi//0.jpg)]( "HTTPS Node.JS")
+[![HTTPS Node.JS](http://img.youtube.com/vi/IUQ8ttXm7w4/0.jpg)](https://www.youtube.com/watch?v=IUQ8ttXm7w4 "HTTPS Node.JS")
 
-Link da vídeo aula: 
+Link da vídeo aula: https://www.youtube.com/watch?v=IUQ8ttXm7w4
 
 Link da documentação: https://github.com/vaamonde/ca-certificates/blob/main/03-services/03-nodejs-https.md
