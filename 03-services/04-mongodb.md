@@ -169,18 +169,47 @@ sudo cat -n /etc/ssl/index.txt
 sudo cat -n /etc/ssl/serial
 ```
 
-#09_ Atualizando o arquivo de configuração do MongoDB Server no Ubuntu Server<br>
+#09_ Combinando a Chave Privada e o Certificado Assinado no Arquivo PEM ()<br>
+```bash
+#OBSERVAÇÃO IMPORTANTE: Nas configurações do MongoDB Server ele só utilizar uma variável para
+#configurar as opções de certificados e chave privada, nesse cenário recomendo criar o arquivo
+#de certificado PEM adicionando o Certificado Assinado e a Chave Primária.
+
+#se autenticando como Root no Ubuntu Server
+#OBSERVAÇÃO IMPORTANTE: o comando abaixo só funciona como Root devido a permissões de criação
+#do certificado
+#opção do comando sudo: -i (login)
+sudo -i
+
+#criando o certificado PEM com os arquivos de Certificado Assinado e Chave Privada do MongoDB
+#opção do redirecionar de saída > (maior): Redireciona a saída padrão (STDOUT)
+sudo cat /etc/ssl/newcerts/mongodb.crt /etc/ssl/private/mongodb.key > /etc/ssl/certs/mongodb.pem
+
+#saindo o usuário Root e voltando para o usuário normal
+exit
+
+#listando o Certificado PEM MongoDB Server
+#opção do comando ls: -l (long listing), -h (human-readable), -a (all)
+ls -lha /etc/ssl/certs/mongodb.pem
+```
+
+#10_ Atualizando o arquivo de configuração do MongoDB Server no Ubuntu Server<br>
 ```bash
 #fazendo o backup do arquivo de configuração do MongoDB Server
 #opção do comando cp: -v (verbose)
 sudo cp -v /etc/mongod.conf /etc/mongod.conf.bkp
+
+#visualizando os backup do arquivo de configuração do MongoDB Server
+#listando o Certificado PEM MongoDB Server
+#opção do comando ls: -l (long listing), -h (human-readable), * (asterisco - all/tudo)
+ls -lh /etc/mongod.*
 
 #atualizando o arquivo de configuração do MongoDB Server
 #opção do comando wget: -v (verbose), -O (output file)
 sudo wget -v -O /etc/mongod.conf https://raw.githubusercontent.com/vaamonde/ca-certificates/main/conf/mongod.conf
 ```
 
-#10_ Configurando o MongoDB Server para suportar TLS/SSL nas Conexões Remotas<br>
+#11_ Configurando o MongoDB Server para suportar TLS/SSL nas Conexões Remotas<br>
 ```bash
 #editando o arquivo de configuração do MongoDB Server
 sudo vim /etc/mongod.conf
@@ -198,15 +227,14 @@ INSERT
 	    #OBSERVAÇÃO: foi configurado o modo Preferencial pois permiti conexão segura
 	    #e não segura utilizando TLS/SSL para se conectar no Banco de Dados MongoDB
 	    mode: preferTLS
-	    certificateFile: /etc/ssl/newcerts/mongodb.crt
-	    privateKeyFile: /etc/ssl/private/mongodb.key
+	    certificateKeyFile: /etc/ssl/certs/mongodb.pem
 	    CAFile: /etc/ssl/certs/pti-ca.pem
 	    #define se certificados inválidos devem ser aceitos. Para produção, deixe como false
 	    allowInvalidCertificates: false
 	    #define se o MongoDB deve aceitar certificados onde o nome do host não corresponde ao nome no certificado.
 	    allowInvalidHostnames: false
 
-	#habilitando o recurso de autenticação do MongoDB Server na linha: 46
+	#habilitando o recurso de autenticação do MongoDB Server na linha: 45
 	#descomentar a linha: #security, adicionar o valor: authorization: enabled
 	security:
 	  authorization: enabled
@@ -217,9 +245,14 @@ ESC SHIFT :x <ENTER>
 #reiniciar o serviço do MongoDB Server
 sudo systemctl restart mongod
 sudo systemctl status mongod
+
+#analisando os Log's e mensagens de erro do Servidor do MongoDB (NÃO COMENTADO NO VÍDEO)
+#opção do comando journalctl: -t (identifier), x (catalog), e (pager-end), u (unit)
+sudo journalctl -t mongod
+sudo journalctl -xeu mongod
 ```
 
-#11_ Verificando a Porta de Conexão do MongoDB Sever no Ubuntu Server<br>
+#12_ Verificando a Porta de Conexão do MongoDB Sever no Ubuntu Server<br>
 ```bash
 #OBSERVAÇÃO IMPORTANTE: no Ubuntu Server as Regras de Firewall utilizando o comando: 
 #iptables ou: ufw está desabilitado por padrão (INACTIVE), caso você tenha habilitado 
@@ -230,8 +263,17 @@ sudo systemctl status mongod
 sudo lsof -nP -iTCP:'27017' -sTCP:LISTEN
 ```
 
-
-openssl s_client -connect localhost:27017 -CAfile /etc/ssl/certs/pti-ca.pem
+#13_ Testando o Certificado TLS/SSL do MongoDB Server no ubuntu Server<br>
+```bash
+#testando o certificado do MongoDB Server no Ubuntu Server
+#opção do comando echo: | (piper, faz a função de Enter no comando)
+#opções do comando openssl: s_client (command implements a generic SSL/TLS client which 
+#connects to a remote host using SSL/TLS), -connect (The host and port to connect to),
+#-servername (Include the TLS Server Name Indication (SNI) extension in the ClientHello 
+#message), -showcerts (Display the whole server certificate chain: normally only the server 
+#certificate itself is displayed)
+echo | openssl s_client -connect localhost:27017 -servername 172.16.1.20 -showcerts
+```
 
 mongo --host localhost --port 27017 --tls --tlsCAFile /etc/ssl/certs/pti-ca.pem
 
