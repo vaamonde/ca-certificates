@@ -270,7 +270,7 @@ Linux
 sudo cat -n /var/log/auth.log | grep ssh
 sudo cat -n /var/log/syslog | grep ssh
 sudo cat -n /var/log/hosts-deny.log
-sudo cat -n /var/log/hosts-allow-ssh.log
+sudo cat -n /var/log/hosts-allow.log
 sudo cat -n /var/log/ufw.log | grep -i dpt=22
 ```
 
