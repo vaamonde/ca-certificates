@@ -245,6 +245,7 @@ echo | openssl s_client -connect localhost:19999 -servername 172.16.1.20 -showce
 firefox ou google chrome: https://endereço_ipv4_ubuntuserver:19999
 ```
 
+
 =========================================================================================
 
 OBSERVAÇÃO IMPORTANTE: COMENTAR NO VÍDEO DO NETDATA SE VOCÊ CONSEGUIU FAZER O A INSTALAÇÃO COM A SEGUINTE FRASE: Configuração do Certificado no Netdata realizado com sucesso!!! #BoraParaPrática
